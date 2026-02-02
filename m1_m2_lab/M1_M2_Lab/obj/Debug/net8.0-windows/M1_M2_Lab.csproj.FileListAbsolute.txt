@@ -1,0 +1,16 @@
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\bin\Debug\net8.0-windows\M1_M2_Lab.exe
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\bin\Debug\net8.0-windows\M1_M2_Lab.deps.json
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\bin\Debug\net8.0-windows\M1_M2_Lab.runtimeconfig.json
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\bin\Debug\net8.0-windows\M1_M2_Lab.dll
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\bin\Debug\net8.0-windows\M1_M2_Lab.pdb
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\obj\Debug\net8.0-windows\M1_M2_Lab.Form1.resources
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\obj\Debug\net8.0-windows\M1_M2_Lab.csproj.GenerateResource.cache
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\obj\Debug\net8.0-windows\M1_M2_Lab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\obj\Debug\net8.0-windows\M1_M2_Lab.AssemblyInfoInputs.cache
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\obj\Debug\net8.0-windows\M1_M2_Lab.AssemblyInfo.cs
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\obj\Debug\net8.0-windows\M1_M2_Lab.csproj.CoreCompileInputs.cache
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\obj\Debug\net8.0-windows\M1_M2_Lab.dll
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\obj\Debug\net8.0-windows\refint\M1_M2_Lab.dll
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\obj\Debug\net8.0-windows\M1_M2_Lab.pdb
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\obj\Debug\net8.0-windows\M1_M2_Lab.genruntimeconfig.cache
+C:\Users\cmz5478\source\repos\M1_M2_Lab\M1_M2_Lab\obj\Debug\net8.0-windows\ref\M1_M2_Lab.dll

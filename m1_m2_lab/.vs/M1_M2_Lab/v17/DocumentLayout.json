@@ -1,0 +1,97 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\cmz5478\\source\\repos\\M1_M2_Lab\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6FB655ED-A419-46CC-92DD-EE90D52D683C}|M1_M2_Lab\\M1_M2_Lab.csproj|c:\\users\\cmz5478\\source\\repos\\m1_m2_lab\\m1_m2_lab\\shape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FB655ED-A419-46CC-92DD-EE90D52D683C}|M1_M2_Lab\\M1_M2_Lab.csproj|solutionrelative:m1_m2_lab\\shape.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FB655ED-A419-46CC-92DD-EE90D52D683C}|M1_M2_Lab\\M1_M2_Lab.csproj|c:\\users\\cmz5478\\source\\repos\\m1_m2_lab\\m1_m2_lab\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FB655ED-A419-46CC-92DD-EE90D52D683C}|M1_M2_Lab\\M1_M2_Lab.csproj|solutionrelative:m1_m2_lab\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FB655ED-A419-46CC-92DD-EE90D52D683C}|M1_M2_Lab\\M1_M2_Lab.csproj|c:\\users\\cmz5478\\source\\repos\\m1_m2_lab\\m1_m2_lab\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FB655ED-A419-46CC-92DD-EE90D52D683C}|M1_M2_Lab\\M1_M2_Lab.csproj|solutionrelative:m1_m2_lab\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FB655ED-A419-46CC-92DD-EE90D52D683C}|M1_M2_Lab\\M1_M2_Lab.csproj|C:\\Users\\cmz5478\\source\\repos\\M1_M2_Lab\\m1_m2_lab\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6FB655ED-A419-46CC-92DD-EE90D52D683C}|M1_M2_Lab\\M1_M2_Lab.csproj|solutionrelative:m1_m2_lab\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 188,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Shape.cs",
+              "DocumentMoniker": "C:\\Users\\cmz5478\\source\\repos\\M1_M2_Lab\\M1_M2_Lab\\Shape.cs",
+              "RelativeDocumentMoniker": "M1_M2_Lab\\Shape.cs",
+              "ToolTip": "C:\\Users\\cmz5478\\source\\repos\\M1_M2_Lab\\M1_M2_Lab\\Shape.cs",
+              "RelativeToolTip": "M1_M2_Lab\\Shape.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T14:40:09.725Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 212,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\cmz5478\\source\\repos\\M1_M2_Lab\\M1_M2_Lab\\Form1.cs",
+              "RelativeDocumentMoniker": "M1_M2_Lab\\Form1.cs",
+              "ToolTip": "C:\\Users\\cmz5478\\source\\repos\\M1_M2_Lab\\M1_M2_Lab\\Form1.cs",
+              "RelativeToolTip": "M1_M2_Lab\\Form1.cs",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAAwG8AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T14:31:20.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\cmz5478\\source\\repos\\M1_M2_Lab\\M1_M2_Lab\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "M1_M2_Lab\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\cmz5478\\source\\repos\\M1_M2_Lab\\M1_M2_Lab\\Form1.Designer.cs",
+              "RelativeToolTip": "M1_M2_Lab\\Form1.Designer.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAqwJ4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T13:59:28.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\cmz5478\\source\\repos\\M1_M2_Lab\\M1_M2_Lab\\Form1.cs",
+              "RelativeDocumentMoniker": "M1_M2_Lab\\Form1.cs",
+              "ToolTip": "C:\\Users\\cmz5478\\source\\repos\\M1_M2_Lab\\M1_M2_Lab\\Form1.cs [Design]",
+              "RelativeToolTip": "M1_M2_Lab\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-15T14:01:08.052Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
