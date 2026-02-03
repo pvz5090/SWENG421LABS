@@ -41,4 +41,17 @@ public class Product : ProductIF
 		this.name = name;
 	}
 
+	public int CompareTo(object? other)
+	{
+		if (other == null)
+		{
+			return -1;
+		}
+		else
+		{
+			Product otherProduct = other as Product;
+            return this.price.CompareTo(otherProduct.price);
+		}
+	}
+
 }

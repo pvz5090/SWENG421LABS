@@ -1,6 +1,7 @@
+using p1;
 namespace p2
 {
-    public class ProxySort<T> : SortUtility<T> where T : ProductIF {
+    public class ProxySort<T> : SortUtility<T> where T : IComparable {
         public ProxySort(string sortName) : base(sortName) {}
 
         public override List<IComparable> sort(List<IComparable> data) {
