@@ -1,8 +1,10 @@
 ﻿using System;
 
-public class Class1
+public interface ProductIF
 {
-	public Class1()
-	{
-	}
+	public int getId();
+	public string getName();
+	public double getPrice();
+	public setPrice(double price);
+	public setName(string name);
 }
