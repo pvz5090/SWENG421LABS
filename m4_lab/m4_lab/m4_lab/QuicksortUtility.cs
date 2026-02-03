@@ -1,11 +1,11 @@
 namespace p2
 {
-    public class QuicksortUtility<T> : SortUtility<T> where T : ProductIF, IComparable<T>
+    public class QuicksortUtility<T> : SortUtility<T> where T : ProductIF
     {
-        QuicksortUtility(string sortName) : base(sortName) {}
-        public virtual List<T> sort(List<T> data)
+        public QuicksortUtility() : base("quicksort") {}
+        public virtual List<IComparable> sort(List<IComparable> data)
         {
-
+            throw new NotImplementedException();
         }
     }
 }

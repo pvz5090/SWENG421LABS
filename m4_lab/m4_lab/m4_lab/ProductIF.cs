@@ -2,7 +2,11 @@
 
 namespace p2
 {
-    public class ProductIF
+    public class ProductIF : IComparable
     {
+        public int CompareTo(object? obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

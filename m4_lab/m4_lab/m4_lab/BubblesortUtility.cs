@@ -1,6 +1,6 @@
 namespace p2
 {
-    public class BubblesortUtility<T> : SortUtility<ProductIF> where T : ProductIF {
-        BubblesortUtility(string sortName) : base(sortName) {}
+    public class BubblesortUtility<T> : SortUtility<T> where T : ProductIF {
+        public BubblesortUtility() : base("bubblesort") {}
     }
 }
