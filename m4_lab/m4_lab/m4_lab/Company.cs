@@ -1,8 +1,5 @@
 ﻿using System;
 
-public class Class1
+public class Company
 {
-	public Class1()
-	{
-	}
 }

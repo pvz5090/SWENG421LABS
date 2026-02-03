@@ -1,12 +1,10 @@
 ﻿using System;
 
-namespace p2
+public interface ProductIF
 {
-    public class ProductIF : IComparable
-    {
-        public int CompareTo(object? obj)
-        {
-            throw new NotImplementedException();
-        }
-    }
+	public int getId();
+	public string getName();
+	public double getPrice();
+	public setPrice(double price);
+	public setName(string name);
 }

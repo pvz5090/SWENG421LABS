@@ -1,8 +1,7 @@
 ﻿using System;
 
-public class Class1
+using p2;
+
+public class Desk : ProductIF
 {
-	public Class1()
-	{
-	}
 }

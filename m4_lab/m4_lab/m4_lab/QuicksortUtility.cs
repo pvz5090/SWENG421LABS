@@ -1,4 +1,4 @@
-namespace p2
+namespace p1
 {
     public class QuicksortUtility<T> : SortUtility<T> where T : ProductIF
     {
