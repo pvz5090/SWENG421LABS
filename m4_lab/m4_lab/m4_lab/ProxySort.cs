@@ -18,7 +18,7 @@ namespace p2
 {
     public class ProxySort<T> : SortUtility<T> where T : ProductIF {
         public override List<T> sort(List<T> data) {
-            private SortUtility<T> client;
+            SortUtility<ProductIF> client;
 
             if (base.getName() == "bubblesort") {
                 client = new BubblesortUtility<T>();
@@ -28,7 +28,7 @@ namespace p2
                 throw new NotFoundError("Sorting algorithm not found");
             }
 
-            return sortUtility.sort(data);
+            return client.sort(data);
         }
     }
 }

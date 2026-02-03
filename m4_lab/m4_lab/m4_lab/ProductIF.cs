@@ -1,8 +1,8 @@
 ﻿using System;
 
-public class Class1
+namespace p2
 {
-	public Class1()
-	{
-	}
+    public class ProductIF
+    {
+    }
 }
