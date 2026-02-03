@@ -14,18 +14,21 @@
 //     }
 // }
 
-public class ProxySort : SortUtility where T : ProductIF {
-    public override List sort(List data) {
-        private SortUtility<T> client;
+namespace p2
+{
+    public class ProxySort<T> : SortUtility<T> where T : ProductIF {
+        public override List<T> sort(List<T> data) {
+            private SortUtility<T> client;
 
-        if (base.getName() == "bubblesort") {
-            client = new BubblesortUtility<T>();
-        } else if (base.getName() == "quicksort") {
-            client = new QuicksortUtility<T>();
-        } else {
-            throw new NotFoundError("Sorting algorithm not found");
+            if (base.getName() == "bubblesort") {
+                client = new BubblesortUtility<T>();
+            } else if (base.getName() == "quicksort") {
+                client = new QuicksortUtility<T>();
+            } else {
+                throw new NotFoundError("Sorting algorithm not found");
+            }
+
+            return sortUtility.sort(data);
         }
-
-        return sortUtility.sort(data);
     }
 }
