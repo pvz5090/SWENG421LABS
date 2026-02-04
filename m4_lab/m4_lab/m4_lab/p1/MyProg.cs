@@ -1,4 +1,4 @@
-﻿using p2;
+﻿namespace m4_lab.p1;
 
 SortUtility<Desk> sorter = new ProxySort<Desk>("bubblesort");
 

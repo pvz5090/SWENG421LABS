@@ -1,5 +1,5 @@
 using p1;
-namespace p2
+namespace m4_lab.p2;
 {
     public class ProxySort<T> : SortUtility<T> where T : IComparable {
         public ProxySort(string sortName) : base(sortName) {}

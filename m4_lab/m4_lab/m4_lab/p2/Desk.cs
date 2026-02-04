@@ -1,6 +1,6 @@
 ﻿using System;
 
-using p2;
+namespace m4_lab.p2;
 
 public class Desk : Product
 {

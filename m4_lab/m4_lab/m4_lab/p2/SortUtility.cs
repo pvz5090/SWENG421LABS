@@ -1,4 +1,5 @@
-namespace p2
+namespace m4_lab.p2;
+ 
 {
     public class SortUtility<T> where T : IComparable {
         private string sortName = "bubblesort";

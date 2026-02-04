@@ -1,5 +1,5 @@
 ﻿using System;
-
+namespace m4_lab.p2;
 public interface ProductIF : IComparable
 {
 	public int getId();
