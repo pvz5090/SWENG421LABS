@@ -1,13 +1,35 @@
-﻿namespace m4_lab.p1;
+﻿using p2;
 
-SortUtility<Desk> sorter = new ProxySort<Desk>("bubblesort");
+namespace p1;
 
-List<Desk> deskList = new List<Desk>();
-deskList.Add(new Desk(1, "Desk1", 1));
-deskList.Add(new Desk(3, "Desk3", 3));
-deskList.Add(new Desk(5, "Desk5", 5));
-deskList.Add(new Desk(4, "Desk4", 4));
-deskList.Add(new Desk(2, "Desk2", 2));
-Console.WriteLine(deskList);
-List<Desk> sorted = sorter.sort(deskList);
-Console.WriteLine(sorted);
+public class MyProg {
+
+    public static void Main(String[] args)
+    {
+        Company xyz = new Company();
+        List<ProductIF> listOfProducts = getProducts();
+        xyz.sortUtility = new ProxySort<ProductIF>("bubblesort");
+        listOfProducts= xyz.sortUtility.sort(listOfProducts);
+
+        foreach (ProductIF product in listOfProducts)
+            Console.WriteLine(product.getPrice());
+
+
+        List<ProductIF> listOfProducts2 = getProducts();
+        xyz.sortUtility.setName("quicksort");
+        listOfProducts2 = xyz.sortUtility.sort(listOfProducts);
+
+        foreach (ProductIF product in listOfProducts2)
+            Console.WriteLine(product.getPrice());
+
+    }
+
+    public static List <ProductIF> getProducts()
+    {
+        return new List<ProductIF> {new Desk(1, "writing", 20.30),
+                                                                new Desk(2, "corner", 15.25),
+                                                                new Desk(3, "lap", 25.13),
+                                                                new Desk(4, "standing", 15.85),
+                                                                new Desk(5, "floating", 22.56)};
+    }
+}

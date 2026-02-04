@@ -1,4 +1,4 @@
-﻿using System;
+﻿using p2;
 
 public class Product : ProductIF
 {
@@ -21,7 +21,7 @@ public class Product : ProductIF
 		return this.id;
     }
 
-	public string getName()
+	public virtual string getName() //converted this to virtual so subclasses can override
 	{
 		return this.name;
     }
