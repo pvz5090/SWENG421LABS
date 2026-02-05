@@ -10,10 +10,5 @@ namespace p1
             data.Sort();
             return data;
         }
-        public void print(List<ProductIF> data)
-        {
-            foreach (var product in data)
-                Console.WriteLine(product.getPrice() + ", " + product.getName() + ", " + product.getId() + "\n");
-        }
     }
 }
