@@ -1,8 +1,13 @@
 ﻿using System;
 
-public class InputModule
+public abstract class InputModule : Module
 {
 	public InputModule()
 	{
 	}
+
+	protected double collectInput()
+	{
+		
+    }
 }
