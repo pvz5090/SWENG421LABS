@@ -15,10 +15,10 @@ public class Factory
 
     public Module createModule(string moduleName)
     {
-        string mduleString = hashMap[base.getName()];
+        string mduleString = hashMap[moduleName];
         Console.WriteLine(mduleString);
         Type moduleType = Type.GetType(mduleString);
         Console.WriteLine(mduleString);
-        return Activator.CreateInstance(moduleType);
+        return (Module)Activator.CreateInstance(moduleType, mduleString);
     }
 }
