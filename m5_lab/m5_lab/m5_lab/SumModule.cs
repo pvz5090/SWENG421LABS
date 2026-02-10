@@ -1,15 +1,16 @@
 ﻿using System;
 
-public class SumModule : InputModule
+public class SumModule : InputModule  
 {
+	public SumModule(double x) : base(x) { }
 	private void sum(double input)
 	{
-		this.value += input;
+		value += input; 
 	}
 
 	public void compute()
 	{
-		double input = this.collectInput()
-		sum(input)
+		sum(this.collectInput());
+		Console.WriteLine("value:" + value);
 	}
 }
