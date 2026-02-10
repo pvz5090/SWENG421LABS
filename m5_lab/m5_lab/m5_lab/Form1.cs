@@ -2,6 +2,7 @@ namespace m5_lab
 {
     public partial class Form1 : Form
     {
+        Factory factory = new Factory();
         public Form1()
         {
             InitializeComponent();
@@ -49,10 +50,9 @@ namespace m5_lab
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Factory fac = new Factory();
-            Module mod = fac.createModule(e.ToString()); 
-
+        { 
+            Module mod = factory.createModule(e.ToString()); 
+            
         }
     }
 }
