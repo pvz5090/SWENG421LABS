@@ -1,8 +1,8 @@
 ﻿using System;
 
-public class Class1
+public class LogModule
 {
-	public Class1()
+	public LogModule()
 	{
 	}
 }
