@@ -37,5 +37,10 @@ namespace m5_lab
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            e.ToString(); 
+        }
     }
 }

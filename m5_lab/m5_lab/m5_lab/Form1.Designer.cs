@@ -52,6 +52,7 @@
             textBox1.Size = new Size(150, 31);
             textBox1.TabIndex = 2;
             textBox1.Visible = false;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
