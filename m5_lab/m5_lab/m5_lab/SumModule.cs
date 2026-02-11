@@ -2,13 +2,14 @@
 
 public class SumModule : InputModule  
 {
-	public SumModule(double x) : base(x) { }
+	public SumModule(string name, TextBox inputTextBox) : base(name, inputTextBox) {}
+
 	private void sum(double input)
 	{
 		value += input; 
 	}
 
-	public void compute()
+	public override void compute()
 	{
 		sum(this.collectInput());
 		Console.WriteLine("value:" + value);
