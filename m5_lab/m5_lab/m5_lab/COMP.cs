@@ -1,6 +1,6 @@
 namespace m5_lab
 {
-    internal static class Program
+    internal static class COMP
     {
         /// <summary>
         ///  The main entry point for the application.
