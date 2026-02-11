@@ -3,13 +3,13 @@
 public abstract class Module : IComparable
 {
 	protected static double value;
-	protected static TextBox inputTextBox;
+	protected TextBox inputTextBox;
 	private string name;
 
 	public Module(string name, TextBox inputTextBox)
 	{
 		this.name = name;
-		Module.inputTextBox = inputTextBox;
+		this.inputTextBox = inputTextBox;
 	}
 
 	public abstract void compute();

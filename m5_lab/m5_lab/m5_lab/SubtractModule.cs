@@ -1,8 +1,17 @@
 ﻿using System;
 
-public class SubtractModule
+public class SubtractModule : InputModule  
 {
-	public SubtractModule()
+	public SubtractModule(string name, TextBox inputTextBox) : base(name, inputTextBox) {}
+
+	private void subtract(double input)
 	{
+		value -= input; 
+	}
+
+	public override void compute()
+	{
+		subtract(this.collectInput());
+		Console.WriteLine("value:" + value);
 	}
 }
