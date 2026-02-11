@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Module : IComparable
+public abstract class Module : IComparable
 {
 	protected static double value;
 	private string name;
@@ -9,8 +9,8 @@ public class Module : IComparable
 	{
 		this.name = name;
 	}
-
-	public abstract compute(); 
+		
+	public abstract double Compute(); 
 
 	public int CompareTo(object obj)
 	{

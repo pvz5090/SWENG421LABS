@@ -8,7 +8,7 @@ public class SumModule : InputModule
 		value += input; 
 	}
 
-	public void compute()
+	public void Compute()
 	{
 		sum(this.collectInput());
 		Console.WriteLine("value:" + value);

@@ -2,10 +2,10 @@
 
 public abstract class InputModule : Module
 {
-	protected double input = 0;
-	public InputModule(double x)
+	protected double input;
+	public InputModule()
 	{
-		this.input = x;
+		this.input = 0;
 	}
 
 	protected double collectInput()

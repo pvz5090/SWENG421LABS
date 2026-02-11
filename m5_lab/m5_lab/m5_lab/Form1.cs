@@ -42,6 +42,7 @@ namespace m5_lab
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             e.ToString();
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -52,7 +53,19 @@ namespace m5_lab
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         { 
             Module mod = factory.createModule(e.ToString()); 
-            
+            //showing of input box 
+            if (mod is InputModule)
+            {
+                textBox1.Visible = true;
+                textBox5.Visible = true; 
+            }
+            else
+            {
+                textBox1.Visible = false;
+                textBox5.Visible = false;
+            }
+
+            textBox2.Text = mod.Compute().ToString();
         }
     }
 }
