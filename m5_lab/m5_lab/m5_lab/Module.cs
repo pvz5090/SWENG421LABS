@@ -1,20 +1,27 @@
 ﻿using System;
 
-public class Module : IComparable
+public abstract class Module : IComparable
 {
 	protected static double value;
+	protected static TextBox inputTextBox;
 	private string name;
 
-	public Module(string name)
+	public Module(string name, TextBox inputTextBox)
 	{
 		this.name = name;
+		Module.inputTextBox = inputTextBox;
 	}
 
-	public abstract compute(); 
+	public abstract void compute();
+
+    public override string ToString()
+    {
+        return name;
+    }
 
 	public int CompareTo(object obj)
 	{
-		return name.CompareTo(obj.name);
+		return this.ToString().CompareTo(obj.ToString());
 	}
 
 }
