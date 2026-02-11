@@ -2,7 +2,7 @@ namespace m5_lab
 {
     public partial class Form1 : Form
     {
-        Factory factory = new Factory();
+        private Factory factory = new Factory();
         public Form1()
         {
             InitializeComponent();
