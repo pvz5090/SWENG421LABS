@@ -2,7 +2,7 @@
 
 public class InitializeModule : InputModule  
 {
-	public InitializeModule(string name, TextBox inputTextBox) : base(name, inputTextBox) {}
+	public InitializeModule(string name) : base(name) {}
 
 	private void initialize(double input)
 	{

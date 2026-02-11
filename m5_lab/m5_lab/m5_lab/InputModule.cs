@@ -2,7 +2,7 @@
 
 public abstract class InputModule : Module
 {
-	public InputModule(string name, TextBox inputTextBox) : base(name, inputTextBox) {}
+	public InputModule(string name) : base(name) {}
 
 
 	protected double collectInput()

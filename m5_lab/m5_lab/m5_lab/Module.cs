@@ -2,15 +2,16 @@
 
 public abstract class Module : IComparable
 {
-	protected static double value = 0;
+	protected static double value;
 	public static TextBox inputTextBox;
-    public static TextBox outputTextBox;
-    private string name;
+	public static TextBox outputTextBox;
+	private string name;
 
-	public Module(string name, TextBox inputTextBox)
+	public Module(string name)
 	{
 		this.name = name;
 		inputTextBox = inputTextBox;
+
 	}
 
 	public abstract void compute();

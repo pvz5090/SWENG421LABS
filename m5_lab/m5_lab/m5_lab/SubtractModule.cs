@@ -2,7 +2,7 @@
 
 public class SubtractModule : InputModule  
 {
-	public SubtractModule(string name, TextBox inputTextBox) : base(name, inputTextBox) {}
+	public SubtractModule(string name) : base(name) {}
 
 	private void subtract(double input)
 	{
