@@ -13,6 +13,5 @@ public class LogModule : Module
 	public override void compute()
 	{
 		log();
-		Console.WriteLine("value:" + value);
 	}
 }
