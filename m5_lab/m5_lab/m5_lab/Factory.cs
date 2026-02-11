@@ -3,7 +3,7 @@ using System;
 
 public class Factory
 {
-    private Dictionary<string, string> hashMap;
+    private Dictionary<string, string> hashMap = new Dictionary<string, string> { };
 	public Factory()
 	{
         hashMap.Add("Power", "PowerModule");

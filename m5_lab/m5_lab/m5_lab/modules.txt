@@ -1,5 +1,5 @@
-Initialize 
+Initialize
 Sum
 Subtract
 Product
-Power 
+Power

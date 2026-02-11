@@ -11,10 +11,6 @@ public abstract class Module : IComparable
 		this.name = name;
 		Module.inputTextBox = inputTextBox;
 	}
-<<<<<<< HEAD
-		
-	public abstract double Compute(); 
-=======
 
 	public abstract void compute();
 
@@ -22,7 +18,6 @@ public abstract class Module : IComparable
     {
         return name;
     }
->>>>>>> ba37426e88b6402ed109041dcb0df8c6286326e0
 
 	public int CompareTo(object obj)
 	{

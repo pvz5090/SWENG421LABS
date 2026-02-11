@@ -2,7 +2,7 @@ namespace m5_lab
 {
     public partial class Form1 : Form
     {
-        Factory factory = new Factory();
+        Factory factory = new Factory(); 
         public Form1()
         {
             InitializeComponent();
@@ -51,21 +51,20 @@ namespace m5_lab
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        { 
-            Module mod = factory.createModule(e.ToString()); 
+        {
+            MessageBox.Show(); 
+            Module mod = factory.createModule(e.ToString(), textBox1); 
             //showing of input box 
             if (mod is InputModule)
             {
                 textBox1.Visible = true;
-                textBox5.Visible = true; 
+                textBox5.Visible = true;
             }
             else
             {
                 textBox1.Visible = false;
                 textBox5.Visible = false;
             }
-
-            textBox2.Text = mod.Compute().ToString();
         }
     }
 }
