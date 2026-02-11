@@ -2,7 +2,7 @@
 
 public class PowerModule : InputModule  
 {
-	public PowerModule(string name, TextBox inputTextBox) : base(name, inputTextBox) {}
+	public PowerModule(string name) : base(name) {}
 
 	private void power(double input)
 	{

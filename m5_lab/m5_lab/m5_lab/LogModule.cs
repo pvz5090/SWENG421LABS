@@ -2,17 +2,17 @@
 
 public class LogModule : InputModule  
 {
-	public LogModule(string name, TextBox inputTextBox) : base(name, inputTextBox) {}
+	public LogModule(string name) : base(name) {}
 
-	private void log(double input)
+	private void log()
 	{
-		value = Math.Log(value, input); 
+		value = Math.Log(value); 
 	}
 
 
 	public override void compute()
 	{
-		log(this.collectInput());
+		log();
 		Console.WriteLine("value:" + value);
 	}
 }

@@ -2,7 +2,7 @@
 
 public class SumModule : InputModule  
 {
-	public SumModule(string name, TextBox inputTextBox) : base(name, inputTextBox) {}
+	public SumModule(string name) : base(name) {}
 
 	private void sum(double input)
 	{

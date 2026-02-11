@@ -2,7 +2,7 @@
 
 public class ProductModule : InputModule  
 {
-	public ProductModule(string name, TextBox inputTextBox) : base(name, inputTextBox) {}
+	public ProductModule(string name) : base(name) {}
 
 	private void product(double input)
 	{
