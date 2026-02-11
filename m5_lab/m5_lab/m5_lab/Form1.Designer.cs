@@ -53,11 +53,13 @@
             textBox1.TabIndex = 2;
             textBox1.Visible = false;
             textBox1.TextChanged += textBox1_TextChanged;
+            textBox1.KeyDown += textBox1_KeyDown;
             // 
             // textBox2
             // 
             textBox2.Location = new Point(915, 320);
             textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
             textBox2.Size = new Size(150, 31);
             textBox2.TabIndex = 3;
             textBox2.TextChanged += textBox2_TextChanged;
@@ -101,9 +103,9 @@
 
         #endregion
         private ComboBox comboBox1;
-        public static TextBox textBox1;
         private TextBox textBox5;
         private TextBox textBox6;
-        public static TextBox textBox2;
+        public TextBox textBox1;
+        public TextBox textBox2;
     }
 }

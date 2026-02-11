@@ -11,6 +11,8 @@ public class Factory
         hashMap.Add("Sum", "SumModule");
         hashMap.Add("Subtract", "SubtractModule");
         hashMap.Add("Initialize", "InitializeModule");
+        hashMap.Add("Product", "ProductModule");
+
     }
 
     public Module createModule(string moduleName)

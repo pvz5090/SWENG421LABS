@@ -1,16 +1,15 @@
 ﻿using System;
-
+using m5_lab;
 public abstract class Module : IComparable
 {
 	protected static double value;
-	public static TextBox inputTextBox;
+	public static TextBox inputTextBox; 
 	public static TextBox outputTextBox;
 	private string name;
 
 	public Module(string name)
 	{
 		this.name = name;
-		inputTextBox = inputTextBox;
 
 	}
 

@@ -35,14 +35,10 @@ namespace m5_lab
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-            Module mod = factory.createModule(comboBox1.Text);
-            mod.compute(); 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            textBox2.Text = Module.getValue().ToString();
-            textBox2.Text = Module.getValue().ToString();
 
         }
 
@@ -54,6 +50,8 @@ namespace m5_lab
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Module mod = factory.createModule(comboBox1.Text);
+            Module.outputTextBox = textBox2;
+            Module.inputTextBox = textBox1;
             //showing of input box 
             if (mod is InputModule)
             {
@@ -67,12 +65,26 @@ namespace m5_lab
                 mod.compute();
                 textBox2.Text = Module.getValue().ToString();
             }
-            
+
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (textBox1.Text == "") { }
+                else
+                {
+                    Module mod = factory.createModule(comboBox1.Text);
+                    mod.compute();
+                    textBox2.Text = Module.getValue().ToString();
+                }
+            }
         }
     }
 }
