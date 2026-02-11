@@ -15,7 +15,7 @@ namespace m5_lab
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string filePath = "C:\\Users\\patrick\\SWENG421LABS\\m5_lab\\m5_lab\\m5_lab\\modules.txt";
+            string filePath = "modules.txt";
 
             try
             {
