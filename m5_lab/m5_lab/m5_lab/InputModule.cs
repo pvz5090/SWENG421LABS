@@ -7,6 +7,6 @@ public abstract class InputModule : Module
 
 	protected double collectInput()
 	{
-		return Double.Parse(Module.inputTextBox.Text);
+		return Double.Parse(inputTextBox.Text);
     }
 }

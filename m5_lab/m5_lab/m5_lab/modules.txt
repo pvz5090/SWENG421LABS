@@ -3,3 +3,4 @@ Sum
 Subtract
 Product
 Power
+Log

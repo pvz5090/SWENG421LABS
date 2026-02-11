@@ -2,14 +2,15 @@
 
 public abstract class Module : IComparable
 {
-	protected static double value;
-	protected TextBox inputTextBox;
-	private string name;
+	protected static double value = 0;
+	public static TextBox inputTextBox;
+    public static TextBox outputTextBox;
+    private string name;
 
 	public Module(string name, TextBox inputTextBox)
 	{
 		this.name = name;
-		this.inputTextBox = inputTextBox;
+		inputTextBox = inputTextBox;
 	}
 
 	public abstract void compute();
@@ -18,8 +19,12 @@ public abstract class Module : IComparable
     {
         return name;
     }
+    public static double getValue()
+    {
+        return value;
+    }
 
-	public int CompareTo(object obj)
+    public int CompareTo(object obj)
 	{
 		return this.ToString().CompareTo(obj.ToString());
 	}

@@ -13,12 +13,12 @@ public class Factory
         hashMap.Add("Initialize", "InitializeModule");
     }
 
-    public Module createModule(string moduleName, TextBox inputTextBox)
+    public Module createModule(string moduleName)
     {
         string moduleString = hashMap[moduleName];
         Console.WriteLine(moduleString);
         Type moduleType = Type.GetType(moduleString);
         Console.WriteLine(moduleString);
-        return (Module)Activator.CreateInstance(moduleType, moduleString, inputTextBox);
+        return (Module)Activator.CreateInstance(moduleType, moduleString);
     }
 }

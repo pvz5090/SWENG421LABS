@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class LogModule : InputModule  
+public class LogModule : Module
 {
 	public LogModule(string name, TextBox inputTextBox) : base(name, inputTextBox) {}
 
@@ -12,7 +12,6 @@ public class LogModule : InputModule
 
 	public override void compute()
 	{
-		log(this.collectInput());
 		Console.WriteLine("value:" + value);
 	}
 }

@@ -31,8 +31,6 @@
             comboBox1 = new ComboBox();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
             textBox5 = new TextBox();
             textBox6 = new TextBox();
             SuspendLayout();
@@ -64,24 +62,6 @@
             textBox2.TabIndex = 3;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(748, 217);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(86, 31);
-            textBox3.TabIndex = 4;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(719, 180);
-            textBox4.Name = "textBox4";
-            textBox4.ReadOnly = true;
-            textBox4.Size = new Size(150, 31);
-            textBox4.TabIndex = 5;
-            textBox4.Text = "Current Value ";
-            textBox4.TextChanged += textBox4_TextChanged;
-            // 
             // textBox5
             // 
             textBox5.Location = new Point(748, 266);
@@ -101,7 +81,6 @@
             textBox6.Size = new Size(75, 31);
             textBox6.TabIndex = 7;
             textBox6.Text = "Output:";
-            textBox6.Visible = false;
             // 
             // Form1
             // 
@@ -110,8 +89,6 @@
             ClientSize = new Size(1949, 710);
             Controls.Add(textBox6);
             Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(comboBox1);
@@ -124,11 +101,9 @@
 
         #endregion
         private ComboBox comboBox1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        public static TextBox textBox1;
         private TextBox textBox5;
         private TextBox textBox6;
+        public static TextBox textBox2;
     }
 }

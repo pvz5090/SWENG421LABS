@@ -2,7 +2,7 @@ namespace m5_lab
 {
     public partial class Form1 : Form
     {
-        Factory factory = new Factory(); 
+        Factory factory = new Factory();
         public Form1()
         {
             InitializeComponent();
@@ -26,7 +26,6 @@ namespace m5_lab
             {
                 MessageBox.Show("Error loading file: modules.txt");
             }
-
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -52,8 +51,8 @@ namespace m5_lab
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(); 
-            Module mod = factory.createModule(e.ToString(), textBox1); 
+            Module mod = factory.createModule(comboBox1.Text);
+            Module.outputTextBox.Text = Module.getValue().ToString(); 
             //showing of input box 
             if (mod is InputModule)
             {
@@ -65,6 +64,11 @@ namespace m5_lab
                 textBox1.Visible = false;
                 textBox5.Visible = false;
             }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
