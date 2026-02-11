@@ -2,14 +2,11 @@
 
 public abstract class InputModule : Module
 {
-	protected double input;
-	public InputModule()
-	{
-		this.input = 0;
-	}
+	public InputModule(string name, TextBox inputTextBox) : base(name, inputTextBox) {}
+
 
 	protected double collectInput()
 	{
-		return input;  
+		return Double.Parse(Module.inputTextBox.Text);
     }
 }
