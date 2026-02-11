@@ -105,7 +105,7 @@
         private ComboBox comboBox1;
         private TextBox textBox5;
         private TextBox textBox6;
-        public TextBox textBox1;
-        public TextBox textBox2;
+        private TextBox textBox1;
+        private TextBox textBox2;
     }
 }
