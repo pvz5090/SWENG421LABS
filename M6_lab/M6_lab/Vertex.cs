@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace M6_lab
 {
-    internal class Vertex
+    internal class Vertex : Drawing
     {
         private int vertex_ID;
         private int x_coordinate;

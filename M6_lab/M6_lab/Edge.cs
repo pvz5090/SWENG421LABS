@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace M6_lab
 {
-    internal class Edge
+    internal class Edge : Drawing
     {
         private int edge_ID;
         private Edge from_vertex;
