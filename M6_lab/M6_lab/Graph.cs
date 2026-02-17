@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Numerics;
-using System.Collections.Generic;//for list
+using System.Collections.Generic;
+using M6_lab;//for list
 
-  
+
 internal class Graph :ICloneable
 {
 	int graph_ID;
@@ -39,6 +40,31 @@ internal class Graph :ICloneable
 
 	public clone()
 
-	public getID()
+	public int getID()
+	{
+		return graph_ID;
+    }
 
+	public List<M6_lab.Vertex> getVertices()
+	{
+		return listOfVertices;
+    }
+
+	public List<M6_lab.Edge> getEdges()
+	{
+		return listOfEdges;
+    }
+
+
+	public Vertex getVertexById(int id)
+	{
+		foreach (Vertex v in listOfVertices)
+		{
+			if (v.getVertexID() == id)
+			{
+				return v;
+			}
+		}
+		return null; // Return null if vertex with the specified ID is not found
+    }
 }
