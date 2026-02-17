@@ -7,29 +7,39 @@ using System.Threading.Tasks;
 
 namespace M6_lab
 {
-    internal class Vertex
+    internal class Edge : Drawing
     {
-        private int vertex_ID;
-        private int x_coordinate;
-        private int y_coordinate;
+        private int edge_ID;
+        private Edge from_vertex;
+        private Edge to_vertex;
 
         public void drawing()
         { }
 
-        public int getX()
-        { }
+        public void setFromVertex(Edge fromVertex)
+        {
+            this.from_vertex = fromVertex;
+        }
 
-        public void setX(int x)
-        { }
+        public Edge getFromVertex()
+        {
+            return from_vertex;
+        }
 
-        public int getY()
-        { }
+        public void setToVertex(Edge toVertex)
+        {
+            this.to_vertex = toVertex;
+        }
 
-        public void setY(int x)
-        { }
+        public Edge getToVertex()
+        {
+            return to_vertex;
+        }
 
         public int getEdgeID()
-        { }
+        {
+            return edge_ID;
+        }
 
     }
 }

@@ -10,10 +10,12 @@ public class Graph :ICloneable
     List<M6_lab.Edge> listOfEdges;
 
 
-
+        
     public Graph()
-	{
-	}
+        {
+            this.graph_ID = id;
+        }
+    }
 
 	public display()
 
