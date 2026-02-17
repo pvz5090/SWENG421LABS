@@ -9,28 +9,37 @@ namespace M6_lab
 {
     internal class Vertex
     {
-        private int edge_ID;
-        private Vertex from_vertex;
-        private Vertex to_vertex;
+        private int vertex_ID;
+        private int x_coordinate;
+        private int y_coordinate;
 
         public void drawing()
         { }
 
-        public void setFromVertex(Vertex fromVertex)
-        { }
+        public int getX()
+        {
+            return x_coordinate;
+        }
 
-        public Vertex getFromVertex()
-        { }
+        public void setX(int x)
+        {
+            this.x_coordinate = x;
+        }
 
+        public int getY()
+        {
+            return y_coordinate;
+        }
 
-        public void setToVertex(Vertex fromVertex)
-        { }
-
-        public Vertex getToVertex()
-        { }
+        public void setY(int y)
+        {
+            this.y_coordinate = y;
+        }
 
         public int getVertexID()
-        { }
+        {
+            return vertex_ID;
+        }
 
     }
 }
