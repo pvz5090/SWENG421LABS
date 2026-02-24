@@ -70,32 +70,31 @@ internal class Graph :ICloneable
         }
     }
 
-    public void display(Graphics g)
-	{
-		// NOTE come back to this and discuss
-        // super.display(g);
+    private double cosine(Point p1, Point p2) {
+        double d0 = p1.X * p2.X + p1.Y * p2.Y;
+        double d1 = Math.Sqrt(p1.X * p1.X + p1.Y * p1.Y);
+        return d0 / d1;
+    }
 
-		double cosine(Point p1, Point p2) {
-            double d0 = p1.X * p2.X + p1.Y * p2.Y;
-            double d1 = Math.Sqrt(p1.X * p1.X + p1.Y * p1.Y);
-            return d0 / d1;
-        }
+    private Point compute(Point p1, double angle) {
+        double d1 = Math.Sqrt(p1.X * p1.X + p1.Y * p1.Y);
+        double x = -20 * p1.X / d1;
+        double y = -20 * p1.Y / d1;
+        double nx = x * Math.Cos(angle) - y * Math.Sin(angle);
+        double ny = x * Math.Sin(angle) + y * Math.Cos(angle);
+        return new Point((int) nx, (int) ny);
+    }
 
-		Point compute(Point p1, double angle) {
-            double d1 = Math.Sqrt(p1.X * p1.X + p1.Y * p1.Y);
-            double x = -20 * p1.X / d1;
-            double y = -20 * p1.Y / d1;
-            double nx = x * Math.Cos(angle) - y * Math.Sin(angle);
-            double ny = x * Math.Sin(angle) + y * Math.Cos(angle);
-            return new Point((int) nx, (int) ny);
-        }
-
+    private void displayEdge(Graphics g, Edge e)
+    {
+        // Radius of each node
         int s = 25;
+
         Color color = Color.Black;
 		Pen pen = new Pen(color);
         Brush brush = new SolidBrush(color);
-        Rectangle r1 = new Rectangle(200, 130, 2 * s, 2 * s);
-        Rectangle r2 = new Rectangle(100, 330, 2 * s, 2 * s);
+        Rectangle r1 = new Rectangle(e.getFromVertex().getX(), e.getFromVertex().getY(), 2 * s, 2 * s);
+        Rectangle r2 = new Rectangle(e.getToVertex().getX(), e.getToVertex().getY(), 2 * s, 2 * s);
         g.DrawEllipse(pen, r1);
         g.DrawEllipse(pen, r2);
         
@@ -112,6 +111,14 @@ internal class Graph :ICloneable
         g.DrawLine(pen, new Point((int) x2, (int) y2), new Point((int) x2 + p.X, (int) y2 + p.Y));
         p = compute(new Point(r2.X - r1.X, r2.Y - r1.Y), -Math.PI / 6);
         g.DrawLine(pen, new Point((int) x2, (int) y2), new Point((int) x2 + p.X, (int) y2 + p.Y));
+    }
+
+    public void display(Graphics g)
+	{
+        foreach (Edge e in this.listOfEdges)
+        {
+            displayEdge(g, e);
+        }
     }
 
 	public int getID()
