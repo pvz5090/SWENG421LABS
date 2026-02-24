@@ -41,5 +41,7 @@ namespace M6_lab
             return edge_ID;
         }
 
+        public void setEdgeID(int id) { edge_ID = id; }
+
     }
 }

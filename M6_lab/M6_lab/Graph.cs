@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using M6_lab;//for list
 
 
-internal class Graph :ICloneable
+internal class Graph :ICloneable 
 {
 	int graph_ID;
 	List<M6_lab.Vertex> listOfVertices;
@@ -21,11 +21,13 @@ internal class Graph :ICloneable
 
 	public void addVertex(M6_lab.Vertex v)
 	{
+		v.setID(listOfVertices.Count + 1);
 		listOfVertices.Add(v);
     }
 
 	public void addEdge(M6_lab.Edge e)
 	{ 
+		e.setEdgeID(listOfEdges.Count + 1);
 		listOfEdges.Add(e);
     }
 
@@ -36,9 +38,12 @@ internal class Graph :ICloneable
 
 
 
-    public display()
+    public void display() { }
 
-	public clone()
+	public Object Clone()
+	{
+		return new Graph(GraphManager.listOfGraphs.Count+1);
+	}
 
 	public int getID()
 	{

@@ -14,26 +14,35 @@ namespace M6_lab
         public static List <Graph> listOfGraphs = new List <Graph> (); 
 
         private GraphManager(){}
-        private static int create() 
+        public int create() 
         {
             lock (listOfGraphs) {
-                listOfGraphs.Add(new Graph(listOfGraphs.Count + 1)); //graph_id = where graph lies in listOfGraphs 
-                return listOfGraphs.Count - 1;
+                listOfGraphs.Add(new Graph(listOfGraphs.Count + 1)); //graph_id - 1 = where graph lies in listOfGraphs 
+                return listOfGraphs.Count;
             }
         }
-        private static void modify(int graph_id, List<Vertex> vertices, List<Edge> edges)
+        public void modify(int graph_id, List<Vertex> vertices, List<Edge> edges)
         {
-            foreach (Vertex v in vertices) { 
-                if (listOfGraphs[graph_id].         //if vertex doesn't exist in graph.listOfVertexes -> create one and add to list, else modify existing 
+            Graph graph = listOfGraphs[graph_id]; 
+            List<Vertex> graphVertices = listOfGraphs[graph_id].getVertices();
+            var vertexList = graphVertices.ToDictionary(v => v.getVertexID());
 
-
+            foreach (var vertex in vertices) { 
+                int id = vertex.getVertexID();
+                if(vertexList.TryGetValue(id, out Vertex existingVertex)) //if vertex exists in graph -> modify existing X,Y 
+                {
+                    existingVertex.setX(vertex.getX());
+                    existingVertex.setY(vertex.getY());
+                }
+                else
+                {
+                    graphVertices.Add(vertex);
+                }
             }
-            foreach (Edge e in edges) {             
-                if (listOfGraphs[graph_id].         //if edge doesn't exists in graph.listOfEdges -> create and add to list, else modify existing 
-            }
+          
         }
 
-        private static int copy(int graph_id)
+        public int copy(int graph_id)
         {
             listOfGraphs.Add(listOfGraphs[graph_id - 1].clone());
             return listOfGraphs.Count - 1;
