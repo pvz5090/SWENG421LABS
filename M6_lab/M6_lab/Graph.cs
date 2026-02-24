@@ -31,7 +31,16 @@ internal class Graph :ICloneable
             .ToList();
     }
 
-	public void addVertex(M6_lab.Vertex v)
+    //a Copy constructor that creates a new graph by Constructing  the vertices and edges from an existing graph
+    public Graph(Graph g)
+    {
+        this.graph_ID = id;
+        List<M6_lab.Vertex> listOfVertices = new List<M6_lab.Vertex>();
+		for v in g.getVertices
+        List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();
+    }
+
+    public void addVertex(M6_lab.Vertex v)
 	{
 		listOfVertices.Add(v);
     }
@@ -42,7 +51,25 @@ internal class Graph :ICloneable
     }
 
 	public void removeVertex(M6_lab.Vertex v)
-	{ }
+	{ 
+		for item in listOfVertices
+
+        {
+			if (item.getVertexID() == v.getVertexID())
+			{
+				listOfVertices.Remove(item);
+            }
+        }
+
+		for item in listOfEdges
+			{
+            if (item.getFromVertex().getVertexID == v || item.getDestination() == v)
+            {
+                listOfEdges.Remove(item);
+            }
+
+        }
+    }
 
     public void display(Graphics g)
 	{

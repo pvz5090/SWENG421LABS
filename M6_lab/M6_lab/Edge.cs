@@ -21,7 +21,7 @@ namespace M6_lab
             this.from_vertex = fromVertex;
         }
 
-        public Edge getFromVertex()
+        public M6_lab.Vertex getFromVertex()
         {
             return from_vertex;
         }
@@ -31,7 +31,7 @@ namespace M6_lab
             this.to_vertex = toVertex;
         }
 
-        public Edge getToVertex()
+        public M6_lab.Vertex getToVertex()
         {
             return to_vertex;
         }
