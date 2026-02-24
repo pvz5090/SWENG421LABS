@@ -52,5 +52,8 @@ namespace M6_lab
         {
             return vertex_ID;
         }
+
+        public void setID(int id) {vertex_ID = id;}
+
     }
 }

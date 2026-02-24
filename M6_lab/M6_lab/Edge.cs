@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace M6_lab
 {
     internal class Edge : Drawing, ICloneable
@@ -23,6 +24,11 @@ namespace M6_lab
         public object Clone()
         {
             return new Edge(this);
+        }
+
+        Edge(int edge_ID,Vextex)
+        {
+            this.edge_ID = edge_ID;
         }
 
         public void drawing()
@@ -52,6 +58,8 @@ namespace M6_lab
         {
             return edge_ID;
         }
+
+        public void setEdgeID(int id) { edge_ID = id; }
 
     }
 }

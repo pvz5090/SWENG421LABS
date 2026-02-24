@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Numerics;
-using System.Collections.Generic;
-using M6_lab;//for list
+using System.Collections.Generic;//For List
+using M6_lab;//for getter method of vertex and edge
 
 
 internal class Graph :ICloneable
 {
-	int graph_ID;
-	List<M6_lab.Vertex> listOfVertices;
-    List<M6_lab.Edge> listOfEdges;
+	private int graph_ID;
+	private List<M6_lab.Vertex> listOfVertices;
+	private List<M6_lab.Edge> listOfEdges;
 
 
 
@@ -18,18 +18,6 @@ internal class Graph :ICloneable
 			List<M6_lab.Vertex> listOfVertices = new List<M6_lab.Vertex>();
 			List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();
     }
-    public Graph(Graph otherGraph)
-    {
-
-        Graph newGraph = new Graph(otherGraph.getID() + 1);
-        this.listOfVertices = otherGraph.listOfVertices
-            .Select(v => v.Clone())
-            .ToList();
-
-        this.listOfEdges = otherGraph.listOfEdges
-            .Select(e => e.Clone())
-            .ToList();
-    }
 
 	public object Clone()
     {
@@ -37,9 +25,24 @@ internal class Graph :ICloneable
     }
 
     //a Copy constructor that creates a new graph by Constructing  the vertices and edges from an existing graph
+    public Graph(Graph g)
+    {
+        this.graph_ID = g.graph_ID;
+        List<M6_lab.Vertex> listOfVertices = new List<M6_lab.Vertex>();
+		foreach (Vertex v in g.getVertices())
+        {
+            this.listOfVertices.Add(v.Clone() as Vertex);
+        }
+        List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();
+		foreach (Edge e in g.getEdges())
+        {
+            this.listOfEdges.Add(e.Clone() as Edge);
+        }
+    }
 
     public void addVertex(M6_lab.Vertex v)
 	{
+		v.setID(listOfVertices.Count + 1);
 		listOfVertices.Add(v);
     }
 
@@ -50,22 +53,20 @@ internal class Graph :ICloneable
 
 	public void removeVertex(M6_lab.Vertex v)
 	{ 
-		for item in listOfVertices
-
+		foreach(Vertex currentVert in listOfVertices)
         {
-			if (item.getVertexID() == v.getVertexID())
+			if (currentVert.getVertexID() == v.getVertexID())
 			{
-				listOfVertices.Remove(item);
+				this.listOfVertices.Remove(currentVert);
             }
         }
 
-		for item in listOfEdges
+		foreach(Edge currentEdge in listOfEdges)
+        {
+			if (currentEdge.getFromVertex().getVertexID() == v.getVertexID() || currentEdge.getToVertex().getVertexID() == v.getVertexID())
 			{
-            if (item.getFromVertex().getVertexID == v || item.getDestination() == v)
-            {
-                listOfEdges.Remove(item);
+                this.listOfEdges.Remove(currentEdge);
             }
-
         }
     }
 
