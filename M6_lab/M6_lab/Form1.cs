@@ -3,7 +3,8 @@ namespace M6_lab
     public partial class Form1 : Form
     {
         GraphManager manager = GraphManager.getManager();
-        List<Graph> graphs = GraphManager.listOfGraphs; 
+        List<Graph> graphs = GraphManager.listOfGraphs;
+        Graph activeGraph;
         public Form1()
         {
             InitializeComponent();
@@ -18,15 +19,22 @@ namespace M6_lab
         private void CreateGraphClicked(object sender, EventArgs e)
         {
             int graph = manager.create();
-            graphs[graph].display(); 
+            activeGraph = graphs[graph];
+            GraphPanel.Invalidate();
         }
 
-        protected override void OnPaint(PaintEventArgs e)
+        private void GraphPanel_Paint(object sender, PaintEventArgs e)
         {
-            base.OnPaint(e);
             Graphics g = e.Graphics;
+            if (activeGraph != null)
+                activeGraph.display(g);
+        }
 
-
+        private void CopyGraphButton_Click(object sender, EventArgs e)
+        {
+            int newGraphID = manager.copy(activeGraph.getID());
+            activeGraph = graphs[newGraphID]; 
+            GraphPanel.Invalidate();
         }
     }
 }

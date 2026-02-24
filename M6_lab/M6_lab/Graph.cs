@@ -4,7 +4,8 @@ using System.Collections.Generic;//For List
 using M6_lab;//for getter method of vertex and edge
 
 
-internal class Graph :ICloneable
+
+internal class Graph :ICloneable 
 {
 	private int graph_ID;
 	private List<M6_lab.Vertex> listOfVertices;
@@ -32,9 +33,10 @@ internal class Graph :ICloneable
     {
         this.graph_ID = g.graph_ID;
         List<M6_lab.Vertex> listOfVertices = new List<M6_lab.Vertex>();
-		foreach (Vertex v in g.getVertices())
-        {
-            this.listOfVertices.Add(v.Clone() as Vertex);
+		for v in g.getVertices()
+			{
+				Vertex newVertex = new Vertex(v.getVertexID(), v.getX(), v.getY());
+				this.listOfVertices.Add(newVertex);
         }
         List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();
 		foreach (Edge e in g.getEdges())
@@ -51,7 +53,7 @@ internal class Graph :ICloneable
 
 	public void addEdge(M6_lab.Edge e)
 	{ 
-		listOfEdges.Add(e);
+		this.listOfEdges.Add(e);
     }
 
 	public void removeVertex(M6_lab.Vertex v)
