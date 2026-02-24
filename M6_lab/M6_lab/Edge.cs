@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Drawing.Configuration;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,13 @@ namespace M6_lab
         private Vertex from_vertex;
         private Vertex to_vertex;
 
+        //A constructor that initializes the edge with the source and destination vertices as copyied soft references and assign a given ID to the edge
+        public Edge(int ID, Vertex source, Vertex Destination)
+        {
+            this.edge_ID = 0;
+            this.from_vertex = source;
+            this.to_vertex = Destination;
+        }
         public Edge(Edge otherEdge)
         {
             this.edge_ID = otherEdge.edge_ID + 1;
@@ -26,10 +34,7 @@ namespace M6_lab
             return new Edge(this);
         }
 
-        Edge(int edge_ID,Vextex)
-        {
-            this.edge_ID = edge_ID;
-        }
+    
 
         public void drawing()
         { }
