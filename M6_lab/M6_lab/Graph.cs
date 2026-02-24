@@ -2,8 +2,6 @@
 using System.Numerics;
 using System.Collections.Generic;//For List
 using M6_lab;//for getter method of vertex and edge
-using M6_lab.Vertex;
-using M6_lab.Edges;
 
 
 
@@ -22,17 +20,26 @@ internal class Graph :ICloneable
 			List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();
     }
 
+	public object Clone()
+    {
+        return new Graph(this);
+    }
+
     //a Copy constructor that creates a new graph by Constructing  the vertices and edges from an existing graph
     public Graph(Graph g)
     {
-        this.graph_ID = id;
+        this.graph_ID = g.graph_ID;
         List<M6_lab.Vertex> listOfVertices = new List<M6_lab.Vertex>();
 		for v in g.getVertices()
-		{
+			{
 				Vertex newVertex = new Vertex(v.getVertexID(), v.getX(), v.getY());
 				this.listOfVertices.Add(newVertex);
         }
         List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();
+		foreach (Edge e in g.getEdges())
+        {
+            this.listOfEdges.Add(e.Clone() as Edge);
+        }
     }
 
     public void addVertex(M6_lab.Vertex v)
@@ -48,35 +55,66 @@ internal class Graph :ICloneable
 
 	public void removeVertex(M6_lab.Vertex v)
 	{ 
-		for item in listOfVertices
-
+		foreach(Vertex currentVert in listOfVertices)
         {
-			if (item.getVertexID() == v.getVertexID())
+			if (currentVert.getVertexID() == v.getVertexID())
 			{
-				this.listOfVertices.Remove(item);
+				this.listOfVertices.Remove(currentVert);
             }
         }
 
-		for item in this.listOfEdges
+		foreach(Edge currentEdge in listOfEdges)
+        {
+			if (currentEdge.getFromVertex().getVertexID() == v.getVertexID() || currentEdge.getToVertex().getVertexID() == v.getVertexID())
 			{
-            if (item.getFromVertex().getVertexID == v || item.getDestination() == v)
-            {
-                listOfEdges.Remove(item);
+                this.listOfEdges.Remove(currentEdge);
             }
-
         }
     }
 
-
-
-
-
-    public void display() { }
-
-	public Object Clone()
+    public void display(Graphics g)
 	{
-		return new Graph(GraphManager.listOfGraphs.Count+1);
-	}
+		// NOTE come back to this and discuss
+        // super.display(g);
+
+		double cosine(Point p1, Point p2) {
+            double d0 = p1.X * p2.X + p1.Y * p2.Y;
+            double d1 = Math.Sqrt(p1.X * p1.X + p1.Y * p1.Y);
+            return d0 / d1;
+        }
+
+		Point compute(Point p1, double angle) {
+            double d1 = Math.Sqrt(p1.X * p1.X + p1.Y * p1.Y);
+            double x = -20 * p1.X / d1;
+            double y = -20 * p1.Y / d1;
+            double nx = x * Math.Cos(angle) - y * Math.Sin(angle);
+            double ny = x * Math.Sin(angle) + y * Math.Cos(angle);
+            return new Point((int) nx, (int) ny);
+        }
+
+        int s = 25;
+        Color color = Color.Black;
+		Pen pen = new Pen(color);
+        Brush brush = new SolidBrush(color);
+        Rectangle r1 = new Rectangle(200, 130, 2 * s, 2 * s);
+        Rectangle r2 = new Rectangle(100, 330, 2 * s, 2 * s);
+        g.DrawEllipse(pen, r1);
+        g.DrawEllipse(pen, r2);
+        
+        int v = r1.Y > r2.Y? -1: 1;
+        double d = cosine(new Point(r2.X - r1.X, r2.Y - r1.Y), new Point(v, 0));
+        double x = r1.X + s + v * s * d;
+        double y = r1.Y + s + v * s * Math.Sqrt(1 - d * d);
+        double x2 = r2.X + s - v * s * d;
+        double y2 = r2.Y + s - v * s * Math.Sqrt(1 - d * d);
+        g.DrawLine(pen, new Point((int) x, (int) y), new Point((int) x2, (int) y2));
+        g.FillEllipse(brush, new Rectangle((int) (x - 5), (int) (y - 5), 10, 10));
+
+        Point p = compute(new Point(r2.X - r1.X, r2.Y - r1.Y), Math.PI / 6);
+        g.DrawLine(pen, new Point((int) x2, (int) y2), new Point((int) x2 + p.X, (int) y2 + p.Y));
+        p = compute(new Point(r2.X - r1.X, r2.Y - r1.Y), -Math.PI / 6);
+        g.DrawLine(pen, new Point((int) x2, (int) y2), new Point((int) x2 + p.X, (int) y2 + p.Y));
+    }
 
 	public int getID()
 	{

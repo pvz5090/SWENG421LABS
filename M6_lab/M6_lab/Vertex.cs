@@ -7,11 +7,23 @@ using System.Threading.Tasks;
 
 namespace M6_lab
 {
-    internal class Vertex : Drawing
+    internal class Vertex : Drawing, ICloneable
     {
         private int vertex_ID;
         private int x_coordinate;
         private int y_coordinate;
+
+        public Vertex(Vertex otherVertex)
+        {
+            vertex_ID = otherVertex.vertex_ID + 1;
+            x_coordinate = otherVertex.x_coordinate;
+            y_coordinate = otherVertex.y_coordinate;
+        }
+
+        public object Clone()
+        {
+            return new Vertex(this);
+        }
 
         public void drawing()
         { }
