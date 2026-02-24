@@ -12,12 +12,15 @@ namespace M6_lab
     {
         private static GraphManager graphManager; 
         public static List <Graph> listOfGraphs = new List <Graph> (); 
+        private int nextGraphID=1;
 
         private GraphManager(){}
         public int create() 
         {
             lock (listOfGraphs) {
-                listOfGraphs.Add(new Graph(listOfGraphs.Count + 1)); //graph_id - 1 = where graph lies in listOfGraphs 
+                
+                listOfGraphs.Add(new Graph(nextGraphID)); //graph_id - 1 = where graph lies in listOfGraphs 
+                nextGraphID= listOfGraphs.Count + 1;
                 return listOfGraphs.Count;
             }
         }
@@ -45,6 +48,8 @@ namespace M6_lab
         public int copy(int graph_id)
         {
             listOfGraphs.Add(listOfGraphs[graph_id - 1].clone());
+            nextGraphID = listOfGraphs.Count + 1;
+
             return listOfGraphs.Count - 1;
         }
 

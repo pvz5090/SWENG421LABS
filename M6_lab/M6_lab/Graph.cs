@@ -9,6 +9,9 @@ internal class Graph :ICloneable
 	private int graph_ID;
 	private List<M6_lab.Vertex> listOfVertices;
 	private List<M6_lab.Edge> listOfEdges;
+    private int nextVertexID=1;
+    private int nextEdgeID=1;
+
 
 
 
