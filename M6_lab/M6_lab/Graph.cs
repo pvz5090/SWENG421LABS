@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Numerics;
-using System.Collections.Generic;
-using M6_lab;//for list
+using System.Collections.Generic;//For List
+using M6_lab;//for getter method of vertex and edge
+using M6_lab.Vertex;
+using M6_lab.Edges;
 
 
-internal class Graph :ICloneable 
+internal class Graph :ICloneable
 {
-	int graph_ID;
-	List<M6_lab.Vertex> listOfVertices;
-    List<M6_lab.Edge> listOfEdges;
+	private int graph_ID;
+	private List<M6_lab.Vertex> listOfVertices;
+	private List<M6_lab.Edge> listOfEdges;
 
 
 
@@ -19,7 +21,20 @@ internal class Graph :ICloneable
 			List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();
     }
 
-	public void addVertex(M6_lab.Vertex v)
+    //a Copy constructor that creates a new graph by Constructing  the vertices and edges from an existing graph
+    public Graph(Graph g)
+    {
+        this.graph_ID = id;
+        List<M6_lab.Vertex> listOfVertices = new List<M6_lab.Vertex>();
+		for v in g.getVertices()
+			{
+				Vertex newVertex = new Vertex(v.getVertexID(), v.getX(), v.getY());
+				this.listOfVertices.Add(newVertex);
+        }
+        List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();
+    }
+
+    public void addVertex(M6_lab.Vertex v)
 	{
 		v.setID(listOfVertices.Count + 1);
 		listOfVertices.Add(v);
@@ -27,12 +42,29 @@ internal class Graph :ICloneable
 
 	public void addEdge(M6_lab.Edge e)
 	{ 
-		e.setEdgeID(listOfEdges.Count + 1);
 		listOfEdges.Add(e);
     }
 
 	public void removeVertex(M6_lab.Vertex v)
-	{ }
+	{ 
+		for item in listOfVertices
+
+        {
+			if (item.getVertexID() == v.getVertexID())
+			{
+				this.listOfVertices.Remove(item);
+            }
+        }
+
+		for item in this.listOfEdges
+			{
+            if (item.getFromVertex().getVertexID == v || item.getDestination() == v)
+            {
+                listOfEdges.Remove(item);
+            }
+
+        }
+    }
 
 
 

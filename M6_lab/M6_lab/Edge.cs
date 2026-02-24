@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace M6_lab
 {
     internal class Edge : Drawing
@@ -12,6 +13,11 @@ namespace M6_lab
         private int edge_ID;
         private Edge from_vertex;
         private Edge to_vertex;
+
+        Edge(int edge_ID,Vextex)
+        {
+            this.edge_ID = edge_ID;
+        }
 
         public void drawing()
         { }
@@ -21,7 +27,7 @@ namespace M6_lab
             this.from_vertex = fromVertex;
         }
 
-        public Edge getFromVertex()
+        public M6_lab.Vertex getFromVertex()
         {
             return from_vertex;
         }
@@ -31,7 +37,7 @@ namespace M6_lab
             this.to_vertex = toVertex;
         }
 
-        public Edge getToVertex()
+        public M6_lab.Vertex getToVertex()
         {
             return to_vertex;
         }
