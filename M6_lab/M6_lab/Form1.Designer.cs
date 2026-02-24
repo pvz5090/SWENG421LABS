@@ -30,7 +30,10 @@
         {
             graphsComboBox = new ComboBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            button1 = new Button();
+            CreateGraphButton = new Button();
+            GraphPanel = new Panel();
+            CopyGraphButton = new Button();
+            VerticesComboBox = new ComboBox();
             SuspendLayout();
             // 
             // graphsComboBox
@@ -42,22 +45,51 @@
             graphsComboBox.TabIndex = 0;
             graphsComboBox.Text = "Choose a Graph";
             // 
-            // button1
+            // CreateGraphButton
             // 
-            button1.Location = new Point(21, 185);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 25);
-            button1.TabIndex = 1;
-            button1.Text = "Create Graph";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += CreateGraphClicked;
+            CreateGraphButton.Location = new Point(179, 1);
+            CreateGraphButton.Name = "CreateGraphButton";
+            CreateGraphButton.Size = new Size(112, 27);
+            CreateGraphButton.TabIndex = 1;
+            CreateGraphButton.Text = "Create New Graph";
+            CreateGraphButton.UseVisualStyleBackColor = true;
+            CreateGraphButton.Click += CreateGraphClicked;
+            // 
+            // GraphPanel
+            // 
+            GraphPanel.Location = new Point(179, 34);
+            GraphPanel.Name = "GraphPanel";
+            GraphPanel.Size = new Size(421, 362);
+            GraphPanel.TabIndex = 2;
+            GraphPanel.Paint += GraphPanel_Paint;
+            // 
+            // CopyGraphButton
+            // 
+            CopyGraphButton.Location = new Point(451, 3);
+            CopyGraphButton.Name = "CopyGraphButton";
+            CopyGraphButton.Size = new Size(107, 25);
+            CopyGraphButton.TabIndex = 3;
+            CopyGraphButton.Text = "Copy This Graph ";
+            CopyGraphButton.UseVisualStyleBackColor = true;
+            CopyGraphButton.Click += CopyGraphButton_Click;
+            // 
+            // VerticesComboBox
+            // 
+            VerticesComboBox.FormattingEnabled = true;
+            VerticesComboBox.Location = new Point(631, 58);
+            VerticesComboBox.Name = "VerticesComboBox";
+            VerticesComboBox.Size = new Size(121, 23);
+            VerticesComboBox.TabIndex = 4;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(VerticesComboBox);
+            Controls.Add(CopyGraphButton);
+            Controls.Add(GraphPanel);
+            Controls.Add(CreateGraphButton);
             Controls.Add(graphsComboBox);
             Name = "Form1";
             Text = "Form1";
@@ -69,6 +101,9 @@
 
         private ComboBox graphsComboBox;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private Button button1;
+        private Button CreateGraphButton;
+        private Panel GraphPanel;
+        private Button CopyGraphButton;
+        private ComboBox VerticesComboBox;
     }
 }
