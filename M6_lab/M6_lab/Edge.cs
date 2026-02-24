@@ -7,31 +7,43 @@ using System.Threading.Tasks;
 
 namespace M6_lab
 {
-    internal class Edge : Drawing
+    internal class Edge : Drawing, ICloneable
     {
         private int edge_ID;
-        private Edge from_vertex;
-        private Edge to_vertex;
+        private Vertex from_vertex;
+        private Vertex to_vertex;
+
+        public Edge(Edge otherEdge)
+        {
+            this.edge_ID = otherEdge.edge_ID + 1;
+            this.from_vertex = otherEdge.from_vertex;
+            this.to_vertex = otherEdge.to_vertex;
+        }
+
+        public object Clone()
+        {
+            return new Edge(this);
+        }
 
         public void drawing()
         { }
 
-        public void setFromVertex(Edge fromVertex)
+        public void setFromVertex(Vertex fromVertex)
         {
             this.from_vertex = fromVertex;
         }
 
-        public M6_lab.Vertex getFromVertex()
+        public Vertex getFromVertex()
         {
             return from_vertex;
         }
 
-        public void setToVertex(Edge toVertex)
+        public void setToVertex(Vertex toVertex)
         {
             this.to_vertex = toVertex;
         }
 
-        public M6_lab.Vertex getToVertex()
+        public Vertex getToVertex()
         {
             return to_vertex;
         }

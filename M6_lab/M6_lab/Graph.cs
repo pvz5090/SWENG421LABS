@@ -31,14 +31,12 @@ internal class Graph :ICloneable
             .ToList();
     }
 
-    //a Copy constructor that creates a new graph by Constructing  the vertices and edges from an existing graph
-    public Graph(Graph g)
+	public object Clone()
     {
-        this.graph_ID = id;
-        List<M6_lab.Vertex> listOfVertices = new List<M6_lab.Vertex>();
-		for v in g.getVertices
-        List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();
+        return new Graph(this);
     }
+
+    //a Copy constructor that creates a new graph by Constructing  the vertices and edges from an existing graph
 
     public void addVertex(M6_lab.Vertex v)
 	{
@@ -113,11 +111,6 @@ internal class Graph :ICloneable
         g.DrawLine(pen, new Point((int) x2, (int) y2), new Point((int) x2 + p.X, (int) y2 + p.Y));
         p = compute(new Point(r2.X - r1.X, r2.Y - r1.Y), -Math.PI / 6);
         g.DrawLine(pen, new Point((int) x2, (int) y2), new Point((int) x2 + p.X, (int) y2 + p.Y));
-    }
-
-	public object Clone()
-    {
-        return new Graph(this);
     }
 
 	public int getID()
