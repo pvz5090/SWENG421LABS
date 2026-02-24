@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace M6_lab
 {
     internal class Edge : Drawing
@@ -12,6 +13,11 @@ namespace M6_lab
         private int edge_ID;
         private Edge from_vertex;
         private Edge to_vertex;
+
+        Edge(int edge_ID,Vextex)
+        {
+            this.edge_ID = edge_ID;
+        }
 
         public void drawing()
         { }

@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Numerics;
-using System.Collections.Generic;
-using M6_lab;//for list
+using System.Collections.Generic;//For List
+using M6_lab;//for getter method of vertex and edge
+using M6_lab.Vertex;
+using M6_lab.Edges;
+
 
 
 internal class Graph :ICloneable
 {
-	int graph_ID;
-	List<M6_lab.Vertex> listOfVertices;
-    List<M6_lab.Edge> listOfEdges;
+	private int graph_ID;
+	private List<M6_lab.Vertex> listOfVertices;
+	private List<M6_lab.Edge> listOfEdges;
 
 
 
@@ -24,7 +27,11 @@ internal class Graph :ICloneable
     {
         this.graph_ID = id;
         List<M6_lab.Vertex> listOfVertices = new List<M6_lab.Vertex>();
-		for v in g.getVertices
+		for v in g.getVertices()
+			{
+				Vertex newVertex = new Vertex(v.getVertexID(), v.getX(), v.getY());
+				this.listOfVertices.Add(newVertex);
+        }
         List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();
     }
 
@@ -35,7 +42,7 @@ internal class Graph :ICloneable
 
 	public void addEdge(M6_lab.Edge e)
 	{ 
-		listOfEdges.Add(e);
+		this.listOfEdges.Add(e);
     }
 
 	public void removeVertex(M6_lab.Vertex v)
@@ -45,11 +52,11 @@ internal class Graph :ICloneable
         {
 			if (item.getVertexID() == v.getVertexID())
 			{
-				listOfVertices.Remove(item);
+				this.listOfVertices.Remove(item);
             }
         }
 
-		for item in listOfEdges
+		for item in this.listOfEdges
 			{
             if (item.getFromVertex().getVertexID == v || item.getDestination() == v)
             {
