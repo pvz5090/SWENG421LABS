@@ -54,7 +54,7 @@ namespace M6_lab
         {
             VerticesComboBox.Items.Clear();
             foreach (Vertex v in activeGraph.getVertices())
-                VerticesComboBox.Items.Add("Vertex " + v.getVertexID());
+                VerticesComboBox.Items.Add(v.getVertexID());
             VerticesComboBox.Visible = true;
         }
 
@@ -77,7 +77,7 @@ namespace M6_lab
 
         private void VerticesComboBox_SelectedIndexChanged(object sender, EventArgs e) //this should update the X,Y coordinate textboxes
         {
-            Console.WriteLine(e.ToString);
+            int vertexID = VerticesComboBox.SelectedIndex;  
         }
     }
 }
