@@ -42,7 +42,7 @@ internal class Graph :ICloneable
 
     public void addVertex(M6_lab.Vertex v)
 	{
-		v.setID(listOfVertices.Count + 1);
+		
 		listOfVertices.Add(v);
     }
 
