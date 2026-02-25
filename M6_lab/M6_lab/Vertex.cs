@@ -20,9 +20,11 @@ namespace M6_lab
             y_coordinate = y;
         }
 
-        public Vertex(int ID,Vertex otherVertex)
+        public Vertex(Vertex otherVertex)
         {
-            vertex_ID = ID;
+            vertex_ID = GraphManager.getNextVertexID();
+            GraphManager.incrementNextVertexID();
+
             x_coordinate = otherVertex.x_coordinate;
             y_coordinate = otherVertex.y_coordinate;
         }
