@@ -29,9 +29,9 @@ internal class Graph :ICloneable
     {
         this.graph_ID = g.graph_ID;
         List<M6_lab.Vertex> listOfVertices = new List<M6_lab.Vertex>();
-		for v in g.getVertices()
+		foreach (Vertex v in g.getVertices())
 			{
-				Vertex newVertex = new Vertex(v.getVertexID(), v.getX(), v.getY());
+				Vertex newVertex = new Vertex(v.getX(), v.getY());
 				this.listOfVertices.Add(newVertex);
         }
         List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();
@@ -89,13 +89,13 @@ internal class Graph :ICloneable
     private void displayEdge(Graphics g, Edge e)
     {
         // Radius of each node
-        int s = 25;
+        int s = 1;
 
         Color color = Color.Black;
 		Pen pen = new Pen(color);
         Brush brush = new SolidBrush(color);
-        Rectangle r1 = new Rectangle(e.getFromVertex().getX(), e.getFromVertex().getY(), 2 * s, 2 * s);
-        Rectangle r2 = new Rectangle(e.getToVertex().getX(), e.getToVertex().getY(), 2 * s, 2 * s);
+        Rectangle r1 = new Rectangle(e.getFromVertex().getX() -s, e.getFromVertex().getY() -s, 2 * s, 2 * s);
+        Rectangle r2 = new Rectangle(e.getToVertex().getX() -s, e.getToVertex().getY() -s, 2 * s, 2 * s);
         g.DrawEllipse(pen, r1);
         g.DrawEllipse(pen, r2);
         

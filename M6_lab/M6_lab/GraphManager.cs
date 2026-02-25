@@ -48,7 +48,8 @@ namespace M6_lab
 
         public int copy(int graph_id)
         {
-            listOfGraphs.Add(listOfGraphs[graph_id - 1].clone());
+            Graph newGraph = (Graph)listOfGraphs[graph_id - 1].Clone();
+            listOfGraphs.Add(newGraph);
             return listOfGraphs.Count - 1;
         }
 

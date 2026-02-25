@@ -24,10 +24,10 @@ namespace M6_lab
         private void CreateGraphClicked(object sender, EventArgs e)
         {
             int graph = manager.create();
-            activeGraph = graphs[graph];
+            activeGraph = graphs[graph-1];
             GraphPanel.Invalidate();
 
-            VerticesEdgesRefresh();
+            VerticesRefresh();
         }
 
         private void GraphPanel_Paint(object sender, PaintEventArgs e)
@@ -42,7 +42,7 @@ namespace M6_lab
             int newGraphID = manager.copy(activeGraph.getID());
             activeGraph = graphs[newGraphID];
             GraphPanel.Invalidate();
-            VerticesEdgesRefresh();
+            VerticesRefresh();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace M6_lab
 
         }
 
-        private void VerticesEdgesRefresh()
+        private void VerticesRefresh()
         {
             VerticesComboBox.Items.Clear();
             foreach (Vertex v in activeGraph.getVertices())
@@ -69,6 +69,10 @@ namespace M6_lab
             activeGraph.addVertex(fromVertex);
             activeGraph.addVertex(toVertex);
             activeGraph.addEdge(new Edge(fromVertex, toVertex));
+
+            GraphPanel.Invalidate();
+            VerticesRefresh(); 
+
         }
     }
 }
