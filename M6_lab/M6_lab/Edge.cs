@@ -40,8 +40,6 @@ namespace M6_lab
             return e;
         }
 
-   
-
         public void drawing()
         { }
 
