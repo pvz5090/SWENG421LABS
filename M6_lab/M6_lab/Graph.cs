@@ -7,16 +7,14 @@ using M6_lab;//for getter method of vertex and edge
 internal class Graph :ICloneable
 {
 	private int graph_ID;
-	private List<M6_lab.Vertex> listOfVertices;
-	private List<M6_lab.Edge> listOfEdges;
-
-
+	private List<Vertex> listOfVertices = new List<Vertex>();
+	private List<Edge> listOfEdges = new List<Edge>();
 
     public Graph(int id)
 	{
-			this.graph_ID = id;
-			List<M6_lab.Vertex> listOfVertices = new List<M6_lab.Vertex>();
-			List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();
+        this.graph_ID = id;
+        List<Vertex> listOfVertices = new List<Vertex>();
+        List<Edge> listOfEdges = new List<Edge>();
     }
 
 	public object Clone()

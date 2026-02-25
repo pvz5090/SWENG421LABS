@@ -26,9 +26,11 @@ namespace M6_lab
             return new Edge(this);
         }
 
-        Edge(int edge_ID,Vextex)
+        public Edge(int edge_ID, Vertex v1, Vertex v2)
         {
             this.edge_ID = edge_ID;
+            this.from_vertex = v1;
+            this.to_vertex = v2;
         }
 
         public void drawing()

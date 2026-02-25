@@ -10,7 +10,7 @@ namespace M6_lab
 {
     internal class GraphManager
     {
-        private static GraphManager graphManager; 
+        private static GraphManager graphManager = new GraphManager(); 
         public static List <Graph> listOfGraphs = new List <Graph> (); 
 
         private GraphManager(){}
@@ -44,7 +44,7 @@ namespace M6_lab
 
         public int copy(int graph_id)
         {
-            listOfGraphs.Add(listOfGraphs[graph_id - 1].clone());
+            listOfGraphs.Add(listOfGraphs[graph_id - 1].Clone() as Graph);
             return listOfGraphs.Count - 1;
         }
 
