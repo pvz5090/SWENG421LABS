@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Drawing.Configuration;
 using System.Linq;
 using System.Text;
@@ -14,22 +15,34 @@ namespace M6_lab
         private Vertex from_vertex;
         private Vertex to_vertex;
 
+        //A constructor that initializes the edge with the source and destination vertices as copyied soft references and assign a given ID to the edge
+        public Edge(int id, Vertex source, Vertex Destination)
+        {
+            this.edge_ID = id;
+            this.from_vertex = source;
+            this.to_vertex = Destination;
+        }
+
+
         public Edge(Edge otherEdge)
         {
-            this.edge_ID = otherEdge.edge_ID + 1;
-            this.from_vertex = otherEdge.from_vertex;
-            this.to_vertex = otherEdge.to_vertex;
+            this.edge_ID = GraphManager.getNextEdgeID();
+            GraphManager.incrementNextEdgeID();
+            this.from_vertex = new Vertex(otherEdge.from_vertex);
+            this.to_vertex = new Vertex(otherEdge.to_vertex);
         }
 
         public object Clone()
         {
-            return new Edge(this);
+            Edge e= new Edge(GraphManager.getNextEdgeID(), this);
+            GraphManager.incrementNextEdgeID();
+            return e;
         }
 
-        //Edge(int edge_ID,Vertex)
-        //{
-        //    this.edge_ID = edge_ID;
-        //}
+        Edge(int edge_ID,Vextex)
+        {
+            this.edge_ID = edge_ID;
+        }
 
         public void drawing()
         { }

@@ -12,12 +12,16 @@ namespace M6_lab
     {
         private static GraphManager graphManager = new GraphManager(); 
         public static List <Graph> listOfGraphs = new List <Graph> (); 
-
+        private static int nextGraphID=1;
+        private static int nextVertexID = 1;
+        private static int nextEdgeID = 1;
         private GraphManager(){}
         public int create() 
         {
             lock (listOfGraphs) {
-                listOfGraphs.Add(new Graph(listOfGraphs.Count + 1)); //graph_id - 1 = where graph lies in listOfGraphs 
+                
+                listOfGraphs.Add(new Graph(nextGraphID)); //graph_id - 1 = where graph lies in listOfGraphs 
+                nextGraphID= listOfGraphs.Count + 1;//incrementing nextGraphID for next graph creation
                 return listOfGraphs.Count;
             }
         }
@@ -44,8 +48,7 @@ namespace M6_lab
 
         public int copy(int graph_id)
         {
-            Graph copy = (Graph)listOfGraphs[graph_id - 1].Clone(); 
-            listOfGraphs.Add(copy);
+            listOfGraphs.Add(listOfGraphs[graph_id - 1].clone());
             return listOfGraphs.Count - 1;
         }
 
@@ -53,5 +56,37 @@ namespace M6_lab
         {
             return graphManager;
         }
+
+        public static int getNextGraphID()
+        {
+            return nextGraphID;
+        }
+
+        public static int getNextVertexID()
+        {
+            return nextVertexID;
+        }
+
+        public static int getNextEdgeID()
+        {
+            return nextEdgeID;
+        }
+
+        public static void incrementNextGraphID()
+        {
+            nextGraphID++;
+        }
+
+        public static void incrementNextVertexID()
+        {
+            nextVertexID++;
+        }
+
+        public static void incrementNextEdgeID()
+        {
+            nextEdgeID++;
+        }
+
+            
     }
 }
