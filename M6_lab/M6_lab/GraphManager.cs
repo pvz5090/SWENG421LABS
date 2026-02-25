@@ -11,13 +11,11 @@ namespace M6_lab
 {
     internal class GraphManager
     {
-        private static GraphManager? graphManager = null; 
+        private static GraphManager graphManager = null; 
         public static List <Graph> listOfGraphs = new List <Graph> (); 
         private static int nextGraphID=1;
         private static int nextVertexID = 1;
         private static int nextEdgeID = 1;
-       
-        //Singleton pattern implementation of Constructor for GraphManager class
         private GraphManager()
         {
             if (graphManager==null)
@@ -71,6 +69,15 @@ namespace M6_lab
 
         public static GraphManager getManager()
         {
+            if (graphManager == null)
+            {
+                graphManager = new GraphManager();
+            }
+            else
+            {
+                Console.WriteLine("GraphManager instance already exists. Constructor will not Construct new Instance");
+
+            }
             return graphManager;
         }
 
