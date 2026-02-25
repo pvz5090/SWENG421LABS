@@ -19,7 +19,7 @@ namespace M6_lab
         private void CreateGraphClicked(object sender, EventArgs e)
         {
             int graph = manager.create();
-            activeGraph = graphs[graph];
+            activeGraph = graphs[graph-1];
             GraphPanel.Invalidate();
         }
 

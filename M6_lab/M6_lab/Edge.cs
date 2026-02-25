@@ -34,7 +34,10 @@ namespace M6_lab
             return new Edge(this);
         }
 
-    
+        Edge(int edge_ID,Vextex)
+        {
+            this.edge_ID = edge_ID;
+        }
 
         public void drawing()
         { }
