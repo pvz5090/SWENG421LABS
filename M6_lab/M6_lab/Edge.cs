@@ -31,13 +31,12 @@ namespace M6_lab
 
         public object Clone()
         {
-            return new Edge(this);
+            Edge e= new Edge(GraphManager.getNextEdgeID(), this);
+            GraphManager.incrementNextEdgeID();
+            return e;
         }
 
-        Edge(int edge_ID,Vextex)
-        {
-            this.edge_ID = edge_ID;
-        }
+   
 
         public void drawing()
         { }
