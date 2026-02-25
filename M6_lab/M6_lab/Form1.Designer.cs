@@ -85,12 +85,14 @@
             // 
             // VerticesComboBox
             // 
+            VerticesComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             VerticesComboBox.FormattingEnabled = true;
             VerticesComboBox.Location = new Point(631, 63);
             VerticesComboBox.Name = "VerticesComboBox";
             VerticesComboBox.Size = new Size(121, 23);
             VerticesComboBox.TabIndex = 4;
             VerticesComboBox.Visible = false;
+            VerticesComboBox.SelectedIndexChanged += VerticesComboBox_SelectedIndexChanged;
             // 
             // ChooseGraphText
             // 

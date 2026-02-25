@@ -24,7 +24,7 @@ namespace M6_lab
         private void CreateGraphClicked(object sender, EventArgs e)
         {
             int graph = manager.create();
-            activeGraph = graphs[graph-1];
+            activeGraph = graphs[graph - 1];
             GraphPanel.Invalidate();
 
             VerticesRefresh();
@@ -39,7 +39,7 @@ namespace M6_lab
 
         private void CopyGraphButton_Click(object sender, EventArgs e)
         {
-            int newGraphID = manager.copy(activeGraph.getID());
+            int newGraphID = manager.copy(activeGraph);
             activeGraph = graphs[newGraphID];
             GraphPanel.Invalidate();
             VerticesRefresh();
@@ -71,8 +71,13 @@ namespace M6_lab
             activeGraph.addEdge(new Edge(fromVertex, toVertex));
 
             GraphPanel.Invalidate();
-            VerticesRefresh(); 
+            VerticesRefresh();
 
+        }
+
+        private void VerticesComboBox_SelectedIndexChanged(object sender, EventArgs e) //this should update the X,Y coordinate textboxes
+        {
+            Console.WriteLine(e.ToString);
         }
     }
 }
