@@ -15,6 +15,8 @@ namespace M6_lab
         private static int nextGraphID=1;
         private static int nextVertexID = 1;
         private static int nextEdgeID = 1;
+       
+        //Singleton pattern implementation of Constructor for GraphManager class
         private GraphManager()
         {
             if (graphManager==null)
