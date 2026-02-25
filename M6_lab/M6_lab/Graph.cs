@@ -19,10 +19,6 @@ internal class Graph :ICloneable
         List<Edge> listOfEdges = new List<Edge>();
     }
 
-	public object Clone()
-    {
-        return new Graph(this);
-    }
 
     //a Copy constructor that creates a new graph by Constructing  the vertices and edges from an existing graph
     public Graph(Graph g)
@@ -41,9 +37,15 @@ internal class Graph :ICloneable
         }
     }
 
+
+    public object Clone()
+    {
+        return new Graph(this);
+    }
+
     public void addVertex(M6_lab.Vertex v)
 	{
-		v.setID(listOfVertices.Count + 1);
+		
 		listOfVertices.Add(v);
     }
 
