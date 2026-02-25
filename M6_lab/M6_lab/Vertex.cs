@@ -13,9 +13,10 @@ namespace M6_lab
         private int x_coordinate;
         private int y_coordinate;
 
-        public Vertex(int id,int x, int y)
+        public Vertex(int x, int y)
         {
-            vertex_ID = id;
+            vertex_ID = GraphManager.getNextVertexID();
+            GraphManager.incrementNextVertexID();
             x_coordinate = x;
             y_coordinate = y;
         }
