@@ -16,18 +16,11 @@ namespace M6_lab
         private static int nextGraphID=1;
         private static int nextVertexID = 1;
         private static int nextEdgeID = 1;
+
+        // Private constructor to called by getManager() method to create a new instance of GraphManager if it does not exist, otherwise return existing instance, for Singleton pattern
         private GraphManager()
         {
-            if (graphManager==null)
-            {
-                graphManager = new GraphManager();
-            }
-            else 
-            {
-                Console.WriteLine("GraphManager instance already exists. Constructor will not Construct new Instance");
-               
-            }
-
+            graphManager = new GraphManager();
         }
         public int create() 
         {
