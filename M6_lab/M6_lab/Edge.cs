@@ -22,11 +22,14 @@ namespace M6_lab
             this.from_vertex = source;
             this.to_vertex = Destination;
         }
-        public Edge(int id,Edge otherEdge)
+
+
+        public Edge(Edge otherEdge)
         {
-            this.edge_ID = id;
-            this.from_vertex = otherEdge.from_vertex;
-            this.to_vertex = otherEdge.to_vertex;
+            this.edge_ID = GraphManager.getNextEdgeID();
+            GraphManager.incrementNextEdgeID();
+            this.from_vertex = new Vertex(otherEdge.from_vertex);
+            this.to_vertex = new Vertex(otherEdge.to_vertex);
         }
 
         public object Clone()
