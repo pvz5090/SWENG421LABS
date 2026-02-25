@@ -10,7 +10,7 @@ namespace M6_lab
 {
     internal class GraphManager
     {
-        private static GraphManager graphManager = null; 
+        private static GraphManager? graphManager = null; 
         public static List <Graph> listOfGraphs = new List <Graph> (); 
         private static int nextGraphID=1;
         private static int nextVertexID = 1;
