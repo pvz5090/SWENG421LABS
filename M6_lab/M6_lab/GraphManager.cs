@@ -12,15 +12,16 @@ namespace M6_lab
     {
         private static GraphManager graphManager; 
         public static List <Graph> listOfGraphs = new List <Graph> (); 
-        private int nextGraphID=1;
-
+        private static int nextGraphID=1;
+        private static int nextVertexID = 1;
+        private static int nextEdgeID = 1;
         private GraphManager(){}
         public int create() 
         {
             lock (listOfGraphs) {
                 
                 listOfGraphs.Add(new Graph(nextGraphID)); //graph_id - 1 = where graph lies in listOfGraphs 
-                nextGraphID= listOfGraphs.Count + 1;
+                nextGraphID= listOfGraphs.Count + 1;//incrementing nextGraphID for next graph creation
                 return listOfGraphs.Count;
             }
         }

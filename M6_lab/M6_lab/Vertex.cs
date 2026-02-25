@@ -13,9 +13,16 @@ namespace M6_lab
         private int x_coordinate;
         private int y_coordinate;
 
-        public Vertex(Vertex otherVertex)
+        public Vertex(int id,int x, int y)
         {
-            vertex_ID = otherVertex.vertex_ID + 1;
+            vertex_ID = id;
+            x_coordinate = x;
+            y_coordinate = y;
+        }
+
+        public Vertex(int ID,Vertex otherVertex)
+        {
+            vertex_ID = ID;
             x_coordinate = otherVertex.x_coordinate;
             y_coordinate = otherVertex.y_coordinate;
         }

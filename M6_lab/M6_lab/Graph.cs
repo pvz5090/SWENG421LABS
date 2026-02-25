@@ -10,8 +10,7 @@ internal class Graph :ICloneable
 	private int graph_ID;
 	private List<M6_lab.Vertex> listOfVertices;
 	private List<M6_lab.Edge> listOfEdges;
-    private int nextVertexID=1;
-    private int nextEdgeID=1;
+
 
 
 
@@ -33,9 +32,9 @@ internal class Graph :ICloneable
     {
         this.graph_ID = g.graph_ID;
         List<M6_lab.Vertex> listOfVertices = new List<M6_lab.Vertex>();
-		for v in g.getVertices()
+		for (Vector v in g.getVertices())
 			{
-				Vertex newVertex = new Vertex(v.getVertexID(), v.getX(), v.getY());
+				Vertex newVertex = new Vertex(GraphManager nextVertexID, v.getX(), v.getY());
 				this.listOfVertices.Add(newVertex);
         }
         List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();
