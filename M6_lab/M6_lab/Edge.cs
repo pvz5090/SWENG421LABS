@@ -35,8 +35,8 @@ namespace M6_lab
 
         public object Clone()
         {
-            Edge e= new Edge(GraphManager.getNextEdgeID(), this);
-            GraphManager.incrementNextEdgeID();
+            Edge e= new Edge( this);
+            
             return e;
         }
 
