@@ -40,8 +40,7 @@ namespace M6_lab
 
         private void CopyGraphButton_Click(object sender, EventArgs e)
         {
-            int newGraphID = manager.copy(activeGraph);
-            activeGraph = graphs[newGraphID];
+            activeGraph = manager.copy(activeGraph);
             GraphPanel.Invalidate();
             VerticesRefresh();
             graphsRefresh();
