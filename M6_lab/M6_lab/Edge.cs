@@ -16,9 +16,10 @@ namespace M6_lab
         private Vertex to_vertex;
 
         //A constructor that initializes the edge with the source and destination vertices as copyied soft references and assign a given ID to the edge
-        public Edge(int id, Vertex source, Vertex Destination)
+        public Edge( Vertex source, Vertex Destination)
         {
-            this.edge_ID = id;
+            this.edge_ID = GraphManager.getNextEdgeID();
+            GraphManager.incrementNextEdgeID();
             this.from_vertex = source;
             this.to_vertex = Destination;
         }
