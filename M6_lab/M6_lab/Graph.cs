@@ -30,9 +30,9 @@ internal class Graph :ICloneable
     {
         this.graph_ID = g.graph_ID;
         List<M6_lab.Vertex> listOfVertices = new List<M6_lab.Vertex>();
-		for v in g.getVertices()
+		foreach (Vertex v in g.getVertices())
 			{
-				Vertex newVertex = new Vertex(v.getVertexID(), v.getX(), v.getY());
+				Vertex newVertex = new Vertex(v);
 				this.listOfVertices.Add(newVertex);
         }
         List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();

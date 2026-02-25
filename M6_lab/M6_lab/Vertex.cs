@@ -20,6 +20,7 @@ namespace M6_lab
             y_coordinate = otherVertex.y_coordinate;
         }
 
+
         public object Clone()
         {
             return new Vertex(this);
