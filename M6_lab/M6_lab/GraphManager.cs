@@ -15,19 +15,7 @@ namespace M6_lab
         private static int nextGraphID=1;
         private static int nextVertexID = 1;
         private static int nextEdgeID = 1;
-        private GraphManager()
-        {
-            if (graphManager==null)
-            {
-                graphManager = new GraphManager();
-            }
-            else 
-            {
-                Console.WriteLine("GraphManager instance already exists. Constructor will not Construct new Instance");
-               
-            }
-
-        }
+        private GraphManager() { }
         public int create() 
         {
             lock (listOfGraphs) {
