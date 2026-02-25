@@ -84,12 +84,13 @@ namespace M6_lab
             return nextVertexID;
         }
 
+
         public static int getNextEdgeID()
         {
             return nextEdgeID;
         }
 
-        //increments nextGraphID, nextVertexID and nextEdgeID for new graph, vertex and edge creation respectively
+        //increments nextGraphID new graph
         public static void incrementNextGraphID()
         {
             nextGraphID++;
