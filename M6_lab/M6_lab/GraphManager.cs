@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.VisualStyles;
 
 namespace M6_lab
 {
@@ -88,16 +89,18 @@ namespace M6_lab
             return nextEdgeID;
         }
 
+        //increments nextGraphID, nextVertexID and nextEdgeID for new graph, vertex and edge creation respectively
         public static void incrementNextGraphID()
         {
             nextGraphID++;
         }
-
+        // increments nextVertexID and  for new vertex creation 
         public static void incrementNextVertexID()
         {
             nextVertexID++;
         }
 
+        //nextEdgeID for new  edge creation 
         public static void incrementNextEdgeID()
         {
             nextEdgeID++;
