@@ -27,6 +27,7 @@ namespace M6_lab
             activeGraph = graphs[graph - 1];
             GraphPanel.Invalidate();
 
+            graphsRefresh();
             VerticesRefresh();
         }
 
@@ -43,6 +44,7 @@ namespace M6_lab
             activeGraph = graphs[newGraphID];
             GraphPanel.Invalidate();
             VerticesRefresh();
+            graphsRefresh();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -50,11 +52,18 @@ namespace M6_lab
 
         }
 
+        private void graphsRefresh()
+        {
+            graphsComboBox.Items.Clear();
+            foreach (Graph g in graphs)
+                graphsComboBox.Items.Add(g);
+            graphsComboBox.Invalidate();
+        }
         private void VerticesRefresh()
         {
             VerticesComboBox.Items.Clear();
             foreach (Vertex v in activeGraph.getVertices())
-                VerticesComboBox.Items.Add(v.getVertexID());
+                VerticesComboBox.Items.Add(v);
             VerticesComboBox.Visible = true;
         }
 
@@ -77,7 +86,36 @@ namespace M6_lab
 
         private void VerticesComboBox_SelectedIndexChanged(object sender, EventArgs e) //this should update the X,Y coordinate textboxes
         {
-            int vertexID = VerticesComboBox.SelectedIndex;  
+            Vertex selectedVertex = (Vertex)VerticesComboBox.SelectedItem;
+            userX.Text = selectedVertex.getX().ToString();
+            userY.Text = selectedVertex.getY().ToString();
+        }
+
+        private void userX_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Vertex selectedVertex = (Vertex)VerticesComboBox.SelectedItem;
+                selectedVertex.setX(int.Parse(userX.Text));
+                GraphPanel.Invalidate();
+            }
+        }
+
+        private void userY_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Vertex selectedVertex = (Vertex)VerticesComboBox.SelectedItem;
+                selectedVertex.setY(int.Parse(userY.Text));
+                GraphPanel.Invalidate();
+            }
+        }
+
+        private void graphsComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            activeGraph = (Graph)graphsComboBox.SelectedItem;
+            GraphPanel.Invalidate();
+            VerticesRefresh(); 
         }
     }
 }

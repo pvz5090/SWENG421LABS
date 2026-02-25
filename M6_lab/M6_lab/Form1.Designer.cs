@@ -36,8 +36,8 @@
             VerticesComboBox = new ComboBox();
             ChooseGraphText = new TextBox();
             VerticesText = new TextBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            userX = new TextBox();
+            userY = new TextBox();
             VertexXText = new TextBox();
             VertexYText = new TextBox();
             SuspendLayout();
@@ -50,6 +50,7 @@
             graphsComboBox.Name = "graphsComboBox";
             graphsComboBox.Size = new Size(121, 23);
             graphsComboBox.TabIndex = 0;
+            graphsComboBox.SelectedIndexChanged += graphsComboBox_SelectedIndexChanged;
             // 
             // CreateGraphButton
             // 
@@ -113,19 +114,21 @@
             VerticesText.TabIndex = 6;
             VerticesText.Text = "Vertices";
             // 
-            // textBox1
+            // userX
             // 
-            textBox1.Location = new Point(631, 121);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 9;
+            userX.Location = new Point(631, 121);
+            userX.Name = "userX";
+            userX.Size = new Size(100, 23);
+            userX.TabIndex = 9;
+            userX.KeyDown += userX_KeyDown;
             // 
-            // textBox2
+            // userY
             // 
-            textBox2.Location = new Point(631, 179);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 10;
+            userY.Location = new Point(631, 179);
+            userY.Name = "userY";
+            userY.Size = new Size(100, 23);
+            userY.TabIndex = 10;
+            userY.KeyDown += userY_KeyDown;
             // 
             // VertexXText
             // 
@@ -152,8 +155,8 @@
             ClientSize = new Size(800, 450);
             Controls.Add(VertexYText);
             Controls.Add(VertexXText);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(userY);
+            Controls.Add(userX);
             Controls.Add(VerticesText);
             Controls.Add(ChooseGraphText);
             Controls.Add(VerticesComboBox);
@@ -178,8 +181,8 @@
         private ComboBox VerticesComboBox;
         private TextBox ChooseGraphText;
         private TextBox VerticesText;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox userX;
+        private TextBox userY;
         private TextBox VertexXText;
         private TextBox VertexYText;
     }
