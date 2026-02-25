@@ -24,13 +24,14 @@ namespace M6_lab
         }
         public int create() 
         {
-            lock (listOfGraphs) {
-                
-                listOfGraphs.Add(new Graph(nextGraphID)); //graph_id - 1 = where graph lies in listOfGraphs 
+            lock (listOfGraphs) 
+            {
+                listOfGraphs.Add(new Graph(nextGraphID)); 
                 nextGraphID= listOfGraphs.Count + 1;//incrementing nextGraphID for next graph creation
                 return listOfGraphs.Count;
             }
         }
+
         public void modify(int graph_id, List<Vertex> vertices, List<Edge> edges)
         {
             Graph graph = listOfGraphs[graph_id]; 
@@ -74,17 +75,19 @@ namespace M6_lab
             return graphManager;
         }
 
+        //gets nextGraphID for new graph creation
         public static int getNextGraphID()
         {
             return nextGraphID;
         }
 
+        //gets nextVertexID for new vertex creation
         public static int getNextVertexID()
         {
             return nextVertexID;
         }
 
-
+        //gets nextEdgeID for new edge creation
         public static int getNextEdgeID()
         {
             return nextEdgeID;
