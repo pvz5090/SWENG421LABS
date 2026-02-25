@@ -20,7 +20,6 @@ namespace M6_lab
         // Private constructor to called by getManager() method to create a new instance of GraphManager if it does not exist, otherwise return existing instance, for Singleton pattern
         private GraphManager()
         {
-            graphManager = new GraphManager();
         }
         public int create() 
         {

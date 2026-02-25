@@ -36,8 +36,12 @@ namespace M6_lab
             return new Vertex(this);
         }
 
-        public void drawing()
-        { }
+        public void drawing(Graphics g, Color c, int s)
+        {
+            Pen pen = new Pen(c);
+            Rectangle r = new Rectangle(this.getX() - s, this.getY() - s, 2 * s, 2 * s);
+            g.DrawEllipse(pen, r);
+        }
 
         public int getX()
         {

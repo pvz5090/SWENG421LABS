@@ -8,6 +8,6 @@ namespace M6_lab
 {
     internal interface Drawing
     {
-        public void drawing();
+        public void drawing(Graphics g, Color c, int s);
     }
 }

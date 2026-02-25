@@ -73,54 +73,16 @@ internal class Graph :ICloneable
         }
     }
 
-    private double cosine(Point p1, Point p2) {
-        double d0 = p1.X * p2.X + p1.Y * p2.Y;
-        double d1 = Math.Sqrt(p1.X * p1.X + p1.Y * p1.Y);
-        return d0 / d1;
-    }
-
-    private Point compute(Point p1, double angle) {
-        double d1 = Math.Sqrt(p1.X * p1.X + p1.Y * p1.Y);
-        double x = -20 * p1.X / d1;
-        double y = -20 * p1.Y / d1;
-        double nx = x * Math.Cos(angle) - y * Math.Sin(angle);
-        double ny = x * Math.Sin(angle) + y * Math.Cos(angle);
-        return new Point((int) nx, (int) ny);
-    }
-
-    private void displayEdge(Graphics g, Edge e)
-    {
-        // Radius of each node
-        int s = 1;
-
-        Color color = Color.Black;
-		Pen pen = new Pen(color);
-        Brush brush = new SolidBrush(color);
-        Rectangle r1 = new Rectangle(e.getFromVertex().getX() -s, e.getFromVertex().getY() -s, 2 * s, 2 * s);
-        Rectangle r2 = new Rectangle(e.getToVertex().getX() -s, e.getToVertex().getY() -s, 2 * s, 2 * s);
-        g.DrawEllipse(pen, r1);
-        g.DrawEllipse(pen, r2);
-        
-        int v = r1.Y > r2.Y? -1: 1;
-        double d = cosine(new Point(r2.X - r1.X, r2.Y - r1.Y), new Point(v, 0));
-        double x = r1.X + s + v * s * d;
-        double y = r1.Y + s + v * s * Math.Sqrt(1 - d * d);
-        double x2 = r2.X + s - v * s * d;
-        double y2 = r2.Y + s - v * s * Math.Sqrt(1 - d * d);
-        g.DrawLine(pen, new Point((int) x, (int) y), new Point((int) x2, (int) y2));
-        g.FillEllipse(brush, new Rectangle((int) (x - 5), (int) (y - 5), 10, 10));
-
-        Point p = compute(new Point(r2.X - r1.X, r2.Y - r1.Y), Math.PI / 6);
-        g.DrawLine(pen, new Point((int) x2, (int) y2), new Point((int) x2 + p.X, (int) y2 + p.Y));
-        p = compute(new Point(r2.X - r1.X, r2.Y - r1.Y), -Math.PI / 6);
-        g.DrawLine(pen, new Point((int) x2, (int) y2), new Point((int) x2 + p.X, (int) y2 + p.Y));
-    }
-
     public void display(Graphics g)
 	{
+        Color color = Color.Black;
+        int vertexRadius = 10;
+        int lineThickness = 1;
         foreach (Edge e in this.listOfEdges)
         {
-            displayEdge(g, e);
+            e.drawing(g, color, lineThickness);
+            e.getFromVertex().drawing(g, color, vertexRadius);
+            e.getToVertex().drawing(g, color, vertexRadius);
         }
     }
 
