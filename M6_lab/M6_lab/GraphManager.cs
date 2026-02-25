@@ -16,8 +16,7 @@ namespace M6_lab
         private static int nextGraphID=1;
         private static int nextVertexID = 1;
         private static int nextEdgeID = 1;
-        private GraphManager()
-        {}
+        private GraphManager() {}
 
         public int create() 
         {
@@ -62,12 +61,12 @@ namespace M6_lab
         ///  <returns>
         /// the identifier graph_ID of the newly created graph in the list of graphs, which serves as its unique identifier (ID).
         /// </returns>
-        public int copy(Graph g)
+        public Graph copy(Graph g)
         {
-            listOfGraphs.Add(g.Clone() as Graph);
-            nextGraphID = listOfGraphs.Count + 1;
+            Graph newGraph = g.Clone() as Graph; 
+            listOfGraphs.Add(newGraph);
 
-            return nextGraphID - 1;
+            return newGraph;
         }
 
         /// <summary>

@@ -23,7 +23,8 @@ internal class Graph :ICloneable
     //a Copy constructor that creates a new graph by Constructing  the vertices and edges from an existing graph
     public Graph(Graph g)
     {
-        this.graph_ID = g.graph_ID;
+        this.graph_ID = GraphManager.getNextGraphID();
+        GraphManager.incrementNextGraphID(); 
         List<M6_lab.Vertex> listOfVertices = new List<M6_lab.Vertex>();
 		foreach (Vertex v in g.getVertices())
 			{
