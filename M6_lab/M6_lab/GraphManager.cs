@@ -48,7 +48,7 @@ namespace M6_lab
 
         public int copy(int graph_id)
         {
-            listOfGraphs.Add(listOfGraphs[graph_id - 1].clone());
+            listOfGraphs.Add(listOfGraphs[graph_id - 1].clone() as Graph);
             nextGraphID = listOfGraphs.Count + 1;
 
             return listOfGraphs.Count - 1;
@@ -58,5 +58,37 @@ namespace M6_lab
         {
             return graphManager;
         }
+
+        public static int getNextGraphID()
+        {
+            return nextGraphID;
+        }
+
+        public static int getNextVertexID()
+        {
+            return nextVertexID;
+        }
+
+        public static int getNextEdgeID()
+        {
+            return nextEdgeID;
+        }
+
+        public static void incrementNextGraphID()
+        {
+            nextGraphID++;
+        }
+
+        public static void incrementNextVertexID()
+        {
+            nextVertexID++;
+        }
+
+        public static void incrementNextEdgeID()
+        {
+            nextEdgeID++;
+        }
+
+            
     }
 }
