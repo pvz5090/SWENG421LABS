@@ -113,4 +113,9 @@ internal class Graph :ICloneable
 		}
 		return null; // Return null if vertex with the specified ID is not found
     }
+
+    public override string ToString()
+    {
+        return graph_ID.ToString();
+    }
 }

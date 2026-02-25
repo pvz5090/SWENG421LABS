@@ -70,5 +70,9 @@ namespace M6_lab
 
         public void setID(int id) {vertex_ID = id;}
 
+        public override string ToString()
+        {
+            return vertex_ID.ToString();
+        }
     }
 }
