@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.VisualStyles;
 
 namespace M6_lab
 {
@@ -15,16 +16,34 @@ namespace M6_lab
         private static int nextGraphID=1;
         private static int nextVertexID = 1;
         private static int nextEdgeID = 1;
-        private GraphManager() { }
+        private GraphManager()
+        {
+            if (graphManager==null)
+            {
+                graphManager = new GraphManager();
+            }
+            else 
+            {
+                Console.WriteLine("GraphManager instance already exists. Constructor will not Construct new Instance");
+               
+            }
+
+        }
         public int create() 
         {
-            lock (listOfGraphs) {
-                
-                listOfGraphs.Add(new Graph(nextGraphID)); //graph_id - 1 = where graph lies in listOfGraphs 
+            lock (listOfGraphs) 
+            {
+                listOfGraphs.Add(new Graph(nextGraphID)); 
                 nextGraphID= listOfGraphs.Count + 1;//incrementing nextGraphID for next graph creation
                 return listOfGraphs.Count;
             }
         }
+        /// <summary>
+        /// 
+        /// modifies the vertices and edges of an existing graph with the given graph_id,
+        /// if a vertex in the input list of vertices already exists in the graph, it updates the X and Y coordinates of the existing vertex,
+        /// otherwise it adds the new vertex to the graph. The method does not modify edges in this implementation.
+        /// </summary>
         public void modify(int graph_id, List<Vertex> vertices, List<Edge> edges)
         {
             Graph graph = listOfGraphs[graph_id]; 
@@ -46,14 +65,24 @@ namespace M6_lab
           
         }
 
+        /// <summary>
+        /// creates a new graph by copying an existing graph and adds the new graph to the list of graphs, returns the ID of the new graph
+        /// </summary>
+        /// <param name="g">the new x-coordinate.</param>
+        ///  <returns>
+        /// the identifier graph_ID of the newly created graph in the list of graphs, which serves as its unique identifier (ID).
+        /// </returns>
         public int copy(Graph g)
         {
             listOfGraphs.Add(g.Clone() as Graph);
             nextGraphID = listOfGraphs.Count + 1;
 
-            return listOfGraphs.Count - 1;
+            return nextGraphID - 1;
         }
 
+        /// <summary>
+        /// a static getter for the singleton instance of GraphManager, if it does not exist, creates a new instance, otherwise returns existing instance
+        /// </summary>
         public static GraphManager getManager()
         {
             if (graphManager == null)
@@ -68,31 +97,52 @@ namespace M6_lab
             return graphManager;
         }
 
+        /// <summary>
+        ///a static getter for nextGraphID attribute, used for new graph creation
+        /// </summary>
+        /// <returns> returns interger attribute nextGraphID of GraphManager, it is primarily used to determine the ID of new Graphs in their constructors </returns>
         public static int getNextGraphID()
         {
             return nextGraphID;
         }
 
+        /// <summary>
+        ///a static getter for the attribute nextVertexID, used in new vertex creation
+        /// </summary>
+        /// <returns> returns interger attribute nextVertexID of GraphManager, it is primarily used to determine the ID of new Vertexs in their constructors </returns>
         public static int getNextVertexID()
         {
             return nextVertexID;
         }
 
+        /// <summary>
+        /// a static getter for nextEdgeID attribute, used when new edges are created
+        /// </summary>
+        /// <returns> returns interger attribute nextEdgeID of GraphManager, it is primarily used to determine the ID of new Edges in their constructors </returns>
         public static int getNextEdgeID()
         {
             return nextEdgeID;
         }
 
+        /// <summary>
+        /// Increments the identifier nextGraphID used for constructing new graphs
+        /// </summary>
         public static void incrementNextGraphID()
         {
             nextGraphID++;
         }
 
+        /// <summary>
+        /// Increments the identifier nextVertexID used for new vertex creation 
+        /// </summary>
         public static void incrementNextVertexID()
         {
             nextVertexID++;
         }
 
+        /// <summary>
+        /// Increments the identifier nextEdgeID used for creating new edges.
+        /// </summary>
         public static void incrementNextEdgeID()
         {
             nextEdgeID++;
