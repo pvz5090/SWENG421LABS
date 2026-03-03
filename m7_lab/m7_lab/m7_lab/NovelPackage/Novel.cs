@@ -8,7 +8,7 @@ public class Novel : Component
         Console.WriteLine("Saving The Novel Components");
     }
 
-    public void edit()
+    public void edit(string text)
     {
         Console.WriteLine("Editing The Novel Components");
     }

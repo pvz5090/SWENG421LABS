@@ -8,7 +8,7 @@ public class Frame:ColumnComponent
         Console.WriteLine("Saving The Frame");
     }
 
-    public void edit()
+    public void edit(string text)
     {
         Console.WriteLine("Editing The Frame");
     }
