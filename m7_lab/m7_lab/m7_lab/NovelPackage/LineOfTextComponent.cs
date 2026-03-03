@@ -1,4 +1,6 @@
-public interface LineOfTextComponent: ColumnComponent, FrameComponent
-{
-    
+namespace NovelPackage{ 
+    public interface LineOfTextComponent: ColumnComponent, FrameComponent
+    {
+        
+    }
 }

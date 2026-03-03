@@ -1,4 +1,7 @@
-public interface FrameComponent: PageComponent
-{
-    
+namespace NovelPackage{ 
+    public interface FrameComponent: PageComponent
+    {
+        
+    }
+
 }

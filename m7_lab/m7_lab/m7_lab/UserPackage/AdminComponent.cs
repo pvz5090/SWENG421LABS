@@ -1,4 +1,6 @@
-public interface AdminComponent: WriterComponent, EditorComponent
-{
-    
+namespace UserPackage{ 
+    public interface AdminComponent: WriterComponent, EditorComponent
+    {
+        
+    }
 }

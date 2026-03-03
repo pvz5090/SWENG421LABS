@@ -1,4 +1,6 @@
-public interface ColumnComponent: PageComponent
-{
-    
+namespace NovelPackage{ 
+    public interface ColumnComponent: PageComponent
+    {
+        
+    }
 }

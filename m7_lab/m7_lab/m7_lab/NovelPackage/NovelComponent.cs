@@ -1,4 +1,6 @@
-public interface NovelComponent: Component
-{
-    
+namespace NovelPackage{ 
+    public interface NovelComponent: Component
+    {
+        
+    }
 }
