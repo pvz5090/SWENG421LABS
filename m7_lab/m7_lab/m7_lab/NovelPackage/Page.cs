@@ -1,7 +1,7 @@
 namespace NovelPackage;
 public class Page:NovelComponent
 {
-    private List<PageComponent> component;
+    private List<PageComponent> components;
 
      public void save()
     {
@@ -25,6 +25,10 @@ public class Page:NovelComponent
 
     public void view()
     {
-        Console.WriteLine("Viewing The Page Components");
+        foreach ( PageComponent item in components)
+        {
+            item.view();
+        }
+        //Console.WriteLine("Viewing The Page Components");
     }
 }

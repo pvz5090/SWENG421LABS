@@ -25,6 +25,7 @@ public class Character : LineOfTextComponent
 
     public void view()
     {
-        Console.WriteLine("Viewing The Character");
+        Console.Write(chara.ToString());
+        //Console.WriteLine("Viewing The Character");
     }
 }

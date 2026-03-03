@@ -1,7 +1,7 @@
 namespace NovelPackage;
 public class Frame:ColumnComponent
 {
-    private List<FrameComponent> component;
+    private List<FrameComponent> components;
 
         public void save()
     {
@@ -25,6 +25,10 @@ public class Frame:ColumnComponent
 
     public void view()
     {
-        Console.WriteLine("Viewing The Frame");
+        foreach ( FrameComponent item in components)
+        {
+            item.view();
+        }
+        //Console.WriteLine("Viewing The Frame");
     }
 }

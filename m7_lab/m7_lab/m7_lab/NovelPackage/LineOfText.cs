@@ -25,6 +25,8 @@ public class LineOfTextComponent:ColumnComponent
 
     public void view()
     {
-        Console.WriteLine("Viewing The Line of Text");
+        component.view();
+        
+        //Console.WriteLine("Viewing The Line of Text");
     }
 }

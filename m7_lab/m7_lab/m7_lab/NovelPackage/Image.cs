@@ -23,6 +23,6 @@ public class Image:LineOfTextComponent
 
     public void view()
     {
-        Console.WriteLine("Viewing The Image");
+       // Console.WriteLine("Viewing The Image");
     }
 }

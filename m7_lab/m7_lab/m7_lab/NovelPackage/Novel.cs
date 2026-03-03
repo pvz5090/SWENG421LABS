@@ -1,7 +1,9 @@
+using System.Runtime.CompilerServices;
+
 namespace NovelPackage;
 public class Novel : Component
 {
-    private List<NovelComponent> component;
+    private List<NovelComponent> components;
 
     public void save()
     {
@@ -25,7 +27,12 @@ public class Novel : Component
 
     public void view()
     {
-        Console.WriteLine("Viewing The Novel Components");
+        foreach ( NovelComponent item in components)
+        {
+            item.view();
+        }
+        
+        //Console.WriteLine("Viewing The Novel Components");
     }
 
 
