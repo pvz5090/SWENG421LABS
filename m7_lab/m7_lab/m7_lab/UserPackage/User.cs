@@ -5,11 +5,22 @@ using System.Security.Cryptography.X509Certificates;
 namespace UserPackage{ 
     public abstract class User
     {
-        private Type componentInterface;
+        protected Type componentInterface;
+        public User(Type c)
+        {
+            componentInterface=c;
+        }
         public void doStuff(Component component, string methodName, params object[] arguments)
         {
-            MethodInfo method = componentInterface.GetMethod(methodName);
-            method?.Invoke(component, arguments);
+        if (!componentInterface.IsAssignableFrom(component.GetType()))
+            throw new UnauthorizedAccessException("Permission denied.");
+
+        MethodInfo method = componentInterface.GetMethod(methodName);
+
+        if (method == null)
+            throw new UnauthorizedAccessException("Method not allowed.");
+
+        method.Invoke(component, arguments);
         }
     }
 }
