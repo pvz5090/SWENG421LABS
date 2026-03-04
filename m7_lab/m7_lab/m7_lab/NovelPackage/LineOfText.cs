@@ -3,7 +3,7 @@ using System.Reflection.PortableExecutable;
 namespace NovelPackage;
 public class LineOfText:ColumnComponent
 {
-    private List <LineOfTextComponent> component;
+    public List <LineOfTextComponent> component;
 
     public LineOfText()
     {
