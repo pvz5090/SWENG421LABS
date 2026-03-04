@@ -7,6 +7,7 @@ public class LineOfText:ColumnComponent
 
     public LineOfText()
     {
+         component=new List <LineOfTextComponent>();
     }
 
      public void save()
