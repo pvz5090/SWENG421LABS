@@ -3,28 +3,28 @@ public class Character : LineOfTextComponent
 {
     private char chara;
 
-    public void delete()
+        public void save()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Saving The Character");
     }
 
     public void edit()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Editing The Character");
     }
 
     public void retrieve()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Retreiving Character");
     }
 
-    public void save()
+    public void delete()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Deleting The Character");
     }
 
     public void view()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Viewing The Character");
     }
 }

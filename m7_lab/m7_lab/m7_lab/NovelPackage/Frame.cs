@@ -1,30 +1,30 @@
 namespace NovelPackage;
 public class Frame:ColumnComponent
 {
-    private List<FrameComponent> component;
+    public List<FrameComponent> component;
 
-    public void delete()
+        public void save()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Saving The Frame");
     }
 
     public void edit()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Editing The Frame");
     }
 
     public void retrieve()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Retreiving The Frame");
     }
 
-    public void save()
+    public void delete()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Deleting The Frame");
     }
 
     public void view()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Viewing The Frame");
     }
 }

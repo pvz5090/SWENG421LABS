@@ -1,31 +1,30 @@
-using System.Data.Common;
-
 namespace NovelPackage;
 public class Page:NovelComponent
 {
-    private List<PageComponent> component; 
+    private List<PageComponent> component;
+
+     public void save()
+    {
+        Console.WriteLine("Saving The Page Components");
+    }
+
+    public void edit()
+    {
+        Console.WriteLine("Editing The Page Components");
+    }
+
+    public void retrieve()
+    {
+        Console.WriteLine("Retreiving The Page Components");
+    }
+
     public void delete()
-        {
-            throw new NotImplementedException();
-        }
+    {
+        Console.WriteLine("Delete The Page Components");
+    }
 
-        public void edit()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void retrieve()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void save()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void view()
-        {
-            throw new NotImplementedException();
-        }
+    public void view()
+    {
+        Console.WriteLine("Viewing The Page Components");
+    }
 }

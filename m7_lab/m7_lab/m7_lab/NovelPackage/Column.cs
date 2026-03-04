@@ -2,7 +2,7 @@ namespace NovelPackage;
 
 public class Column:FrameComponent
 {
-    private List<ColumnComponent> component;
+    public List<ColumnComponent> component;
 
     public void delete()
     {

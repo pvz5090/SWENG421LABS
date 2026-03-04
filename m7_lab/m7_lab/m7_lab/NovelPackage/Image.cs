@@ -1,29 +1,28 @@
 namespace NovelPackage;
-
-public class Image : LineOfTextComponent
+public class Image:LineOfTextComponent
 {
-    public void delete()
+        public void save()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Saving The Image");
     }
 
     public void edit()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Editing The Image");
     }
 
     public void retrieve()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Retreiving The Image");
     }
 
-    public void save()
+    public void delete()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Delete The Image");
     }
 
     public void view()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Viewing The Image");
     }
 }

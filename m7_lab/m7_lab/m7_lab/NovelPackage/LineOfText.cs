@@ -1,30 +1,30 @@
 namespace NovelPackage;
-public class LineOfText : ColumnComponent
+public class LineOfText:ColumnComponent
 {
     private LineOfTextComponent component;
 
-    public void delete()
+     public void save()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Saving The Line of Text");
     }
 
     public void edit()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Editing The Line of Text");
     }
 
     public void retrieve()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Retreiving The Line of Text");
     }
 
-    public void save()
+    public void delete()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Delete The Line of Text");
     }
 
     public void view()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Viewing The Line of Text");
     }
 }

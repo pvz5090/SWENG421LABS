@@ -1,30 +1,32 @@
 namespace NovelPackage;
-public class Novel:Component
+public class Novel : Component
 {
-    public List<NovelComponent> component;
+    private List<NovelComponent> component;
 
-    public void delete()
+    public void save()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Saving The Novel Components");
     }
 
     public void edit()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Editing The Novel Components");
     }
 
     public void retrieve()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Retreiving The Novel Components");
     }
 
-    public void save()
+    public void delete()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Delete The Novel Components");
     }
 
     public void view()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Viewing The Novel Components");
     }
+
+
 }
