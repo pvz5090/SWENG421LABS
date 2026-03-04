@@ -4,12 +4,16 @@ public class Column:FrameComponent
 {
     private List<ColumnComponent> components;
 
+    public Column()
+    {
+        components=new List<ColumnComponent>();
+    }
         public void save()
     {
         Console.WriteLine("Saving The Column");
     }
 
-    public void edit()
+    public void edit(String str)
     {
         Console.WriteLine("Editing The Column");
     }
