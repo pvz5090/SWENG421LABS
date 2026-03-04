@@ -4,13 +4,17 @@ namespace NovelPackage;
 public class Novel : Component
 {
     private List<NovelComponent> components;
-
+    
+    public Novel()
+    {
+        components=new List<NovelComponent>();
+    }
     public void save()
     {
         Console.WriteLine("Saving The Novel Components");
     }
 
-    public void edit()
+    public void edit(string text)
     {
         Console.WriteLine("Editing The Novel Components");
     }

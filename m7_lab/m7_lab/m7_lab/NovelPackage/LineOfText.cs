@@ -8,7 +8,7 @@ public class LineOfTextComponent:ColumnComponent
         Console.WriteLine("Saving The Line of Text");
     }
 
-    public void edit()
+    public void edit(string text)
     {
         Console.WriteLine("Editing The Line of Text");
     }

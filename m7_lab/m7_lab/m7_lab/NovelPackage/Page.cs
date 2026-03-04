@@ -8,7 +8,7 @@ public class Page:NovelComponent
         Console.WriteLine("Saving The Page Components");
     }
 
-    public void edit()
+    public void edit(string text)
     {
         Console.WriteLine("Editing The Page Components");
     }
