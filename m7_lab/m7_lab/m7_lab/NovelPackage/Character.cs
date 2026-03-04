@@ -1,7 +1,7 @@
 namespace NovelPackage;
 public class Character : LineOfTextComponent
 {
-    string chara;
+    public string chara;
 
     public Character(string c)
     {

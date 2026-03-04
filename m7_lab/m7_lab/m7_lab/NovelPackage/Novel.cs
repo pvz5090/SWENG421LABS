@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 namespace NovelPackage;
 public class Novel : Component
 {
-    private List<NovelComponent> components;
+    public List<NovelComponent> components;
     
     public Novel()
     {

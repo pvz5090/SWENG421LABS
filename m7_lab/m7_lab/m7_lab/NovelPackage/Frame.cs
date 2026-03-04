@@ -1,7 +1,7 @@
 namespace NovelPackage;
 public class Frame:ColumnComponent
 {
-    private List<FrameComponent> components;
+    public List<FrameComponent> components;
 
     public Frame()
     {
