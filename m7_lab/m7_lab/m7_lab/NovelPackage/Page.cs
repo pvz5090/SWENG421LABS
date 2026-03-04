@@ -3,6 +3,10 @@ public class Page:NovelComponent
 {
     private List<PageComponent> components;
 
+    public Page()
+    {
+        components=new List<PageComponent>();
+    }
      public void save()
     {
         Console.WriteLine("Saving The Page Components");
