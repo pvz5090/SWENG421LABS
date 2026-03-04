@@ -1,14 +1,20 @@
+using System.Runtime.CompilerServices;
+
 namespace NovelPackage;
 public class Novel : Component
 {
-    private List<NovelComponent> component;
-
+    private List<NovelComponent> components;
+    
+    public Novel()
+    {
+        components=new List<NovelComponent>();
+    }
     public void save()
     {
         Console.WriteLine("Saving The Novel Components");
     }
 
-    public void edit()
+    public void edit(string text)
     {
         Console.WriteLine("Editing The Novel Components");
     }
@@ -25,7 +31,12 @@ public class Novel : Component
 
     public void view()
     {
-        Console.WriteLine("Viewing The Novel Components");
+        foreach ( NovelComponent item in components)
+        {
+            item.view();
+        }
+        
+        //Console.WriteLine("Viewing The Novel Components");
     }
 
 

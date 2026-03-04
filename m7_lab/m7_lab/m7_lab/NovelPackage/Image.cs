@@ -6,7 +6,7 @@ public class Image:LineOfTextComponent
         Console.WriteLine("Saving The Image");
     }
 
-    public void edit()
+    public void edit(string text)
     {
         Console.WriteLine("Editing The Image");
     }
@@ -23,6 +23,6 @@ public class Image:LineOfTextComponent
 
     public void view()
     {
-        Console.WriteLine("Viewing The Image");
+       // Console.WriteLine("Viewing The Image");
     }
 }

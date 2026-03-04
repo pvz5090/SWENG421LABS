@@ -1,14 +1,17 @@
 namespace NovelPackage;
 public class LineOfText:ColumnComponent
 {
-    private LineOfTextComponent component;
+    private List <LineOfTextComponent> component;
 
+    public LineOfText()
+    {
+    }
      public void save()
     {
         Console.WriteLine("Saving The Line of Text");
     }
 
-    public void edit()
+    public void edit(string text)
     {
         Console.WriteLine("Editing The Line of Text");
     }
@@ -25,6 +28,8 @@ public class LineOfText:ColumnComponent
 
     public void view()
     {
-        Console.WriteLine("Viewing The Line of Text");
+        component.view();
+        
+        //Console.WriteLine("Viewing The Line of Text");
     }
 }

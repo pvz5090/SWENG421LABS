@@ -1,16 +1,21 @@
 namespace NovelPackage;
 public class Character : LineOfTextComponent
 {
-    private char chara;
+    string chara;
 
-        public void save()
+    public Character(string c)
+    {
+        chara=c;
+    }
+    public void save()
     {
         Console.WriteLine("Saving The Character");
     }
 
-    public void edit()
+    public void edit(string text)
     {
         Console.WriteLine("Editing The Character");
+        this.chara = text;
     }
 
     public void retrieve()
@@ -25,6 +30,9 @@ public class Character : LineOfTextComponent
 
     public void view()
     {
-        Console.WriteLine("Viewing The Character");
+
+        Console.Write(chara.ToString());
+
+
     }
 }

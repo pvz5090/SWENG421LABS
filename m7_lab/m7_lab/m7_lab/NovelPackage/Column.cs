@@ -2,30 +2,40 @@ namespace NovelPackage;
 
 public class Column:FrameComponent
 {
-    public List<ColumnComponent> component;
+    private List<ColumnComponent> components;
 
-    public void delete()
+    public Column()
     {
-        throw new NotImplementedException();
+        components=new List<ColumnComponent>();
+    }
+        public void save()
+    {
+        Console.WriteLine("Saving The Column");
     }
 
-    public void edit()
+    public void edit(String str)
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Editing The Column");
     }
 
     public void retrieve()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Retreiving The Column");
     }
 
-    public void save()
+    public void delete()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Deleting The Column");
     }
 
     public void view()
     {
-        throw new NotImplementedException();
+        foreach ( ColumnComponent item in components)
+        {
+            item.view();
+        }
+        //Console.WriteLine("Viewing The Column");
     }
+
+
 }

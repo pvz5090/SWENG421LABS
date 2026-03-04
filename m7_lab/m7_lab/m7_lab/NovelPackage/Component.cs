@@ -4,7 +4,7 @@ namespace NovelPackage{
         public void save(); 
         public void retrieve();
         public void view();
-        public void edit();
+        public void edit(string text);
         public void delete();
     }
 } 
