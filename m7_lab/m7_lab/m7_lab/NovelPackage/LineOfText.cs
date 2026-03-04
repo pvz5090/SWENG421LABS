@@ -1,8 +1,12 @@
 namespace NovelPackage;
-public class LineOfTextComponent:ColumnComponent
+public class LineOfText:ColumnComponent
 {
     private LineOfTextComponent component;
 
+    public LineOfText(LineOfTextComponent lot)
+    {
+        component=lot;
+    }
      public void save()
     {
         Console.WriteLine("Saving The Line of Text");
