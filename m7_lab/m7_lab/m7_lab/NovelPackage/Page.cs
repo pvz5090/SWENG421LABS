@@ -1,7 +1,7 @@
 namespace NovelPackage;
 public class Page:NovelComponent
 {
-    private List<PageComponent> components;
+    public List<PageComponent> components;
 
     public Page()
     {
