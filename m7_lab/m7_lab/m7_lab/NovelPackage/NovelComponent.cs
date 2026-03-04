@@ -1,5 +1,5 @@
 namespace NovelPackage{ 
-    public interface NovelComponent: Component
+    public interface NovelComponent: AdminComponent
     {
    
 

@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 
 namespace NovelPackage;
-public class Novel : Component
+public class Novel : AdminComponent
 {
     public List<NovelComponent> components;
     

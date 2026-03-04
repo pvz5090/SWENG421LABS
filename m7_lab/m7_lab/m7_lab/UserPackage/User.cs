@@ -12,15 +12,8 @@ namespace UserPackage{
         }
         public void doStuff(Component component, string methodName, params object[] arguments)
         {
-        if (!componentInterface.IsAssignableFrom(component.GetType()))
-            throw new UnauthorizedAccessException("Permission denied.");
-
-        MethodInfo method = componentInterface.GetMethod(methodName);
-
-        if (method == null)
-            throw new UnauthorizedAccessException("Method not allowed.");
-
-        method.Invoke(component, arguments);
+            MethodInfo method = componentInterface.GetMethod(methodName);
+            method.Invoke(component, arguments);
         }
     }
 }
