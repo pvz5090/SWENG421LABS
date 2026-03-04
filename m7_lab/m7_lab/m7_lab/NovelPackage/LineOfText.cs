@@ -1,3 +1,5 @@
+using System.Reflection.PortableExecutable;
+
 namespace NovelPackage;
 public class LineOfText:ColumnComponent
 {
@@ -6,6 +8,7 @@ public class LineOfText:ColumnComponent
     public LineOfText()
     {
     }
+
      public void save()
     {
         Console.WriteLine("Saving The Line of Text");
@@ -14,6 +17,11 @@ public class LineOfText:ColumnComponent
     public void edit(string text)
     {
         Console.WriteLine("Editing The Line of Text");
+        component.Clear();
+        foreach (char c in text)
+        {
+            component.Add(new NovelPackage.Character(c.ToString()));
+        }
     }
 
     public void retrieve()
@@ -28,7 +36,10 @@ public class LineOfText:ColumnComponent
 
     public void view()
     {
-        component.view();
+        foreach (LineOfTextComponent lotc in component)
+        {
+            lotc.view();
+        }
         
         //Console.WriteLine("Viewing The Line of Text");
     }
