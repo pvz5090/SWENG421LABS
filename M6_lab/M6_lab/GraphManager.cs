@@ -33,19 +33,21 @@ namespace M6_lab
         /// if a vertex in the input list of vertices already exists in the graph, it updates the X and Y coordinates of the existing vertex,
         /// otherwise it adds the new vertex to the graph. The method does not modify edges in this implementation.
         /// </summary>
-        public void modify(int graph_id, List<Vertex> vertices, List<Edge> edges)
+        public void modify(Graph activeGraph, List<Vertex> modifiedVertices)
         {
-            Graph graph = listOfGraphs[graph_id]; 
-            List<Vertex> graphVertices = listOfGraphs[graph_id].getVertices();
+            List<Vertex> graphVertices = activeGraph.getVertices();
             var vertexList = graphVertices.ToDictionary(v => v.getVertexID());
-
-            foreach (var vertex in vertices) { 
+            if(modifiedVertices.Count == 2)
+            {
+                activeGraph.addEdge(new Edge(modifiedVertices[0], modifiedVertices[1]));
+            }
+            foreach (Vertex vertex in modifiedVertices) { 
                 int id = vertex.getVertexID();
                 if(vertexList.TryGetValue(id, out Vertex existingVertex)) //if vertex exists in graph -> modify existing X,Y 
                 {
                     existingVertex.setX(vertex.getX());
                     existingVertex.setY(vertex.getY());
-                }
+                } 
                 else
                 {
                     graphVertices.Add(vertex);
@@ -61,9 +63,9 @@ namespace M6_lab
         ///  <returns>
         /// the identifier graph_ID of the newly created graph in the list of graphs, which serves as its unique identifier (ID).
         /// </returns>
-        public Graph copy(Graph g)
+        public Graph copy(Graph oldGraph)
         {
-            Graph newGraph = g.Clone() as Graph; 
+            Graph newGraph = oldGraph.Clone() as Graph; 
             listOfGraphs.Add(newGraph);
 
             return newGraph;

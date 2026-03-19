@@ -21,18 +21,18 @@ internal class Graph :ICloneable
 
 
     //a Copy constructor that creates a new graph by Constructing  the vertices and edges from an existing graph
-    public Graph(Graph g)
+    public Graph(Graph oldGraph)
     {
         this.graph_ID = GraphManager.getNextGraphID();
         GraphManager.incrementNextGraphID(); 
         List<M6_lab.Vertex> listOfVertices = new List<M6_lab.Vertex>();
-		foreach (Vertex v in g.getVertices())
+		foreach (Vertex v in oldGraph.getVertices())
 			{
 				Vertex newVertex = new Vertex(v.getX(), v.getY());
 				this.listOfVertices.Add(newVertex);
         }
         List<M6_lab.Edge> listOfEdges = new List<M6_lab.Edge>();
-		foreach (Edge e in g.getEdges())
+		foreach (Edge e in oldGraph.getEdges())
         {
             this.listOfEdges.Add(e.Clone() as Edge);
         }

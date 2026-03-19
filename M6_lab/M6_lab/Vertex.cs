@@ -68,7 +68,7 @@ namespace M6_lab
             return vertex_ID;
         }
 
-        public void setID(int id) {vertex_ID = id;}
+        public void setVertexID(int id) {vertex_ID = id;}
 
         public override string ToString()
         {

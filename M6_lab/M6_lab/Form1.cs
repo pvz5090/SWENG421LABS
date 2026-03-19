@@ -73,13 +73,16 @@ namespace M6_lab
 
         private void GraphPanel_MouseUp(object sender, MouseEventArgs e)
         {
-            toVertex = new Vertex(e.X, e.Y);
-            activeGraph.addVertex(fromVertex);
-            activeGraph.addVertex(toVertex);
-            activeGraph.addEdge(new Edge(fromVertex, toVertex));
-
-            GraphPanel.Invalidate();
-            VerticesRefresh();
+            if (activeGraph != null)
+            {
+                toVertex = new Vertex(e.X, e.Y);
+                List<Vertex> addedVertices = new List<Vertex>();
+                addedVertices.Add(fromVertex);
+                addedVertices.Add(toVertex);
+                manager.modify(activeGraph, addedVertices); 
+                GraphPanel.Invalidate();
+                VerticesRefresh();
+            }
 
         }
 
@@ -94,8 +97,8 @@ namespace M6_lab
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Vertex selectedVertex = (Vertex)VerticesComboBox.SelectedItem;
-                selectedVertex.setX(int.Parse(userX.Text));
+                Vertex updatedVertex = (Vertex)VerticesComboBox.SelectedItem;
+                updatedVertex.setX(int.Parse(userX.Text));
                 GraphPanel.Invalidate();
             }
         }
