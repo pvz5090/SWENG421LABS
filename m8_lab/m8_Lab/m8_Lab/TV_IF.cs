@@ -8,7 +8,7 @@ namespace m8_Lab
 {
     internal interface TV_IF
     {
-        TV Replenish(string type, int budget);
+        TV_IF Replenish(string type, int budget);
         string GetType();
         string GetInfo();
         string GetBrand();

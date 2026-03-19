@@ -21,8 +21,8 @@ namespace m8_Lab
             Buyer b = new Buyer();
             Customer c = new Customer();
 
-            TV_IF tv3 = b.tv.Replenish("Sony", 500);
-            PrintTVInfo(tv3);
+            TV tv3 = b.tv.Replenish("Sony", 500); 
+            PrintTVInfo(tv3.getInfo());
 
             TV_IF tv4 = b.tv.Replenish("LG", 250);
             PrintTVInfo(tv4);
