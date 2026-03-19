@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace m8_Lab
 {
-    internal class Buyer
+    internal class Customer
     {
-        public TV tv;
+        public TV_IF tv;  
+        public Customer() { tv = new Middleman(); }
     }
 }

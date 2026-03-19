@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace m8_Lab
 {
-    internal class Middleman : TV, TV_IF
+    internal class Middleman : TV, TV_IF 
     {
-        public List<TV> tvTable;
+        public List<TV> tvTable; 
         private TV tv; 
 
         public Middleman()
@@ -21,23 +21,38 @@ namespace m8_Lab
             tvTable.Add(new Sony_Smart_TV());
             tvTable.Add(new Sony_UltraHD_TV());
             tvTable.Add(new LG_TV()); 
-            tvTable.Add(new LG_Smart_TV());
+            tvTable.Add(new LG_Smart_TV()); 
             tvTable.Add(new LG_UltraHD_TV());
             tv = new TV(); 
         }
         public string GetBrand()
         {
-            return "No Brand"; 
+            throw new NotImplementedException();
         }
 
         public string GetInfo()
         {
-            throw new NotImplementedException();
+            return tv.getInfo() + "\n";
         }
 
-        public TV Replenish(string type, int budget)
+        public TV_IF Replenish(string type, int budget)
         {
-            throw new NotImplementedException();
+            TV_IF kingTV = new TV();
+            foreach (TV tv in tvTable)
+            {
+                if (tv.getPrice() <= budget && kingTV.getPrice() < tv.getPrice())
+                {
+                    if (type == null)
+                        kingTV = tv;
+                    else
+                    {
+                        if (type.Equals(tv.GetType()))
+                            kingTV = tv;
+                    }
+
+                }
+            }
+            return kingTV;
         }
 
         string TV_IF.GetType()

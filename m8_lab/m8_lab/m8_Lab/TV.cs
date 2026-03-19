@@ -16,7 +16,7 @@ namespace m8_Lab
             MSRP = 200; 
         }
 
-        public TV replenish(string type, int budget)
+        public TV Replenish(string type, int budget)
         {
             TV kingTV = new TV(); 
             Middleman proxy = new Middleman(); 
