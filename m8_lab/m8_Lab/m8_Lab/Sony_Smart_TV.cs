@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace m8_Lab
 {
-    internal class Sony_Smart_TV
+    internal class Sony_Smart_TV: Sony_TV, Smart_TV_IF
     {
     }
 }

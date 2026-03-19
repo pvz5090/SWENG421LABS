@@ -16,7 +16,19 @@ namespace m8_Lab
 
         public TV Replenish(String type, int budget)
         {
-            //
+            if (type == "UltraHD_TV" && budget >= 480)
+            {
+                if (budget >= 480) { return new Sony_UltraHD_TV(); }
+                else { return null; }
+            }
+            else if (type == "Smart_TV" && budget >= 380)
+            {
+                return new Sony_Smart_TV();
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public String GetBrand()
