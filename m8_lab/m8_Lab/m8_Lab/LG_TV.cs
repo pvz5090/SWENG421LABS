@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace m8_Lab
 {
-    internal class LG_TV
+    internal class LG_TV : TV, TV_IF
     {
     }
 }
