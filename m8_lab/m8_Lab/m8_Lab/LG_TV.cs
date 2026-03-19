@@ -16,7 +16,36 @@ namespace m8_Lab
 
         public TV Replenish(String type, int budget)
         {
-            //
+            if (type == "UltraHD_TV")
+            {
+                if (budget >= 450)
+                {
+                    return new LG_UltraHD_TV();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else if (type == "Smart_TV")
+            {
+                if (budget >= 350)
+                {
+                    return new LG_Smart_TV();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else if (budget >= 250)
+            {
+                return new LG_TV();
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public String GetBrand()
