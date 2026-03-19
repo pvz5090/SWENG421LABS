@@ -22,7 +22,7 @@ namespace m8_Lab
             Customer c = new Customer();
 
             TV tv3 = b.tv.Replenish("Sony", 500); 
-            PrintTVInfo(tv3.GetInfo());
+            PrintTVInfo(tv3.getInfo());
 
             TV_IF tv4 = b.tv.Replenish("LG", 250);
             PrintTVInfo(tv4);
