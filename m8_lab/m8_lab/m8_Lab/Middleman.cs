@@ -32,17 +32,17 @@ namespace m8_Lab
 
         public string GetInfo()
         {
-            throw new NotImplementedException();
+            return tv.getInfo();
         }
 
         public TV Replenish(string type, int budget)
         {
-            throw new NotImplementedException();
+            return tv.replenish(type, budget);
         }
 
         string TV_IF.GetType()
         {
-            throw new NotImplementedException();
+            return tv.getType();
         }
     }
 }
