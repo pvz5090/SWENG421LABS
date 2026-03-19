@@ -14,5 +14,26 @@ namespace m8_Lab
         private double powerUsage;
         protected static String brand;
 
+        public TV Replenish(String type, int budget)
+        {
+            //
+        }
+
+        public String GetBrand()
+        {
+            return this.brand;
+        }
+
+        public String GetType()
+        {
+            return this.type;
+        }
+
+        public String GetInfo()
+
+        {
+
+        }
+
     }
 }
