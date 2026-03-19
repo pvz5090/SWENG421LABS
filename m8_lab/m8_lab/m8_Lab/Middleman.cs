@@ -10,9 +10,24 @@ namespace m8_Lab
     {
         public List<TV> tvTable;
         private TV tv; 
+
+        public Middleman()
+        {
+            tvTable = new List<TV>();
+            tvTable.Add(new TV());
+            tvTable.Add(new SmartTV());
+            tvTable.Add(new UltraHDTV());
+            tvTable.Add(new Sony_TV());
+            tvTable.Add(new Sony_Smart_TV());
+            tvTable.Add(new Sony_UltraHD_TV());
+            tvTable.Add(new LG_TV()); 
+            tvTable.Add(new LG_Smart_TV());
+            tvTable.Add(new LG_UltraHD_TV());
+            tv = new TV(); 
+        }
         public string GetBrand()
         {
-            throw new NotImplementedException();
+            return "No Brand"; 
         }
 
         public string GetInfo()
