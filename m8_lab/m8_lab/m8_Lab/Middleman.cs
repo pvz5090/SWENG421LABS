@@ -32,32 +32,17 @@ namespace m8_Lab
 
         public string GetInfo()
         {
-            return tv.getInfo() + "\n";
+            throw new NotImplementedException();
         }
 
-        public TV_IF Replenish(string type, int budget)
+        public TV Replenish(string type, int budget)
         {
-            TV_IF kingTV = new TV();
-            foreach (TV tv in tvTable)
-            {
-                if (tv.getPrice() <= budget && kingTV.getPrice() < tv.getPrice())
-                {
-                    if (type == null)
-                        kingTV = tv;
-                    else
-                    {
-                        if (type.Equals(tv.GetType()))
-                            kingTV = tv;
-                    }
-
-                }
-            }
-            return kingTV;
+            throw new NotImplementedException();
         }
 
         string TV_IF.GetType()
         {
-            throw new NotImplementedException();
+            return tv.getType();
         }
     }
 }
