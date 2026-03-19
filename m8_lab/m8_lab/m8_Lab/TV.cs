@@ -8,12 +8,17 @@ namespace m8_Lab
 {
     internal class TV
     {
-        public int MSRP;
-        public string type;
+        protected int MSRP;
+        protected string type;
+        
+        public TV()
+        {
+            MSRP = 200; 
+        }
 
         public TV replenish(string type, int budget)
         {
-            TV kingTV = null; 
+            TV kingTV = new TV(); 
             Middleman proxy = new Middleman(); 
             foreach(TV tv in proxy.tvTable)
             {
@@ -29,7 +34,7 @@ namespace m8_Lab
 
                 }
             }
-            return new TV(); 
+            return kingTV; 
         }
         public string getType() { return type; }
         public double getPrice() { return MSRP; }
@@ -42,11 +47,21 @@ namespace m8_Lab
 
         protected class SmartTV : TV
         {
-            public double
+            public SmartTV()
+            {
+                MSRP = 300;
+                type = "SmartTV"; 
+            }
+            public double getPowerUsage() { return 5.5; }
         }
-        protected class UltraTV: TV
+        protected class UltraHDTV: TV
         {
-
+            public UltraHDTV()
+            {
+                MSRP = 400;
+                type = "UltraHDTV"; 
+            }
+            public int getResolution() { return 2; }
         }
     }
 }
