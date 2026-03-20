@@ -8,13 +8,11 @@ namespace m8_Lab
 {
     internal class LG_TV : TV, TV_IF
     {
-        private int MSRP;
-        private String type;
-        private int resolution;
-        private double powerUsage;
-        protected static String brand;
+        private int MSRP = 250;
+        private string type = "TV";
+        protected static string brand = "LG";
 
-        public TV Replenish(String type, int budget)
+        public TV_IF Replenish(string type, int budget)
         {
             if (type == "UltraHD_TV")
             {
@@ -48,19 +46,24 @@ namespace m8_Lab
             }
         }
 
-        public String GetBrand()
+        public string GetBrand()
         {
-            return this.brand;
-        }   
-
-        public String GetType()
-        {
-            return this.type;
+            return brand;
         }
 
-        public String GetInfo()
-
+        public new string GetType()
         {
-            
+            return type;
         }
+
+        public new int GetPrice()
+        {
+            return MSRP;
+        }
+
+        public new string GetInfo()
+        {
+            return $"Price: {GetPrice()}\nType: {GetType()}\nBrand{GetBrand()}\n";
+        }
+    }
 }

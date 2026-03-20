@@ -8,6 +8,6 @@ namespace m8_Lab
 {
     internal interface UltraHD_TV_IF : TV_IF
     {
-        void GetResolution();
+        int GetResolution();
     }
 }

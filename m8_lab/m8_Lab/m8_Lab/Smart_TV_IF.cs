@@ -8,6 +8,6 @@ namespace m8_Lab
 {
     internal interface Smart_TV_IF: TV_IF
     {
-        void GetPowerUsage();
+        double GetPowerUsage();
     }
 }

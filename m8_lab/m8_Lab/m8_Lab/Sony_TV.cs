@@ -8,13 +8,16 @@ namespace m8_Lab
 {
     internal class Sony_TV : TV,TV_IF
     {
-        private int MSRP;
-        private String type;
-        private int resolution;
-        private double powerUsage;
-        protected static String brand;
+        private int MSRP = 280;
+        private string type;
+        protected static string brand;
 
-        public TV Replenish(String type, int budget)
+        public new int GetPrice()
+        {
+            return MSRP;
+        }
+
+        public TV_IF Replenish(string type, int budget)
         {
             if (type == "UltraHD_TV" )
             {
@@ -47,20 +50,24 @@ namespace m8_Lab
             }
         }
 
-        public String GetBrand()
+        public string GetBrand()
         {
-            return this.brand;
+            return brand;
         }
 
-        public String GetType()
+        public new string GetType()
         {
-            return this.type;
+            return type;
         }
 
-        public String GetInfo()
-
+        public new int GetPrice()
         {
+            return MSRP;
+        }
 
+        public new string GetInfo()
+        {
+            return $"Price: {GetPrice()}\nType: {GetType()}\nBrand{GetBrand()}\n";
         }
 
     }

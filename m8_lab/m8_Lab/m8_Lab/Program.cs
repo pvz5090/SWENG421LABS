@@ -4,7 +4,7 @@ namespace m8_Lab
 {
     class Program
     {
-        static void PrintTVInfo(TV_IF tv)
+        static void PrintTVInfo(TV tv)
         {
             if (tv == null)
             {
@@ -22,16 +22,16 @@ namespace m8_Lab
             Customer c = new Customer();
 
             TV tv3 = b.tv.Replenish("Sony", 500); 
-            PrintTVInfo(tv3.getInfo());
+            PrintTVInfo(tv3);
 
-            TV_IF tv4 = b.tv.Replenish("LG", 250);
+            TV tv4 = b.tv.Replenish("LG", 250);
             PrintTVInfo(tv4);
 
             TV_IF tv1 = c.tv.Replenish("Sony", 500);
-            PrintTVInfo(tv1);
+            PrintTVInfo((TV) tv1);
 
             TV_IF tv2 = c.tv.Replenish("LG", 250);
-            PrintTVInfo(tv2);
+            PrintTVInfo((TV) tv2);
         }
     }
 
