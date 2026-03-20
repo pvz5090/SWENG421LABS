@@ -8,32 +8,32 @@ namespace m8_Lab
 {
     internal class TV
     {
-        protected int MSRP;
-        protected string type;
-        
-        public TV()
-        {
-            MSRP = 200; 
-        }
+        protected int MSRP = 200;
+        protected string type = "TV";
 
-        public TV Replenish(string type, int budGet)
+        public TV Replenish(string type, int budget)
         {
             TV kingTV = new TV(); 
             Middleman proxy = new Middleman(); 
             foreach(TV tv in proxy.tvTable)
             {
-                if (tv.GetPrice() <= budGet && kingTV.GetPrice() < tv.GetPrice())
+                if (tv.GetPrice() <= budget && kingTV.GetPrice() < tv.GetPrice())
                 {
-                    if(type == null)
+                    if (type == null)
+                    {
                         kingTV = tv;
+                    }
                     else
                     {
                         if (type.Equals(tv.GetType()))
+                        {
                             kingTV = tv;
+                        }
                     }
 
                 }
             }
+            
             return kingTV; 
         }
         public string GetType() { return type; }
@@ -41,7 +41,7 @@ namespace m8_Lab
         public string GetInfo()
         {
             string str = "";
-            str += GetType() + "\n" + GetPrice() + "\n";
+            str += "Type: "+ GetType() + "\n" + "Price:" +GetPrice() + "\n";
             return str; 
         }
 

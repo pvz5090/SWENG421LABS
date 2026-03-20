@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,9 +10,14 @@ namespace m8_Lab
     internal class Sony_Smart_TV: Sony_TV, Smart_TV_IF
     {
         private int MSRP = 380;
+        private string type = "SmartTV";
         public new int GetPrice()
         {
             return MSRP; 
+        }
+        public new string GetType()
+        {
+            return type;
         }
 		public double GetPowerUsage()
         {

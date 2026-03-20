@@ -16,22 +16,34 @@ namespace m8_Lab
             }
 
         }
+        static void PrintTVIFInfo(TV_IF tv)
+        {
+            if (tv == null)
+            {
+                Console.WriteLine("TV is null (not within budget)");
+            }
+            else
+            {
+                Console.WriteLine(tv.GetInfo());
+            }
+
+        }
         static void Main(string[] args)
         {
             Buyer b = new Buyer();
             Customer c = new Customer();
 
-            TV tv3 = b.tv.Replenish("Sony", 500); 
+            TV tv3 = b.tv.Replenish("UltraHDTV", 500); 
             PrintTVInfo(tv3);
 
-            TV tv4 = b.tv.Replenish("LG", 250);
+            TV tv4 = b.tv.Replenish("UltraHDTV", 250);
             PrintTVInfo(tv4);
 
-            TV_IF tv1 = c.tv.Replenish("Sony", 500);
-            PrintTVInfo((TV) tv1);
+            TV_IF tv1 = c.tv.Replenish("SmartTV", 500);
+            PrintTVIFInfo(tv1);
 
-            TV_IF tv2 = c.tv.Replenish("LG", 250);
-            PrintTVInfo((TV) tv2);
+            TV_IF tv2 = c.tv.Replenish("SmartTV", 250);
+            PrintTVIFInfo(tv2);
         }
     }
 

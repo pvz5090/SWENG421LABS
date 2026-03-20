@@ -14,36 +14,23 @@ namespace m8_Lab
 
         public TV_IF Replenish(string type, int budget)
         {
-            if (type == "UltraHD_TV")
+            TV kingTV = new Sony_TV();
+            Middleman proxy = new Middleman();
+            foreach (TV tv in proxy.tvTable)
             {
-                if (budget >= 450)
+                if (tv.GetPrice() <= budget && kingTV.GetPrice() < tv.GetPrice())
                 {
-                    return new LG_UltraHD_TV();
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            else if (type == "Smart_TV")
-            {
-                if (budget >= 350)
-                {
-                    return new LG_Smart_TV();
-                }
-                else
-                {
-                    return null;
+                    if (type == null)
+                        kingTV = tv;
+                    else
+                    {
+                        if (type.Equals(tv.GetType()))
+                            kingTV = tv;
+                    }
+
                 }
             }
-            else if (budget >= 250)
-            {
-                return new LG_TV();
-            }
-            else
-            {
-                return null;
-            }
+            return kingTV as TV_IF;
         }
 
         public string GetBrand()
@@ -63,7 +50,7 @@ namespace m8_Lab
 
         public new string GetInfo()
         {
-            return $"Price: {GetPrice()}\nType: {GetType()}\nBrand{GetBrand()}\n";
+            return $"Price: {GetPrice()}\nType: {GetType()}\nBrand: {GetBrand()}\n";
         }
     }
 }

@@ -10,11 +10,16 @@ namespace m8_Lab
     internal class LG_Smart_TV : LG_TV, Smart_TV_IF
     {
         private int MSRP = 350;
+        private string type = "SmartTV";
         public new int GetPrice()
         {
             return MSRP;
         }
-		public double GetPowerUsage()
+        public new string GetType()
+        {
+            return type;
+        }
+        public double GetPowerUsage()
         {
             return 6.35;
         }

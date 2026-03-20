@@ -9,40 +9,28 @@ namespace m8_Lab
     internal class Sony_TV : TV,TV_IF
     {
         private int MSRP = 280;
-        private string type;
-        protected static string brand;
+        private string type = "TV";
+        protected static string brand = "Sony";
 
         public TV_IF Replenish(string type, int budget)
         {
-            if (type == "UltraHD_TV" )
+            TV kingTV = new Sony_TV();
+            Middleman proxy = new Middleman();
+            foreach (TV tv in proxy.tvTable)
             {
-                if (budget >= 480)
-                { 
-                    return new Sony_UltraHD_TV();
-                }
-                else 
+                if (tv.GetPrice() <= budget && kingTV.GetPrice() < tv.GetPrice())  
                 {
-                    return null;
+                    if (type == null)
+                        kingTV = tv;
+                    else
+                    {
+                        if (type.Equals(tv.GetType()))
+                            kingTV = tv;
+                    }
+
                 }
             }
-            else if (type == "Smart_TV" )
-            {
-                if (budget >= 380)
-                {
-                    return new Sony_Smart_TV();
-                }
-                else 
-                {
-                    return null;
-                }
-            }else if(budget >= 280)
-            {
-                return new Sony_TV();
-            }
-            else
-            {
-                return null;
-            }
+            return kingTV as TV_IF;
         }
 
         public string GetBrand()
@@ -62,7 +50,7 @@ namespace m8_Lab
 
         public new string GetInfo()
         {
-            return $"Price: {GetPrice()}\nType: {GetType()}\nBrand{GetBrand()}\n";
+            return $"Price: {GetPrice()}\nType: {GetType()}\nBrand: {GetBrand()}\n";
         }
 
     }

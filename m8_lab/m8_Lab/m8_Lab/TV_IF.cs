@@ -12,5 +12,7 @@ namespace m8_Lab
         string GetType();
         string GetInfo();
         string GetBrand();
+
+        double GetPrice(); 
     }
 }

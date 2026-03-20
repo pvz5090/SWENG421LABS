@@ -10,9 +10,14 @@ namespace m8_Lab
     internal class Sony_UltraHD_TV : Sony_TV, UltraHD_TV_IF
     {
         private int MSRP = 480;
+        private string type = "UltraHDTV";
         public new int GetPrice()
         {
             return MSRP; 
+        }
+        public new string GetType()
+        {
+            return type;
         }
         public int GetResolution()
         {

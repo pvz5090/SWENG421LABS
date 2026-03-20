@@ -8,6 +8,6 @@ namespace m8_Lab
 {
     internal class Buyer
     {
-        public TV tv;
+        public TV tv = new TV();
     }
 }

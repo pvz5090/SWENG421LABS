@@ -9,9 +9,14 @@ namespace m8_Lab
     internal class LG_UltraHD_TV : LG_TV, UltraHD_TV_IF
     {
         private int MSRP = 450;
+        private string type = "UltraHDTV";
         public new int GetPrice()
         {
             return MSRP;
+        }
+        public new string GetType()
+        {
+            return type;
         }
         public int GetResolution()
         {
