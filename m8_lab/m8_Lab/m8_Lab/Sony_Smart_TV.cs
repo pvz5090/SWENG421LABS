@@ -23,7 +23,7 @@ namespace m8_Lab
         }
         public new string GetInfo()
         {
-            return $"{base.GetInfo()}Power Usage: {GetPowerUsage()}"
+            return $"{base.GetInfo()}Power Usage: {GetPowerUsage()}";
         }
     }
 }

@@ -35,14 +35,14 @@ namespace m8_Lab
             throw new NotImplementedException();
         }
 
-        public TV Replenish(string type, int budget)
+        public TV_IF Replenish(string type, int budget)
         {
-            throw new NotImplementedException();
+            return (TV_IF) tv.Replenish(type, budget);
         }
 
         string TV_IF.GetType()
         {
-            return tv.getType();
+            return tv.GetType();
         }
     }
 }

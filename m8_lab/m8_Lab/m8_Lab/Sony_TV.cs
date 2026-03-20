@@ -12,11 +12,6 @@ namespace m8_Lab
         private string type;
         protected static string brand;
 
-        public new int GetPrice()
-        {
-            return MSRP;
-        }
-
         public TV_IF Replenish(string type, int budget)
         {
             if (type == "UltraHD_TV" )
