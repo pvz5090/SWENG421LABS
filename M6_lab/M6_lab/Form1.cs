@@ -97,8 +97,8 @@ namespace M6_lab
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Vertex selectedVertex = (Vertex)VerticesComboBox.SelectedItem;
-                selectedVertex.setX(int.Parse(userX.Text));
+                Vertex updatedVertex = (Vertex)VerticesComboBox.SelectedItem;
+                updatedVertex.setX(int.Parse(userX.Text));
                 GraphPanel.Invalidate();
             }
         }
