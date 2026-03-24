@@ -65,7 +65,7 @@ namespace m9_lab
             Console.WriteLine("Grinding Time set to " + seconds + "seconds.");
         }
 
-        public void setCoffee(CoffeeIF);
+        public void setCoffee(CoffeeIF order);
 
         public void setLEDnum(int num)
         { 
