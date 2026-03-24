@@ -17,5 +17,9 @@ namespace m9_lab
         }
 
         public abstract void run();
+
+        public double GetPrice() { 
+            return price;
+        }
     }
 }
