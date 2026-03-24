@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace m9_lab
 {
-    internal abstract class LoadableClasses : ProgramIF
+    internal abstract class LoadableClasses: ProgramIF
     {
         protected CoffeeMakingMachineEnviromentIF enviroment;
         protected double price;

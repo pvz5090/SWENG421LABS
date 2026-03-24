@@ -9,6 +9,5 @@ namespace m9_lab
     internal interface CondimentIF
     {
         public double getPrice();
-        public String getName();
     }
 }

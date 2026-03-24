@@ -45,18 +45,6 @@ namespace m9_lab
                 else
                     return condiment.getPrice() + cof.GetPrice(); 
             }
-
-             
-        }
-
-        public Coffee getCoffee()
-        {
-            return cof;
-        }
-
-        public CondimentIF getCondiment()
-        {
-            return condiment;
         }
     }
 }

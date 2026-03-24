@@ -16,10 +16,5 @@ namespace m9_lab
         {
             return this.price;
         }
-
-        public String getName()
-        {
-            return "Cream";
-        }
     }
 }
