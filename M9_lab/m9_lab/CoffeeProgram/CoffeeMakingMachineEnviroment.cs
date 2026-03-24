@@ -11,5 +11,9 @@ namespace m9_lab
         private CoffeeIF cif;
         private ProgramIF pif;
 
+        public ProgramIF setProgram(int num);
+
+        public ProgramIF setProgramIF(String programName);
+
     }
 }
