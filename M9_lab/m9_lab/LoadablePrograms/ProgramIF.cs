@@ -9,8 +9,7 @@ namespace m9_lab
     internal interface ProgramIF
     {
 
-        public void run();
-
         public void setEnviroment(CoffeeMakingMachineEnviromentIF env);
+        public void run();
     }
 }

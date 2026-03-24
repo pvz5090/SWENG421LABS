@@ -8,5 +8,14 @@ namespace m9_lab
 {
     internal abstract class LoadableClasses: ProgramIF
     {
+        protected CoffeeMakingMachineEnviromentIF enviroment;
+        public double price;
+
+        public void setEnviroment(CoffeeMakingMachineEnviromentIF enviroment)
+        {
+            this.enviroment = enviroment;
+        }
+
+        public abstract void run();
     }
 }

@@ -8,5 +8,12 @@ namespace m9_lab
 {
     internal class MochaProg : LoadableClasses
     {
+        public override void run()
+        {
+            enviroment.setLEDnum(1);
+            enviroment.setGrindingTime(8);
+            enviroment.setTemperature(150);
+            enviroment.setLEDnum(0);
+        }
     }
 }
