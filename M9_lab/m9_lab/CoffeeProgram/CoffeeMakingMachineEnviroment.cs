@@ -23,7 +23,7 @@ namespace m9_lab
 
         public double computePrice()
         {
-            return pif.getPrice() + cif.GetPrice();   
+            return pif.GetPrice() + cif.GetPrice();   
         }
 
 
