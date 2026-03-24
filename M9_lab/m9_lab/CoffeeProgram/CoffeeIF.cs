@@ -9,6 +9,6 @@ namespace m9_lab
     internal interface CoffeeIF
     {
 
-        public double getPrice();
+        public double GetPrice();
     }
 }
