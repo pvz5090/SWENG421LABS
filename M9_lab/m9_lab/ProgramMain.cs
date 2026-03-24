@@ -9,7 +9,7 @@ namespace m9_lab
             Console.WriteLine("Hello world");
 
             Cream cream = new Cream();
-            Chocholate chocholate = new Chocholate();
+            Chocalate chocholate = new Chocalate();
             Vanilla vanilla = new Vanilla();
 
             CoffeeMakingMachineEnviroment cme = new CoffeeMakingMachineEnviroment();
@@ -37,7 +37,7 @@ namespace m9_lab
             order2Base.addCondiment(chocholate);
 
             cme.setCoffee(order2Base);
-            cme.computePrice();
+            Console.WriteLine(cme.computePrice();)
 
 
         }
