@@ -13,7 +13,7 @@ namespace m9_lab
             enviroment.setLEDnum(1);
             enviroment.setGrindingTime(8);
             enviroment.setTemperature(150);
-            enviroment.setLEDnum(0);
+            enviroment.setLEDnum(-1);
         }
     }
 }
