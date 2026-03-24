@@ -23,7 +23,7 @@ namespace m9_lab
                     pif = new MochaProg();
                     break;
                 case 2:
-                    pif = new CappicinoProg();
+                    pif = new CappuccinoProg();
                     break;
                 default:
                     Console.WriteLine("Invalid program number. Please enter 1, 2, or 3.");
