@@ -8,6 +8,10 @@ namespace m9_lab
 {
     internal class MochaProg : LoadableClasses
     {
+        public MochaProg()
+        {
+            this.price = 4;
+        }
         public override void run()
         {
             enviroment.setLEDnum(1);

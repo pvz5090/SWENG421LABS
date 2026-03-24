@@ -8,6 +8,9 @@ namespace m9_lab
 {
     internal class EspressoProg:LoadableClasses
     {
+        public EspressoProg() {
+            this.price = 5;
+        }
         public override void run()
         {
             enviroment.setLEDnum(3);

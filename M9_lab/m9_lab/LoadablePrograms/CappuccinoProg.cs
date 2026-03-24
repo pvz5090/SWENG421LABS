@@ -8,6 +8,10 @@ namespace m9_lab
 {
     internal class CappuccinoProg:LoadableClasses
     {
+        public CappuccinoProg()
+        {
+            this.price = 3; 
+        } 
         public override void run()
         {
             enviroment.setLEDnum(2);
@@ -15,5 +19,6 @@ namespace m9_lab
             enviroment.setTemperature(140);
             enviroment.setLEDnum(-1);
         }
+        public double GetPrice() {  return price; }
     }
 }
