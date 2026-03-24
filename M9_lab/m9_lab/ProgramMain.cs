@@ -13,13 +13,34 @@ namespace m9_lab
             Vanilla vanilla = new Vanilla();
 
             CoffeeMakingMachineEnviroment cme = new CoffeeMakingMachineEnviroment();
-            =cme.setProgram(1);
+            cme.setProgram(1);
             cme.runProgram();
             Coffee order1Base = new Coffee();
-            order1Base.addCondiment(cream);
-            order1Base.addCondiment(vanilla);
+            order1Base.AddCondiment(cream);
+            order1Base.AddCondiment(vanilla);
 
+            Console.WriteLine("Mocha with:\n" );
+
+            Coffee comtents= order1Base
+            while (contents.)
+            { 
+
+            }
+/*
+Mocha with:
+
+Cream ×1
+Vanilla ×1
+
+Espresso with:
+
+Cream ×1
+Vanilla ×1
+Chocolate ×2
+*/
             cme.setCoffee(order1Base);
+
+
 
             cme.computePrice();
 
@@ -32,12 +53,14 @@ namespace m9_lab
             cme.setProgram(3);
             cme.runProgram();
             Coffee order2Base = new Coffee();
-            order2Base.addCondiment(cream);
-            order2Base.addCondiment(vanilla);
-            order2Base.addCondiment(chocholate);
+            order2Base.AddCondiment(cream);
+            order2Base.AddCondiment(vanilla);
+            order2Base.AddCondiment(chocholate);
 
             cme.setCoffee(order2Base);
-            Console.WriteLine(cme.computePrice();)
+            Console.WriteLine(cme.computePrice());
+
+
 
 
         }
