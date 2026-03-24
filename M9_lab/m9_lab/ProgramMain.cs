@@ -69,32 +69,7 @@ namespace m9_lab
             }
 
             Console.WriteLine("Total: " + cme.computePrice() ) ;
-
-
-/*
-Mocha with:
-
-Cream ×1
-Vanilla ×1
-
-Espresso with:
-
-Cream ×1
-Vanilla ×1
-Chocolate ×2
-*/
-
-
-
-
             cme.computePrice();
-
-
-
-
-
-
-
             cme.setProgram(3);
             cme.runProgram();
             Coffee order2Base = new Coffee();
@@ -104,10 +79,6 @@ Chocolate ×2
 
             cme.setCoffee(order2Base);
             Console.WriteLine(cme.computePrice());
-
-
-
-
         }
     }
 }
