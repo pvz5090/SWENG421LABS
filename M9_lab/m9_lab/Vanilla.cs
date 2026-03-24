@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace m9_lab
 {
-    internal class Vanilla
+    internal class Vanilla: CondimentIF
     {
     }
 }

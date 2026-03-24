@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace m9_lab
 {
-    internal abstract class LoadableClasses
+    internal abstract class LoadableClasses: ProgramIF
     {
     }
 }
