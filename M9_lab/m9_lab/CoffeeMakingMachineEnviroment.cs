@@ -8,5 +8,8 @@ namespace m9_lab
 {
     internal class CoffeeMakingMachineEnviroment : CoffeeMakingMachineEnviromentIF
     {
+        private CoffeeIF cif;
+        private ProgramIF pif;
+
     }
 }
