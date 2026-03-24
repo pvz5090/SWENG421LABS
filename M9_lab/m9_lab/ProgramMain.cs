@@ -21,9 +21,10 @@ namespace m9_lab
 
             Console.WriteLine("Mocha with:\n" );
 
-            Coffee comtents= order1Base
-            while (contents.)
+            Coffee contents = order1Base;
+            while (contents.getCoffee !=null && )
             { 
+                Console.WriteLine
 
             }
 /*
