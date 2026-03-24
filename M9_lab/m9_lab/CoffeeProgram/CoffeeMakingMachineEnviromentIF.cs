@@ -9,49 +9,40 @@ namespace m9_lab
     internal interface CoffeeMakingMachineEnviromentIF
     {
         public ProgramIF setProgram(int num)
-        { 
-           
-            if (num = 0)
+        {
+
+            if (num == 0)
             {
-                return RegularProg;
+                return new RegularProg();
             }
-            else if (num = 1)
-            { 
-                return MochaProg;
+            else if (num == 1)
+            {
+                return new MochaProg();
 
             }
-            else if (num = 2)
+            else if (num == 2)
             {
-                return CappiccinoProg;
+                return new CappuccinoProg();
             }
-            else 
+            else
             {
                 Console.WriteLine("Invalid program number. Please enter 0, 1, or 2. For a Coffee,Mocha,and Cappuccino plese enter 0, 1, or 2 respectively");
                 return null;
 
             }
+        }
 
-        public ProgramIF setProgramIF(String programName)
+        public ProgramIF SetProgramIF(String programName)
         {
-            if (programName = "Coffee")
-            {
-                return RegularProg;
-            }
-            else if (programName = "Mocha")
-            {
-                return MochaProg;
-
-            }
-            else if (programName = "Cappiccno")
-            {
-                return CappiccinoProg;
-            }
-            else
+            Type type = Type.GetType(programName);
+            if (type == null)
             {
                 Console.WriteLine("Invalid program name. Please enter Coffee, Mocha, or Cappicino.");
-                return null;
-
+                return null; 
             }
+
+            else
+                return (ProgramIF)Activator.CreateInstance(type);
         }
 
         public void setGrindingTime(int seconds)
@@ -62,7 +53,7 @@ namespace m9_lab
 
         public void setTemperature(int degree)
         {
-            Console.WriteLine("Grinding Time set to " + seconds + "seconds.");
+            Console.WriteLine("Temperature set to " + degree + " degrees.");
         }
 
         public void setCoffee(CoffeeIF order);

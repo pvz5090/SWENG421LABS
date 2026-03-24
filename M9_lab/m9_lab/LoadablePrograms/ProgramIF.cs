@@ -11,5 +11,7 @@ namespace m9_lab
 
         public void setEnviroment(CoffeeMakingMachineEnviromentIF env);
         public void run();
+
+        public double GetPrice(); 
     }
 }
