@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Net.Mail;
 
 namespace m9_lab
@@ -13,20 +14,63 @@ namespace m9_lab
             Vanilla vanilla = new Vanilla();
 
             CoffeeMakingMachineEnviroment cme = new CoffeeMakingMachineEnviroment();
-            cme.setProgram(1);
+            ProgramIF c = cme.setProgram(1);
+            c.setEnviroment(cme);
             cme.runProgram();
+
             Coffee order1Base = new Coffee();
             order1Base.AddCondiment(cream);
             order1Base.AddCondiment(vanilla);
+            
+            cme.setCoffee(order1Base);
 
             Console.WriteLine("Mocha with:\n" );
 
             Coffee contents = order1Base;
-            while (contents.getCoffee !=null && )
-            { 
-                Console.WriteLine
+
+            int ch = 0;
+            int cr = 0;
+            int va = 0;
+            while (contents.getCoffee() !=null && contents.getCondiment()!=null)
+            {
+                //Console.WriteLine(contents.getCondiment().getName());
+                switch (contents.getCondiment().getName())
+                {
+                    case "Chocalate":
+                        ch++;
+                        break;
+                    case "Cream":
+                        cr++;
+                        break;
+                    case "Vanilla":
+                        va++;
+                        break;
+                }
+
+                if (contents.getCoffee != null)
+                {
+                    contents= contents.getCoffee();
+                }
+
 
             }
+
+            if (va > 0)
+            { 
+                Console.WriteLine("Vanilla x"+va);
+            }
+            if (cr > 0) 
+            {
+                Console.WriteLine("Cream x"+cr);
+            }
+            if (ch > 0) 
+            {
+                Console.WriteLine("Chocolate x"+ch);
+            }
+
+            Console.WriteLine("Total: " + cme.computePrice() ) ;
+
+
 /*
 Mocha with:
 
@@ -39,7 +83,7 @@ Cream ×1
 Vanilla ×1
 Chocolate ×2
 */
-            cme.setCoffee(order1Base);
+
 
 
 
