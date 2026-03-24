@@ -8,5 +8,13 @@ namespace m9_lab
 {
     internal class Cream:CondimentIF
     {
+        private double price = 0.25;
+
+        //defualt constructor
+
+        public double getPrice()
+        {
+            return this.price;
+        }
     }
 }

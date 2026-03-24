@@ -8,5 +8,14 @@ namespace m9_lab
 {
     internal class Chocalate:CondimentIF
     {
+
+        private double price = 1.0;
+
+        //defualt constructor
+
+        public double getPrice()
+        {
+            return this.price;
+        }
     }
 }

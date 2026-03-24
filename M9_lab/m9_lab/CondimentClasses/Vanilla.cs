@@ -8,5 +8,13 @@ namespace m9_lab
 {
     internal class Vanilla: CondimentIF
     {
+        private double price = 0.5;
+
+        //defualt constructor
+
+        public double getPrice()
+        {
+            return this.price;
+        }
     }
 }
