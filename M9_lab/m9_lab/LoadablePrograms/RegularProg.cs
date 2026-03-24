@@ -8,6 +8,10 @@ namespace m9_lab
 {
     internal class RegularProg:LoadableClasses
     {
+        public RegularProg()
+        {
+            this.price = 2; 
+        }
         public override void run()
         {
             enviroment.setLEDnum(0);
