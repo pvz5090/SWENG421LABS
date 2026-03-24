@@ -25,6 +25,8 @@ namespace m9_lab
                 case 2:
                     pif = new CappuccinoProg();
                     break;
+                case 3:
+                    pif = new EspressoProg(); break;
                 default:
                     Console.WriteLine("Invalid program number. Please enter 1, 2, or 3.");
                     return null;

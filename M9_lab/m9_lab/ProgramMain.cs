@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Net.Mail;
 
@@ -7,33 +8,58 @@ namespace m9_lab
     {
         static void Main()
         {
-            Console.WriteLine("Hello world");
-
             Cream cream = new Cream();
-            Chocalate chocholate = new Chocalate();
+            Chocalate chocolate = new Chocalate();
             Vanilla vanilla = new Vanilla();
 
             CoffeeMakingMachineEnviroment cme = new CoffeeMakingMachineEnviroment();
             ProgramIF c = cme.setProgram(1);
-            c.setEnviroment(cme);
+            c.setEnviroment(cme); 
             cme.runProgram();
+            Console.WriteLine();
+          
 
             Coffee order1Base = new Coffee();
             order1Base.AddCondiment(cream);
             order1Base.AddCondiment(vanilla);
-            
+
             cme.setCoffee(order1Base);
 
-            Console.WriteLine("Mocha with:\n" );
+            Console.WriteLine("Mocha with:");
+            PrintCondiments(order1Base);
 
-            Coffee contents = order1Base;
+            Console.WriteLine("Price: " + cme.computePrice());
+
+            Coffee order2Base = new Coffee();
+            order2Base.AddCondiment(cream);
+            order2Base.AddCondiment(vanilla);
+            order2Base.AddCondiment(chocolate);
+            order2Base.AddCondiment(chocolate);
+
+            cme.setCoffee(order2Base);
+
+            Console.WriteLine();
+            c = cme.setProgram(3);
+            c.setEnviroment(cme);
+            cme.runProgram();
+
+            Console.WriteLine();
+            Console.WriteLine("Espresso with:");
+            PrintCondiments(order2Base);
+
+            Console.WriteLine("Price: " + cme.computePrice());
+        }
+
+        static void PrintCondiments(Coffee coffee)
+        {
+            Coffee contents = coffee;
 
             int ch = 0;
             int cr = 0;
             int va = 0;
-            while (contents.getCoffee() !=null && contents.getCondiment()!=null)
+
+            while (contents != null && contents.getCondiment() != null)
             {
-                //Console.WriteLine(contents.getCondiment().getName());
                 switch (contents.getCondiment().getName())
                 {
                     case "Chocalate":
@@ -47,38 +73,17 @@ namespace m9_lab
                         break;
                 }
 
-                if (contents.getCoffee != null)
-                {
-                    contents= contents.getCoffee();
-                }
-
-
+                contents = contents.getCoffee();
             }
+
+            if (cr > 0)
+                Console.WriteLine($"Cream ×{cr}");
 
             if (va > 0)
-            { 
-                Console.WriteLine("Vanilla x"+va);
-            }
-            if (cr > 0) 
-            {
-                Console.WriteLine("Cream x"+cr);
-            }
-            if (ch > 0) 
-            {
-                Console.WriteLine("Chocolate x"+ch);
-            }
+                Console.WriteLine($"Vanilla ×{va}");
 
-            Console.WriteLine("Total: " + cme.computePrice() ) ;
-            cme.computePrice();
-            cme.setProgram(3);
-            cme.runProgram();
-            Coffee order2Base = new Coffee();
-            order2Base.AddCondiment(cream);
-            order2Base.AddCondiment(vanilla);
-            order2Base.AddCondiment(chocholate);
-
-            cme.setCoffee(order2Base);
-            Console.WriteLine(cme.computePrice());
+            if (ch > 0)
+                Console.WriteLine($"Chocolate ×{ch}");
         }
     }
 }
