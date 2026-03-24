@@ -13,7 +13,7 @@ namespace m9_lab
             Vanilla vanilla = new Vanilla();
 
             CoffeeMakingMachineEnviroment cme = new CoffeeMakingMachineEnviroment();
-            cme.setProgram("Mocha");
+            =cme.setProgram(1);
             cme.runProgram();
             Coffee order1Base = new Coffee();
             order1Base.addCondiment(cream);
@@ -29,7 +29,7 @@ namespace m9_lab
 
 
 
-            cme.setProgram("Espresso");
+            cme.setProgram(3);
             cme.runProgram();
             Coffee order2Base = new Coffee();
             order2Base.addCondiment(cream);
