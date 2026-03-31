@@ -13,7 +13,7 @@ namespace m10_lab.Employees
         public CEO(List<WorkerIF> subordinates, WorkerIF? superior, string name) : base(subordinates, null, name)
         {    
         }
-        public void seeDanger()
+        public new void SeeDanger()
         {
             List<Decision> decs = new List<Decision>();
             foreach(Manager m in _subordinates)

@@ -9,14 +9,14 @@ namespace m10_lab.Employees
     internal class Manager: Worker, UpperManagementIF 
     {
         private Worker informedBy;
-        public Manager(List<Manager> subordinates, WorkerIF? superior, string name) : base(subordinates, null, name)
+        public Manager(List<WorkerIF> subordinates, WorkerIF? superior, string name) : base(subordinates, null, name)
         {
 
         }
         public void SeeDanger()
         {
-            LowerManagementIF reporter = informedBy;
-            reporter.ProvideInfo();
+            string str = ((LowerManagementIF)informedBy).ProvideInfo();
+            Console.WriteLine(str);
             ContactBoss();
         }
 
@@ -28,6 +28,6 @@ namespace m10_lab.Employees
         {
             return new Decision();
         }
-        public void addInformer(WorkerIF informer) { informedBy = informer; }
+        public void addInformer(Worker informer) { informedBy = informer; }
     }
 }

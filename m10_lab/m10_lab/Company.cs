@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace m10_lab
 {
-    internal interface UpperManagementIF: LowerManagementIF
-    { }
+    internal class Company
+    {
+        List<WorkerIF> employees; 
+    }
 }
