@@ -35,7 +35,7 @@ namespace m10_lab.Employees
             {
                 foreach (Worker s in this._subordinates)
                 {
-                    s.fixIt();//solve the problem
+                    s.FixIt();//solve the problem
                 }
                 superior.seeDanger();//report to superiot the problem
             }
