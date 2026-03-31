@@ -2,11 +2,11 @@ using System.Transactions;
 
 namespace m10_lab
 {
-    public class Supervisor : Worker, LowerManagementIF
+    public class Supervisor : Worker, LowerManagementIF, ProvidesInfoIF
     {
         private UpperManagementIF _superior;
 
-        public Supervisor(List<Worker> subordinates, UpperManagementIF superior, string name) : base(subordinates, superior, name)
+        public Supervisor(UpperManagementIF superior, string name) : base(superior, name)
         {
             _superior = superior;
         }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace m10_lab.Employees
 {
-    internal class Manager: Worker, UpperManagementIF 
+    internal class Manager: Worker, UpperManagementIF
     {
         private Worker informedBy;
-        public Manager(List<WorkerIF> subordinates, WorkerIF? superior, string name) : base(subordinates, null, name)
+        public Manager(WorkerIF? superior, string name) : base(superior, name)
         {
 
         }
@@ -24,10 +24,10 @@ namespace m10_lab.Employees
         {
             _superior.SeeDanger(); 
         }
-        public Decision suggestedDecision()
+        public Decision SuggestedDecision()
         {
             return new Decision();
         }
-        public void addInformer(Worker informer) { informedBy = informer; }
+        public void AddInformer(Worker informer) { informedBy = informer; }
     }
 }
