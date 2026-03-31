@@ -20,9 +20,9 @@ namespace m10_lab
             throw new NotImplementedException();
         }
 
-        public string ProvideInfo()
+        public String provideInfo()
         {
-            return "INFO";
+            return ("Information from " + this._name);
         }
     }
 

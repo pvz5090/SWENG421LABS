@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace m10_lab.Employees
 {
-    internal class ProjectLeader : LowerManagementIF
+    internal class ProjectLeader :Worker, LowerManagementIF
     {
 
         private UpperManagementIF superior;
@@ -18,9 +18,9 @@ namespace m10_lab.Employees
             superior = sup;
         }
 
-        public string provideInfo()
-        { 
-        
+        public String provideInfo()
+        {
+            return ("Information from " + this._name);
         }
 
         public void seeDanger()

@@ -2,9 +2,9 @@
 {
     public abstract class Employee : WorkerIF
     {
-        private List<WorkerIF> _subordinates = new List<WorkerIF>();
-        private WorkerIF? _superior = null;
-        private string _name;
+        protected List<WorkerIF> _subordinates = new List<WorkerIF>();
+        protected WorkerIF? _superior = null;
+        protected string _name;
         public Employee(List<WorkerIF> subordinates, WorkerIF? superior, string name)
         {
             _subordinates = subordinates;
