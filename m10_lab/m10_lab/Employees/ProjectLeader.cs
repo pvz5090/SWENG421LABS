@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace m10_lab.Employees
 {
-    internal class ProjectLeader : LowerManagementIF
+    internal class ProjectLeader : LowerManagementIF,Worker
     {
 
         private UpperManagementIF superior;
@@ -20,18 +20,22 @@ namespace m10_lab.Employees
 
         public string provideInfo()
         { 
-        
+            return "Infomation from "+this.GetName();
         }
 
         public void seeDanger()
-        {
+        {   
             if (superior == null)
             {
                 Console.WriteLine("No superior to report to.");
             }
             else
             {
-                superior.seeDanger();
+                foreach (Worker s in subordinates)
+                {
+                    s.fixIt();//solve the problem
+                }
+                superior.seeDanger();//report to superiot the problem
             }
         }
     }
