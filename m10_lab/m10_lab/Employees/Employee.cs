@@ -19,6 +19,7 @@
             {
                 s.Evacuate();
             }
+
             Console.WriteLine("The person " + this._name + " has evacuated.");
         }
 
