@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace m10_lab
+namespace m10_lab.EmployeeIFs
 {
-    internal interface UpperManagementIF: LowerManagementIF
-    { }
+    internal class ProvidesInfoIF
+    {
+        public string ProvideInfo();
+    }
 }

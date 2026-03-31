@@ -2,22 +2,33 @@ using System.Transactions;
 
 namespace m10_lab
 {
-    public class Supervisor : Worker, LowerManagementIF
+    public class Supervisor : Worker, LowerManagementIF, ProvidesInfoIF
     {
-        private UpperManagement _superior;
+        private UpperManagementIF _superior;
 
-        public Supervisor(List<Worker> subordinates, UpperManagement? superior, string name)
+        public Supervisor(UpperManagementIF superior, string name) : base(superior, name)
         {
             _superior = superior;
         }
-        public void Evacuate()
+        public string ProvideInfo()
         {
-            throw new NotImplementedException();
+            return ("Information from " + this._name);
         }
 
         public void SeeDanger()
-        {
-            throw new NotImplementedException();
+        {   
+            if (_superior == null)
+            {
+                Console.WriteLine("No superior to report to.");
+            }
+            else
+            {
+                foreach (Worker s in this._subordinates)
+                {
+                    s.FixIt();//solve the problem
+                }
+                _superior.SeeDanger();//report to superiot the problem
+            }
         }
 
         public String provideInfo()

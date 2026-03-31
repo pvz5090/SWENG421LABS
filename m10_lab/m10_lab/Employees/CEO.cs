@@ -10,15 +10,15 @@ namespace m10_lab.Employees
     internal class CEO: Employee, BossIF
     {
         private Decision decision; 
-        public CEO(List<WorkerIF> subordinates, WorkerIF? superior, string name) : base(subordinates, null, name)
+        public CEO(WorkerIF? superior, string name) : base(null, name)
         {    
         }
-        public void seeDanger()
+        public new void SeeDanger()
         {
             List<Decision> decs = new List<Decision>();
             foreach(Manager m in _subordinates)
             {
-                decs.Add(m.suggestedDecision());
+                decs.Add(m.SuggestedDecision());
             }
             decision = grant(decs);
             decision.doIt();

@@ -4,5 +4,6 @@
     {
         public void SeeDanger();
         public void Evacuate();
+        public void AddSubordinate(WorkerIF employee);
     }
 }

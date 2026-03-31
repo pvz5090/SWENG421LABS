@@ -6,11 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace m10_lab.Employees
+namespace m10_lab
 {
     internal class Worker: Employee
     {
-        public Worker(List<WorkerIF> subordinates, LowerManagementIF? superior, string name): base (subordinates, superior, name) 
+        public Worker(LowerManagementIF? superior, string name): base (superior, name) 
         {
         }
 

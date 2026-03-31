@@ -5,10 +5,12 @@
         protected List<WorkerIF> _subordinates = new List<WorkerIF>();
         protected WorkerIF? _superior = null;
         protected string _name;
-        public Employee(List<WorkerIF> subordinates, WorkerIF? superior, string name)
+        public Employee(WorkerIF? superior, string name)
         {
-            _subordinates = subordinates;
-            _superior = superior;
+            if (superior != null)
+            {
+                this.AddSuperior(superior);
+            }
             _name = name;
         }
         public void Evacuate()
@@ -33,12 +35,12 @@
             return _name;
         }
 
-        public void AddSuperior(Employee employee)
+        public void AddSuperior(WorkerIF employee)
         {
             _superior = employee;
             employee.AddSubordinate(this);
         }
-        protected void AddSubordinate(Employee employee)
+        public void AddSubordinate(WorkerIF employee)
         {
             _subordinates.Add(employee);
         }
