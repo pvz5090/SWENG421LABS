@@ -8,14 +8,16 @@ using System.Xml.Linq;
 
 namespace m10_lab.Employees
 {
-    internal class ProjectLeader : LowerManagementIF,Worker
+    internal class ProjectLeader : Worker,LowerManagementIF
     {
 
         private UpperManagementIF superior;
 
-        public ProjectLeader(List<Worker> subordinates, UpperManagementIF sup, string name) 
+        public ProjectLeader(List<WorkerIF> subordinates, UpperManagementIF sup, string name) : base(subordinates, sup, name)
         {
             superior = sup;
+            this._subordinates = subordinates;
+            this.SetName(name);
         }
 
         public string provideInfo()
@@ -31,7 +33,7 @@ namespace m10_lab.Employees
             }
             else
             {
-                foreach (Worker s in subordinates)
+                foreach (Worker s in this._subordinates)
                 {
                     s.fixIt();//solve the problem
                 }
