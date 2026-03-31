@@ -25,7 +25,7 @@ namespace m10_lab.Employees
             return ("Information from " + this._name);
         }
 
-        public void seeDanger()
+        public void SeeDanger()
         {   
             if (superior == null)
             {
@@ -37,7 +37,7 @@ namespace m10_lab.Employees
                 {
                     s.FixIt();//solve the problem
                 }
-                superior.seeDanger();//report to superiot the problem
+                superior.SeeDanger();//report to superiot the problem
             }
         }
     }
