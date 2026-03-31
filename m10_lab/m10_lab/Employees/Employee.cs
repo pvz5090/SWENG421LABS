@@ -40,7 +40,7 @@
             _superior = employee;
             employee.AddSubordinate(this);
         }
-        protected void AddSubordinate(WorkerIF employee)
+        public void AddSubordinate(WorkerIF employee)
         {
             _subordinates.Add(employee);
         }

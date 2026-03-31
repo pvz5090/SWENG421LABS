@@ -8,19 +8,17 @@ using System.Xml.Linq;
 
 namespace m10_lab.Employees
 {
-    internal class ProjectLeader : Worker,LowerManagementIF
+    internal class ProjectLeader : Worker, LowerManagementIF, ProvidesInfoIF
     {
 
         private UpperManagementIF superior;
 
-        public ProjectLeader(List<WorkerIF> subordinates, UpperManagementIF sup, string name) : base(subordinates, sup, name)
+        public ProjectLeader(UpperManagementIF sup, string name) : base(sup, name)
         {
             superior = sup;
-            this._subordinates = subordinates;
-            this.SetName(name);
         }
 
-        public string provideInfo()
+        public string ProvideInfo()
         {
             return ("Information from " + this._name);
         }
