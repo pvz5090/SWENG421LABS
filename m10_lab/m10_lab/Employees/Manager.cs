@@ -8,14 +8,15 @@ namespace m10_lab.Employees
 {
     internal class Manager: Worker, UpperManagementIF
     {
+        private CEO _superior;
         private Worker informedBy;
-        public Manager(WorkerIF? superior, string name) : base(superior, name)
+        public Manager(CEO superior, string name) : base(superior, name)
         {
-
+            _superior = superior;
         }
         public void SeeDanger()
         {
-            string str = ((LowerManagementIF)informedBy).ProvideInfo();
+            string str = ((ProvidesInfoIF)informedBy).ProvideInfo();
             Console.WriteLine(str);
             ContactBoss();
         }

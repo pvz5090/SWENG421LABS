@@ -19,7 +19,7 @@
             {
                 s.Evacuate();
             }
-            Evacuate();
+            Console.WriteLine("The person " + this._name + " has evacuated.");
         }
 
         public void SeeDanger()
