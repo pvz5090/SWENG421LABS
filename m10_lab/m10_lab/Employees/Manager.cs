@@ -8,7 +8,7 @@ namespace m10_lab.Employees
 {
     internal class Manager: Worker, UpperManagementIF 
     {
-        private Worker informedBy;
+        private LowerManagementIF informedBy;
         public Manager(List<Manager> subordinates, WorkerIF? superior, string name) : base(subordinates, null, name)
         {
 
@@ -28,6 +28,6 @@ namespace m10_lab.Employees
         {
             return new Decision();
         }
-        public void addInformer(WorkerIF informer) { informedBy = informer; }
+        public void addInformer(LowerManagementIF informer) { informedBy = informer; }
     }
 }

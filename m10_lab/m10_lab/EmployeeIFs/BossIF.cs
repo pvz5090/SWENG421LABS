@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace m10_lab.EmployeeIFs
 {
-    internal interface BossIF: UpperManagement
+    internal interface BossIF: UpperManagementIF
     {
     }
 }

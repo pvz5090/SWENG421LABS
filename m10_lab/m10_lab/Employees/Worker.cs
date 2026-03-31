@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace m10_lab.Employees
+namespace m10_lab
 {
     internal class Worker: Employee
     {

@@ -7,9 +7,5 @@ using System.Threading.Tasks;
 namespace m10_lab
 {
     internal interface UpperManagementIF: LowerManagementIF
-    {
-
-        
-
-    }
+    { }
 }
