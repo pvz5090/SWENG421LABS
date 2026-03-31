@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace m10_lab.EmployeeIFs
 {
-    internal class ProvidesInfoIF
+    internal interface ProvidesInfoIF
     {
         public string ProvideInfo();
     }
