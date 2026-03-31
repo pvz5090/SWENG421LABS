@@ -22,7 +22,7 @@ namespace m10_lab.Employees
 
         public string provideInfo()
         { 
-            return "Infomation from "+this.GetName();
+        
         }
 
         public void seeDanger()
