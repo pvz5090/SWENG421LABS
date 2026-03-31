@@ -10,22 +10,18 @@ namespace m10_lab.Employees
 {
     internal class Worker: Employee
     {
-        private _superior LowerManagementIF;
-        public Worker(List<WorkerIF> subordinates, LowerManagementIF? superior, string name)
+        public Worker(List<WorkerIF> subordinates, LowerManagementIF? superior, string name): base (subordinates, superior, name) 
         {
-            _subordinates = subordinates;
-            _superior = superior;
-            _name = name;
         }
 
         public void SeeDanger()
         {
-
+            _superior.SeeDanger(); 
         }
 
         public void FixIt()
         {
-
+            Console.WriteLine("The person" + this._name + " is fixing it"); 
         }
     }
 }

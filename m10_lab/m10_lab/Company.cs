@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace m10_lab.EmployeeIFs
+namespace m10_lab
 {
-    internal interface BossIF: UpperManagementIF
+    internal class Company
     {
+        List<WorkerIF> employees; 
     }
 }
