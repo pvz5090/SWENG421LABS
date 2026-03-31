@@ -5,5 +5,7 @@
         public void SeeDanger();
         public void Evacuate();
         public void AddSubordinate(WorkerIF employee);
+        public string GetName();
+        List<WorkerIF> GetSubordinates();
     }
 }

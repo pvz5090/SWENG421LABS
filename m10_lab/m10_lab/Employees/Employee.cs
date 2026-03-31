@@ -15,14 +15,16 @@
         }
         public void Evacuate()
         {
-            foreach (WorkerIF s in _subordinates)
+            if (_superior == null)
             {
-                s.Evacuate();
+                EvacuationQueue.Instance.BuildLevels(this);
+                EvacuationQueue.Instance.EvacuateAll(); 
             }
-
-            Console.WriteLine("The person " + this._name + " has evacuated.");
         }
-
+        public List<WorkerIF> GetSubordinates()
+        {
+            return _subordinates;
+        } 
         public void SeeDanger()
         {
             throw new NotImplementedException();
