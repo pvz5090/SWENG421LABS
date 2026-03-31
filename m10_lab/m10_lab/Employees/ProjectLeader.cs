@@ -11,11 +11,11 @@ namespace m10_lab.Employees
     internal class ProjectLeader : Worker, LowerManagementIF, ProvidesInfoIF
     {
 
-        private UpperManagementIF superior;
+        private UpperManagementIF _superior;
 
         public ProjectLeader(UpperManagementIF sup, string name) : base(sup, name)
         {
-            superior = sup;
+            _superior = sup;
         }
 
         public string ProvideInfo()
@@ -25,7 +25,7 @@ namespace m10_lab.Employees
 
         public void SeeDanger()
         {   
-            if (superior == null)
+            if (_superior == null)
             {
                 Console.WriteLine("No superior to report to.");
             }
@@ -35,7 +35,7 @@ namespace m10_lab.Employees
                 {
                     s.FixIt();//solve the problem
                 }
-                superior.SeeDanger();//report to superiot the problem
+                _superior.SeeDanger();//report to superiot the problem
             }
         }
     }
