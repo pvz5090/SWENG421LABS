@@ -1,4 +1,5 @@
-﻿using System;
+﻿using m10_lab.EmployeeIFs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

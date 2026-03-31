@@ -2,7 +2,7 @@ using System.Transactions;
 
 namespace m10_lab
 {
-    public class Supervisor : Worker, LowerManagement
+    public class Supervisor : Worker, LowerManagementIF
     {
         private UpperManagement _superior;
 
