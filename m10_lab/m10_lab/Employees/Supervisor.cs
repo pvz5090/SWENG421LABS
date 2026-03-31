@@ -1,3 +1,4 @@
+using m10_lab.Employees;
 using System.Transactions;
 
 namespace m10_lab
@@ -27,7 +28,7 @@ namespace m10_lab
                 {
                     s.FixIt();//solve the problem
                 }
-                _superior.AddInformer(this);
+                ((Manager)_superior).AddInformer(this);
                 _superior.SeeDanger();//report to superiot the problem
             }
         }
