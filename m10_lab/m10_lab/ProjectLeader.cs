@@ -12,7 +12,7 @@ namespace m10_lab
 
         private UpperManagementIF superior;
 
-        public ProjectLeader(List<Worker> subordinates, UpperManagementIF sup, string name) : base(subordinates, sup, name)
+        public ProjectLeader(List<Worker> subordinates, UpperManagementIF sup, string name) 
         {
             superior = sup;
         }
@@ -23,7 +23,15 @@ namespace m10_lab
         }
 
         public void seeDanger()
-        { 
+        {
+            if (superior == null)
+            {
+                Console.WriteLine("No superior to report to.");
+            }
+            else
+            {
+                superior.seeDanger();
+            }
         }
     }
 }
