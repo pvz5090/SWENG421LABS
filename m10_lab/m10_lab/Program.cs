@@ -19,7 +19,7 @@ Chuck leads: Joe, Sam, Greg
 Denise leads: Amy, Wil, Adam
  */
 
-CEO Steve = new CEO("Steve");
+CEO Steve = new CEO(null, "Steve");
     //emplyees under Steve
 
     Manager Bob = new Manager( Steve, "Bob");

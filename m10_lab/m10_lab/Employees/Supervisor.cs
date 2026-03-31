@@ -1,6 +1,6 @@
 using System.Transactions;
 
-namespace m10_lab
+namespace m10_lab.Employees
 {
     internal class Supervisor : Worker, LowerManagementIF, ProvidesInfoIF
     {
@@ -27,6 +27,7 @@ namespace m10_lab
                 {
                     s.FixIt();//solve the problem
                 }
+               ((Manager)_superior).AddSubordinate(this);
                 _superior.SeeDanger();//report to superiot the problem
             }
         }

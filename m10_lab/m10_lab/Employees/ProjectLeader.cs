@@ -35,7 +35,8 @@ namespace m10_lab.Employees
                 {
                     s.FixIt();//solve the problem
                 }
-                superior.SeeDanger();//report to superior the problem
+                ((Manager)_superior).AddSubordinate(this);
+                _superior.SeeDanger();//report to superior the problem
             }
         }
     }
