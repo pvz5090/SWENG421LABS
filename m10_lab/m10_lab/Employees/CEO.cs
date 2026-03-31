@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace m10_lab.Employees
 {
-    internal class CEO: Employee, Boss
+    internal class CEO: Employee, BossIF
     {
         private Decision decision; 
         public CEO(List<WorkerIF> subordinates, WorkerIF? superior, string name) : base(subordinates, null, name)
