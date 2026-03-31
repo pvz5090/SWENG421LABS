@@ -51,12 +51,12 @@
 
         public void EvacuateAll()
         {
-            // reverse order: bottom → top
+            // Print BFS traversal in reverse order (from bottom to top)
             for (int i = _levels.Count - 1; i >= 0; i--)
             {
                 foreach (WorkerIF worker in _levels[i])
                 {
-                    Console.WriteLine(worker.GetName());
+                    Console.WriteLine($"The person {worker.GetName()} has evacuated.");
                 }
             }
         }
