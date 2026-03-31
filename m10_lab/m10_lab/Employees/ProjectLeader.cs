@@ -21,8 +21,8 @@ namespace m10_lab.Employees
         }
 
         public string provideInfo()
-        { 
-        
+        {
+            return ("Information from " + this._name);
         }
 
         public void seeDanger()
