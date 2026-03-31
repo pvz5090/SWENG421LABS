@@ -27,6 +27,7 @@ namespace m10_lab
                 {
                     s.FixIt();//solve the problem
                 }
+                _superior.AddInformer(this);
                 _superior.SeeDanger();//report to superiot the problem
             }
         }
