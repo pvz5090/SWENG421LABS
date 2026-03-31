@@ -19,7 +19,7 @@ Chuck leads: Joe, Sam, Greg
 Denise leads: Amy, Wil, Adam
  */
 
-CEO Steve = new CEO("Steve");
+CEO Steve = new CEO(null,"Steve");
     //emplyees under Steve
 
     Manager Bob = new Manager( Steve, "Bob");
@@ -51,6 +51,8 @@ CEO Steve = new CEO("Steve");
             Worker Amy = new Worker( Denise, "Amy");
             Worker Wil = new Worker( Denise, "Wil");
             Worker Adam = new Worker( Denise, "Adam");
+
+John.SeeDanger(); // John sees danger and reports to Jack, who reports to Bob, who reports to Steve
 
 
 
