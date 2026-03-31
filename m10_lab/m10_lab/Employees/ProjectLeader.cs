@@ -37,7 +37,7 @@ namespace m10_lab.Employees
                 {
                     s.FixIt();//solve the problem
                 }
-                superior.SeeDanger();//report to superiot the problem
+                superior.SeeDanger();//report to superior the problem
             }
         }
     }
