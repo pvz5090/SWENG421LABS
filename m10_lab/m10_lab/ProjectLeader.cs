@@ -7,12 +7,12 @@ using System.Xml.Linq;
 
 namespace m10_lab
 {
-    internal class ProjectLeader : Employee
+    internal class ProjectLeader : LowerManagementIF
     {
 
         private UpperManagementIF superior;
 
-        public ProjectLeader(List<Worker> subordinates, LowerManagement sup, string name) : base(subordinates, sup, name)
+        public ProjectLeader(List<Worker> subordinates, UpperManagementIF sup, string name) : base(subordinates, sup, name)
         {
             superior = sup;
         }

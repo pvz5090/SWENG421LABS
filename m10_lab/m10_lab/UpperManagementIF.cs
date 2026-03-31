@@ -9,6 +9,6 @@ namespace m10_lab
     internal interface UpperManagementIF: LowerManagementIF
     {
 
-
+        //marker interface, no methods
     }
 }
