@@ -19,31 +19,38 @@ Chuck leads: Joe, Sam, Greg
 Denise leads: Amy, Wil, Adam
  */
 
-Worker John = new Worker(null, null, "John");
-Worker Mary = new Worker(null, null, "Mary");
-Worker Jane = new Worker(null, null, "Jane");
-List<Worker> JackSub =new List<Worker>() { John, Mary, Jane };
+CEO Steve = new CEO("Steve");
+
+Manager Bob = new Manager( Steve, "Bob");
+Manager Rachel = new Manager(Steve, "Rachel");
+
 Supervisor Jack = new Supervisor(JackSub, null, "Jack");
+Supervisor Jeff = new Supervisor(JeffSub, null, "Jeff");
+ProjectLeader Chuck = new ProjectLeader(ChuckSub, null, "Chuck");
+ProjectLeader Denise = new ProjectLeader(DeniseSub, null, "Denise");
+
+
+
+Worker John = new Worker( null, "John");
+Worker Mary = new Worker( null, "Mary");
+Worker Jane = new Worker(null, "Jane");
 
 
 Worker Rob = new Worker(null, null, "Rob");
 Worker Ed = new Worker(null, null, "Ed");
 Worker Rick = new Worker(null, null, "Rick");
-List<Worker> JeffSub = new List<Worker>() { Rob, Ed, Rick };
-Supervisor Jeff = new Supervisor(JeffSub, null, "Jeff");
+
+List<Worker> BobSub = new List<Worker>() { Jack, Jeff };
+
+
 
 Worker Joe = new Worker(null, null, "Joe");
 Worker Sam = new Worker(null, null, "Sam");
 Worker Greg = new Worker(null, null, "Greg");
-List<Worker> ChuckSub = new List<Worker>() { Joe, Sam, Greg };
-ProjectLeader Chuck = new ProjectLeader(ChuckSub, null, "Chuck");
 
 Worker Amy = new Worker(null, null, "Amy");
 Worker Wil = new Worker(null, null, "Wil");
 Worker Adam = new Worker(null, null, "Adam");
-List<Worker> DeniseSub = new List<Worker>() { Amy, Wil, Adam };
-ProjectLeader Denise = new ProjectLeader(DeniseSub, null, "Denise");
 
 
 
-CEO Steve = new CEO("Steve");
