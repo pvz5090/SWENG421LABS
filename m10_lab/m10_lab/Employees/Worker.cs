@@ -21,7 +21,7 @@ namespace m10_lab
 
         public void FixIt()
         {
-            Console.WriteLine("The person" + this._name + " is fixing it"); 
+            Console.WriteLine("The person " + this._name + " is fixing it"); 
         }
     }
 }

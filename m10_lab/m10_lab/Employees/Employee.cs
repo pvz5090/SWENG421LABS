@@ -2,7 +2,7 @@
 {
     public abstract class Employee : WorkerIF
     {
-        public List<WorkerIF> _subordinates = new List<WorkerIF>();
+        protected List<WorkerIF> _subordinates = new List<WorkerIF>();
         protected WorkerIF? _superior = null;
         protected string _name;
         public Employee(WorkerIF? superior, string name)
@@ -15,14 +15,16 @@
         }
         public void Evacuate()
         {
-            foreach (Worker outer in _subordinates)
+            if (_superior == null)
             {
-                foreach(Worker inner in outer._subordinates)
-                    inner.Evacuate();
-            } 
-            Console.WriteLine("The person " + this._name + " has evacuated.");
+                EvacuationQueue.Instance.BuildLevels(this);
+                EvacuationQueue.Instance.EvacuateAll(); 
+            }
         }
-
+        public List<WorkerIF> GetSubordinates()
+        {
+            return _subordinates;
+        } 
         public void SeeDanger()
         {
             throw new NotImplementedException();

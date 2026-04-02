@@ -1,6 +1,7 @@
+using m10_lab.Employees;
 using System.Transactions;
 
-namespace m10_lab.Employees
+namespace m10_lab
 {
     internal class Supervisor : Worker, LowerManagementIF, ProvidesInfoIF
     {
@@ -27,7 +28,7 @@ namespace m10_lab.Employees
                 {
                     s.FixIt();//solve the problem
                 }
-               ((Manager)_superior).AddSubordinate(this);
+                ((Manager)_superior).AddInformer(this);
                 _superior.SeeDanger();//report to superiot the problem
             }
         }
