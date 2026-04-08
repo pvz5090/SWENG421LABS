@@ -14,7 +14,19 @@ namespace M11_LAB.StatePackage
         protected CalculatorEnviroment env;
         public int minusEvent = 1;
         public int plusEvent = 2;
-        public CalculatorState GetNextState(int eventID, CalculatorEnviroment)
+        public CalculatorState GetNextState(int input, CalculatorEnviroment)
+        {
+
+
+        }
+
+        public CalculatorState GetNextState(double input, CalculatorEnviroment)
+        {
+
+
+        }
+
+        public CalculatorState GetNextState(BinaryOperator input, CalculatorEnviroment)
         {
 
 

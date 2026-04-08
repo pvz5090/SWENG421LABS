@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace M11_LAB.OperationPackage
 {
-    internal class Minus: BinaryOperatorIF
+    internal interface UnaryOperatorIF:OperatorIF
     {
 
-        public double ExecuteOperation(CalculatorEnviroment state)
-        {
-            return state.GetFirstNumber() - state.GetSecondNumber();;
-        }
+        public double ExecuteOperation(CalculatorEnviroment state);
+        
+        
+        
     }
 }

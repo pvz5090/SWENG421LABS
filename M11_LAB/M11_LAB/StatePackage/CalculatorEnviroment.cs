@@ -8,9 +8,9 @@ namespace M11_LAB.StatePackage
 {
     internal class CalculatorEnviroment
     {
-        private double firstNumber;
-        private double previousOperator;
-        private double SecondNumber;
+        private string firstNumber;
+        private OperaterIF previousOperator;
+        private string SecondNumber;
         CalculatorState currentState;
 
         public void compute()
