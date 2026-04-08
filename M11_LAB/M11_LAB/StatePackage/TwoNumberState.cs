@@ -8,5 +8,10 @@ namespace M11_LAB.StatePackage
 {
     internal class TwoNumberState
     {
+
+        public CalculatorState GetNextState(int eventID)
+        {
+
+        }
     }
 }

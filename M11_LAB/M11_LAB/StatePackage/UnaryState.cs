@@ -8,5 +8,9 @@ namespace M11_LAB.StatePackage
 {
     internal class UnaryState
     {
+        public CalculatorState GetNextState(int eventID)
+        { 
+        
+        }
     }
 }

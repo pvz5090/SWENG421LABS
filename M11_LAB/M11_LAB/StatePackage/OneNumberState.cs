@@ -8,5 +8,11 @@ namespace M11_LAB.StatePackage
 {
     internal class OneNumberState
     {
+
+
+        public CalculatorState GetNextState(int eventID)
+        {
+
+        }
     }
 }
