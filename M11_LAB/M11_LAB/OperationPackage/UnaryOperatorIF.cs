@@ -10,7 +10,6 @@ namespace M11_LAB.OperationPackage
     internal interface UnaryOperatorIF:OperatorIF
     {
 
-        public double ExecuteOperation(CalculatorEnviroment state);
         
         
         
