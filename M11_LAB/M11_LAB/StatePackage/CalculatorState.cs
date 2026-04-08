@@ -13,6 +13,7 @@ namespace M11_LAB.StatePackage
         protected OperatorState oper;
         protected CalculatorEnviroment env;
         public int minusEvent = 1;
+        public int plusEvent = 2;
 
         private create()
         { 
