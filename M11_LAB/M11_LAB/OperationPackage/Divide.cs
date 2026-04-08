@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace M11_LAB.OperationPackage
 {
-    internal class Divide
+    internal class Divide: OperatorIF
     {
 
         public double ExecuteOperation(CalculatorState state)

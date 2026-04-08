@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace M11_LAB.OperationPackage
 {
-    internal class Plus
+    internal class Plus:OperatorIF
     {
 
         public double ExecuteOperation(CalculatorState state)
