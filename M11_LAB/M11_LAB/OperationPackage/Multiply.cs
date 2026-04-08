@@ -9,9 +9,9 @@ namespace M11_LAB.OperationPackage
 {
     internal class Multiply: OperatorIF
     {
-        public double ExecuteOperation(CalculatorState state)
+        public double ExecuteOperation(CalculatorEnviroment state)
         {
-            return 0;
+            return state.GetFirstNumber() * state.GetSecondNumber();
         }
 
     }

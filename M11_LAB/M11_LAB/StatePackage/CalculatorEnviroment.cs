@@ -11,10 +11,10 @@ namespace M11_LAB.StatePackage
         private double firstNumber;
         private double previousOperator;
         private double SecondNumber;
+        Boolean validEquation = false;
 
 
-
-        public double getFirstNumber()
+        public double GetFirstNumber()
         {
             return this.firstNumber;
 
@@ -25,7 +25,7 @@ namespace M11_LAB.StatePackage
             this.firstNumber = num;
         }
 
-        public double getPreviousOperator()
+        public double GetPreviousOperator()
         {
             return previousOperator;
         }
@@ -35,7 +35,7 @@ namespace M11_LAB.StatePackage
             this.previousOperator = num;
         }
 
-        public double getSecondNumber()
+        public double GetSecondNumber()
         {
             return this.SecondNumber;
         }
