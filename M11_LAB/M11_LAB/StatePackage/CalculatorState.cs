@@ -14,26 +14,10 @@ namespace M11_LAB.StatePackage
         protected CalculatorEnviroment env;
         public int minusEvent = 1;
         public int plusEvent = 2;
-
-        private create()
-        { 
-        }
-
-        protected enter()
-        { 
-        }
-
-        protected static CalculatorState nextState(int eventID)
-        {
-        
-        }
-
-        public CalculatorState start()
-        { 
-        }
-
-        public CalculatorState ProcessEvent(int eventID)
+        public CalculatorState GetNextState(int eventID, CalculatorEnviroment)
         {
 
+
         }
+    }
 }

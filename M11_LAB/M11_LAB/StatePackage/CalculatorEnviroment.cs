@@ -11,9 +11,12 @@ namespace M11_LAB.StatePackage
         private double firstNumber;
         private double previousOperator;
         private double SecondNumber;
-        Boolean validEquation = false;
+        CalculatorState currentState;
 
-
+        public void compute()
+        {
+            currentState = currentState.GetNextState(Console.ReadLine(), this);
+        }
         public double GetFirstNumber()
         {
             return this.firstNumber;
