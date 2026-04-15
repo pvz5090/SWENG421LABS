@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace M11_Lab.OperationPackage
+namespace M11_LAB.OperationPackage
 {
     internal class Sign : UnaryOperatorIF 
     {

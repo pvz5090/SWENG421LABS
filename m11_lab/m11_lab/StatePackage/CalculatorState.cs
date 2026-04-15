@@ -20,10 +20,10 @@ namespace M11_LAB.StatePackage
 
         protected CalculatorEnviroment env;
         public abstract CalculatorState GetNextState(string input);
-      \
 
 
         public abstract CalculatorState GetNextState(UnaryOperatorIF input);
+        public abstract CalculatorState GetNextState(BinaryOperatorIF input);
 
 
         public abstract CalculatorState GetNextState(CE input);
