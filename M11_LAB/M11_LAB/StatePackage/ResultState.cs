@@ -54,10 +54,10 @@ namespace M11_LAB.StatePackage
         public CalculatorState GetNextState(C input, CalculatorEnviroment)
         {
 
-                env.setPreviousOperator(input);
+                env.setPreviousOperator(null);
                 env.setFirstNumber(0);
-    
-                env.setSecondNumber(0);//this right?
+                env.setSecondNumber(null);//this right?
+
                 return oneNumberState;
 
         }
