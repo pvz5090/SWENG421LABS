@@ -11,7 +11,7 @@ namespace M11_LAB.StatePackage
     {
         public override CalculatorState GetNextState(String input)
         {
-            env.setSecondNumber(input);
+            env.setSecondNumber(double.Parse(input));
             return twoNumberState;
         }
 
