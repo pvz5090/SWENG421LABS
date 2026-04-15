@@ -15,26 +15,32 @@ namespace M11_LAB.StatePackage
 
         public CalculatorState GetNextState(BinaryOperatorIF input)
         {
+            input.ExecuteOperation(env);
             return resultState;
         }
 
         public CalculatorState GetNextState(UnaryOperatorIF input)
         {
+            input.ExecuteOperation(env);
             return unaryState;
         }
 
         public CalculatorState GetNextState(CE input)
         {
+
+            input.ExecuteOperation(env);
             return twoNumberState;
         }
 
         public CalculatorState GetNextState(C input)
         {
+            input.ExecuteOperation(env);
             return oneNumberState;
         }
 
         public CalculatorState GetNextState(Equal input)
         {
+            input.ExecuteOperation(env);
             return resultState;
         }
     }
