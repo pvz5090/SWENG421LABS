@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace M11_LAB.OperationPackage
 {
-    internal class C:UnaryOperatorIF
+    internal class C
     {
     }
 }
