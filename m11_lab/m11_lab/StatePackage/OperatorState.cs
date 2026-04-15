@@ -9,36 +9,36 @@ namespace M11_LAB.StatePackage
 {
     internal class OperatorState:CalculatorState
     {
-        public CalculatorState GetNextState(string input)
+        public override CalculatorState GetNextState(String input)
         {
             env.setSecondNumber(input);
             return twoNumberState;
         }
 
-        public CalculatorState GetNextState(BinaryOperatorIF input)
+        public override CalculatorState GetNextState(BinaryOperatorIF input)
         {
             return operatorState;
         }
 
-        public CalculatorState GetNextState(UnaryOperatorIF input)
+        public override CalculatorState GetNextState(UnaryOperatorIF input)
         {
             input.ExecuteOperation(env);
             return unaryState;
         }
 
-        public CalculatorState GetNextState(CE input)
+        public override CalculatorState GetNextState(CE input)
         {
             input.ExecuteOperation(env);
             return twoNumberState;
         }
 
-        public CalculatorState GetNextState(C input)
+        public override CalculatorState GetNextState(C input)
         {
             input.ExecuteOperation(env);
             return oneNumberState;
         }
 
-        public CalculatorState GetNextState(Equal input)
+        public override CalculatorState GetNextState(Equal input)
         {
             input.ExecuteOperation(env);
             return resultState;
