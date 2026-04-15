@@ -55,6 +55,14 @@ namespace M11_LAB.StatePackage
         {
             this.SecondNumber = num.ToString();
         }
+        public double getResult()
+        {
+            return double.Parse(resultNumber);
+        }
+        public void setResult(double? num)
+        {
+            this.resultNumber = num.ToString(); 
+        }
 
     }//end class
 }//end namespace
