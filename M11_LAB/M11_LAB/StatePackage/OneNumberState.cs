@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace M11_LAB.StatePackage
 {
-    internal class OneNumberState
+    internal class OneNumberState : CalculatorState
     {
 
 

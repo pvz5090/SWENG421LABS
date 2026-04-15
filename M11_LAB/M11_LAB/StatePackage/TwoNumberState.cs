@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace M11_LAB.StatePackage
 {
-    internal class TwoNumberState
+    internal class TwoNumberState:CalculatorState
     {
 
         public CalculatorState GetNextState(int eventID)
