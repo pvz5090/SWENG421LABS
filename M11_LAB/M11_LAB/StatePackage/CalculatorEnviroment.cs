@@ -14,39 +14,43 @@ namespace M11_LAB.StatePackage
         private string SecondNumber;
         CalculatorState currentState;
 
-        public void compute()
+        public CalculatorState getCurrentState()
         {
-            currentState = currentState.GetNextState(Console.ReadLine(), this);
+            return currentState;
+        }
+        public void setCurrentState(CalculatorState state)
+        {
+            this.currentState = state; 
         }
         public double GetFirstNumber()
         {
-            return this.firstNumber;
+            return double.Parse(this.firstNumber);
 
         }
 
         public void setFirstNumber(double num)
         {
-            this.firstNumber = num;
+            this.firstNumber = num.ToString();
         }
 
-        public double GetPreviousOperator()
+        public OperatorIF GetPreviousOperator()
         {
             return previousOperator;
         }
 
-        public void setPreviousOperator(double num)
+        public void setPreviousOperator(OperatorIF op)
         {
-            this.previousOperator = num;
+            this.previousOperator = op;
         }
 
         public double GetSecondNumber()
         {
-            return this.SecondNumber;
+            return double.Parse(this.SecondNumber);
         }
 
         public void setSecondNumber(double num)
         {
-            this.SecondNumber = num;
+            this.SecondNumber = num.ToString();
         }
 
     }//end class
