@@ -10,13 +10,13 @@ namespace M11_LAB.StatePackage
     internal class CalculatorEnviroment
     {
         private String firstNumber = "0";
-        private String? SecondNumber;
-        private String? resultNumber;
-        private String? display;
+        private String? SecondNumber = null;
+        private String? resultNumber = null;
+        private String? display = null;
 
-        private OperatorIF previousOperator;
+        private OperatorIF previousOperator = null;
 
-        CalculatorState currentState;
+        CalculatorState currentState = new OneNumberState();
 
         public CalculatorState getCurrentState()
         {
