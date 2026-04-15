@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using M11_LAB.OperationPackage;
 
 namespace M11_LAB.StatePackage
 {
     internal class OneNumberState : CalculatorState
     {
-        public CalculatorState GetNextState(string input)
+        public override CalculatorState GetNextState(string input)
         {
             if(input == "backspace"){
                 env.PopFromFirstNumber();
@@ -20,32 +21,32 @@ namespace M11_LAB.StatePackage
             return oneNumberState;
         }
 
-        public CalculatorState GetNextState(BinaryOperatorIF input)
+        public override CalculatorState GetNextState(BinaryOperatorIF input)
         {
             env.setPreviousOperator(input);
 
             return operatorState;
         }
 
-        public CalculatorState GetNextState(UnaryOperatorIF input)
+        public override CalculatorState GetNextState(UnaryOperatorIF input)
         {
             input.ExecuteOperation(env);
             return resultState;
         }
 
-        public CalculatorState GetNextState(CE input)
+        public override CalculatorState GetNextState(CE input)
         {
             input.ExecuteOperation(env);
             return oneNumberState;
         }
 
-        public CalculatorState GetNextState(C input)
+        public override CalculatorState GetNextState(C input)
         {
             input.ExecuteOperation(env);
             return oneNumberState;
         }
 
-        public CalculatorState GetNextState(Equal input)
+        public override CalculatorState GetNextState(Equal input)
         {
             input.ExecuteOperation(env);
             return resultState;

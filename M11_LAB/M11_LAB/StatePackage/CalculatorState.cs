@@ -19,7 +19,7 @@ namespace M11_LAB.StatePackage
         protected TwoNumberState twoNumberState;
 
         protected CalculatorEnviroment env;
-        public abstract CalculatorState GetNextState(int input);
+        public abstract CalculatorState GetNextState(String input);
 
 
         public abstract CalculatorState GetNextState(BinaryOperatorIF input);

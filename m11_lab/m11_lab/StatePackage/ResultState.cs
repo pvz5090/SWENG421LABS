@@ -12,7 +12,7 @@ namespace M11_LAB.StatePackage
     internal class ResultState: CalculatorState
     {
 
-        public CalculatorState GetNextState(int input, CalculatorEnviroment)
+        public override CalculatorState GetNextState(int input, CalculatorEnviroment)
         {
             //PreviousOPerator Does nopthing,stay same
             //SecondNumber does nothing, stay sane
@@ -23,7 +23,7 @@ namespace M11_LAB.StatePackage
 
         }
 
-        public CalculatorState GetNextState(BinaryOperatorIF input, CalculatorEnviroment)
+        public override CalculatorState GetNextState(BinaryOperatorIF input, CalculatorEnviroment)
         {
             //PreviousOPerator Does nopthing,stay same
             //SecondNumber does nothing, stay sane
@@ -34,7 +34,7 @@ namespace M11_LAB.StatePackage
 
         }
 
-        public CalculatorState GetNextState(UnaryOperatorIF input, CalculatorEnviroment)
+        public override CalculatorState GetNextState(UnaryOperatorIF input, CalculatorEnviroment)
         {
             //uses result as first number and computes new result by using input operator 
             input.ExecuteOperation(env)
@@ -44,7 +44,7 @@ namespace M11_LAB.StatePackage
             return resultState;
         }
 
-        public CalculatorState GetNextState(CE input, CalculatorEnviroment)
+        public override CalculatorState GetNextState(CE input, CalculatorEnviroment)
         {
             //sets first number to 0, preserves previous operator and second number
 
@@ -55,7 +55,7 @@ namespace M11_LAB.StatePackage
             return oneNumberState;
         }
 
-        public CalculatorState GetNextState(C input, CalculatorEnviroment)
+        public override CalculatorState GetNextState(C input, CalculatorEnviroment)
         {
             //sets first number to 0, second number to null and previous operator to null
 
@@ -66,7 +66,7 @@ namespace M11_LAB.StatePackage
                 return oneNumberState;
 
         }
-        public CalculatorState GetNextState(Equal input, CalculatorEnviroment)
+        public override CalculatorState GetNextState(Equal input, CalculatorEnviroment)
         {
             //takes result as first number and computes new result by using previous operator and second number
 
