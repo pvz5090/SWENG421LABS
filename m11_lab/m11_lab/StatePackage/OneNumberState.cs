@@ -11,7 +11,7 @@ namespace M11_LAB.StatePackage
         public CalculatorState GetNextState(string input)
         {
             if(input == "backspace"){
-                env.PopFromFirstNumber(input);
+                env.PopFromFirstNumber();
             }
             else {
                 env.PushToFirstNumber(input);
