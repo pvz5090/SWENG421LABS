@@ -9,9 +9,12 @@ namespace M11_LAB.StatePackage
 {
     internal class CalculatorEnviroment
     {
-        private string firstNumber;
+        private String firstNumber;
+        private String SecondNumber;
+        private String resultNumber;
+
         private OperatorIF previousOperator;
-        private string SecondNumber;
+
         CalculatorState currentState;
 
         public void compute()
@@ -24,7 +27,7 @@ namespace M11_LAB.StatePackage
 
         }
 
-        public void setFirstNumber(double num)
+        public void setFirstNumber(double? num)
         {
             this.firstNumber = num;
         }
@@ -34,7 +37,7 @@ namespace M11_LAB.StatePackage
             return previousOperator;
         }
 
-        public void setPreviousOperator(double num)
+        public void setPreviousOperator(double? num)
         {
             this.previousOperator = num;
         }
@@ -44,7 +47,7 @@ namespace M11_LAB.StatePackage
             return this.SecondNumber;
         }
 
-        public void setSecondNumber(double num)
+        public void setSecondNumber(double? num)
         {
             this.SecondNumber = num;
         }

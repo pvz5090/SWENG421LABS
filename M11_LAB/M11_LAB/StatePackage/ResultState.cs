@@ -25,14 +25,19 @@ namespace M11_LAB.StatePackage
 
         public CalculatorState GetNextState(BinaryOperatorIF input, CalculatorEnviroment)
         {
+            //PreviousOPerator Does nopthing,stay same
+            //SecondNumber does nothing, stay sane
+            env.setSecondNumber((double) null);
 
+            env.setPreviousOperator(input);
+            return operatorState;
 
         }
 
         public CalculatorState GetNextState(UnaryOperatorIF input, CalculatorEnviroment)
         {
-
-
+            env.setSecondNumber(    )
+            return resultState;
         }
 
         public CalculatorState GetNextState(CE input, CalculatorEnviroment)
