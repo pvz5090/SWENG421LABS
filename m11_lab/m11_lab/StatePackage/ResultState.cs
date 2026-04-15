@@ -36,19 +36,29 @@ namespace M11_LAB.StatePackage
 
         public CalculatorState GetNextState(UnaryOperatorIF input, CalculatorEnviroment)
         {
-            env.setSecondNumber(    )
+            env.setPreviousOperator(input);
+            env.setFirstNumber();//this Right
+
             return resultState;
         }
 
         public CalculatorState GetNextState(CE input, CalculatorEnviroment)
         {
+            //env.setPreviousOperator(); no change
+            //env.setSecondNumber();//no change
+            env.setFirstNumber(0);
 
-
+            return oneNumberState;
         }
 
         public CalculatorState GetNextState(C input, CalculatorEnviroment)
         {
 
+                env.setPreviousOperator(input);
+                env.setFirstNumber(0);
+    
+                env.setSecondNumber(0);//this right?
+                return oneNumberState;
 
         }
         public CalculatorState GetNextState(Equal input, CalculatorEnviroment)
