@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using M11_LAB.OperationPackage;
 
 namespace M11_LAB.StatePackage
 {
@@ -10,6 +11,8 @@ namespace M11_LAB.StatePackage
     {
         public CalculatorState GetNextState(string input)
         {
+            //keeps second number and previous operator unchanged. Sets first number to input
+            env.setSecondNumber(double.Parse(input));
             return oneNumberState;
         }
 
