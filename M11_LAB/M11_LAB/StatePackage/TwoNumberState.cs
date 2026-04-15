@@ -16,6 +16,7 @@ namespace M11_LAB.StatePackage
             }
             else {
                 env.PushToSecondNumber(input);
+                env.setDisplay(env.GetSecondNumber());
             }
 
             return twoNumberState;
