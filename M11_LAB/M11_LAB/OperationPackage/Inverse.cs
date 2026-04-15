@@ -9,9 +9,19 @@ namespace M11_LAB.OperationPackage
 {
     internal class Inverse : UnaryOperatorIF
     {
-        public double ExecuteOperation(CalculatorEnviroment state)
+        public void ExecuteOperation(CalculatorEnviroment env)
         {
-            return 1 / state.GetFirstNumber();
+            if (env.getCurrentState() is OneNumberState)
+            {
+                env.setFirstNumber(1 / env.GetFirstNumber());
+                env.setDisplay(1 / env.GetFirstNumber());
+            }
+            else
+            {
+                env.setSecondNumber(1 / env.GetSecondNumber());
+                env.setDisplay(1 / env.GetSecondNumber());
+            }
+
         }
     }
 }

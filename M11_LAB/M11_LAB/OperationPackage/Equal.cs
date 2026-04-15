@@ -9,9 +9,9 @@ namespace M11_LAB.OperationPackage
 {
     internal class Equal : BinaryOperatorIF
     {
-        public double ExecuteOperation(CalculatorEnviroment state)
+        public void ExecuteOperation(CalculatorEnviroment env)
         {
-            return 0;
+            env.GetPreviousOperator().ExecuteOperation(env);
         }
     }
 }

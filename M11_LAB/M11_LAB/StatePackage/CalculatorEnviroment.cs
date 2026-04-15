@@ -12,6 +12,7 @@ namespace M11_LAB.StatePackage
         private String firstNumber = "0";
         private String? SecondNumber;
         private String? resultNumber;
+        private String? display;
 
         private OperatorIF previousOperator;
 
@@ -85,6 +86,14 @@ namespace M11_LAB.StatePackage
         public void PopFromSecondNumber() {
             if (SecondNumber?.Length > 0)
                 SecondNumber = SecondNumber.Remove(SecondNumber.Length - 1);
+        }
+        public double getDisplay()
+        {
+            return double.Parse(this.display);
+        }
+        public void setDisplay(double num)
+        {
+            this.display = num.ToString();
         }
 
     }//end class

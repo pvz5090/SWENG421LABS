@@ -9,9 +9,14 @@ namespace M11_LAB.OperationPackage
 {
     internal class Square : UnaryOperatorIF
     {
-        public double ExecuteOperation(CalculatorEnviroment state)
+        public void ExecuteOperation(CalculatorEnviroment env)
         {
-            return state.GetFirstNumber() * state.GetFirstNumber();
+            if (env.getCurrentState() is OneNumberState)
+                env.setFirstNumber(env.GetFirstNumber() * env.GetFirstNumber());
+            else
+                env.setSecondNumber(env.GetSecondNumber() * env.GetSecondNumber());
+
+            env.setDisplay(env.getDisplay() * env.getDisplay());
         }
     }
 }
