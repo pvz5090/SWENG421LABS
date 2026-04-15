@@ -9,7 +9,7 @@ namespace M11_LAB.StatePackage
     internal class TwoNumberState:CalculatorState
     {
 
-        public CalculatorState GetNextState(string input)
+        public override CalculatorState GetNextState(string input)
         {
             if(input == "backspace"){
                 env.PopFromSecondNumber();
@@ -22,31 +22,31 @@ namespace M11_LAB.StatePackage
             return twoNumberState;
         }
 
-        public CalculatorState GetNextState(BinaryOperatorIF input)
+        public override CalculatorState GetNextState(BinaryOperatorIF input)
         {
             input.ExecuteOperation(env);
 
             return operatorState;
         }
 
-        public CalculatorState GetNextState(UnaryOperatorIF input)
+        public override CalculatorState GetNextState(UnaryOperatorIF input)
         {
             input.ExecuteOperation(env);
             return unaryState;
         }
 
-        public CalculatorState GetNextState(CE input)
+        public override CalculatorState GetNextState(CE input)
         {
             input.ExecuteOperation(env);
             return twoNumberState;
         }
 
-        public CalculatorState GetNextState(C input)
+        public override CalculatorState GetNextState(C input)
         {
             input.ExecuteOperation(env);
             return operatorState;
         }
-        public CalculatorState GetNextState(Equal input)
+        public override CalculatorState GetNextState(Equal input)
         {
             input.ExecuteOperation(env);
             return resultState;
