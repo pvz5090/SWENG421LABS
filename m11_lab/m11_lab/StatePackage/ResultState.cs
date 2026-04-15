@@ -12,7 +12,7 @@ namespace M11_LAB.StatePackage
     internal class ResultState: CalculatorState
     {
 
-        public override CalculatorState GetNextState(int input, CalculatorEnviroment)
+        public override CalculatorState GetNextState(String input, CalculatorEnviroment)
         {
             //PreviousOPerator Does nopthing,stay same
             //SecondNumber does nothing, stay sane
