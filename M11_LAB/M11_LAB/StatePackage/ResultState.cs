@@ -12,39 +12,39 @@ namespace M11_LAB.StatePackage
     internal class ResultState: CalculatorState
     {
 
-        public override CalculatorState GetNextState(String input, CalculatorEnviroment)
+        public override CalculatorState GetNextState(String input)
         {
             //PreviousOPerator Does nopthing,stay same
             //SecondNumber does nothing, stay sane
             
-            env.setFirstNumber(input);
+            env.setFirstNumber(double.Parse(input));
 
             return oneNumberState;
 
         }
 
-        public override CalculatorState GetNextState(BinaryOperatorIF input, CalculatorEnviroment)
+        public override CalculatorState GetNextState(BinaryOperatorIF input)
         {
             //PreviousOPerator Does nopthing,stay same
             //SecondNumber does nothing, stay sane
-            env.setSecondNumber((double) null);
+            env.setSecondNumber(null);
 
             env.setPreviousOperator(input);
             return operatorState;
 
         }
 
-        public override CalculatorState GetNextState(UnaryOperatorIF input, CalculatorEnviroment)
+        public override CalculatorState GetNextState(UnaryOperatorIF input)
         {
             //uses result as first number and computes new result by using input operator 
-            input.ExecuteOperation(env)
+            input.ExecuteOperation(env);
             //env.setPreviousOperator(input);
             //env.setFirstNumber(  );//this Right
 
             return resultState;
         }
 
-        public override CalculatorState GetNextState(CE input, CalculatorEnviroment)
+        public override CalculatorState GetNextState(CE input)
         {
             //sets first number to 0, preserves previous operator and second number
 
@@ -55,25 +55,25 @@ namespace M11_LAB.StatePackage
             return oneNumberState;
         }
 
-        public override CalculatorState GetNextState(C input, CalculatorEnviroment)
+        public override CalculatorState GetNextState(C input)
         {
             //sets first number to 0, second number to null and previous operator to null
 
-                env.setPreviousOperator(null);
-                env.setFirstNumber(0);
-                env.setSecondNumber(null);//this right?
+            env.setPreviousOperator(null);
+            env.setFirstNumber(0);
+            env.setSecondNumber(null);//this right?
 
-                return oneNumberState;
+            return oneNumberState;
 
         }
-        public override CalculatorState GetNextState(Equal input, CalculatorEnviroment)
+        public override CalculatorState GetNextState(Equal input)
         {
             //takes result as first number and computes new result by using previous operator and second number
 
             //env.setPreviousOperator(); no change
             //env.setSecondNumber();//no change
 
-            env.setFirstNumber(resultNumber);
+            env.setFirstNumber(env.getResult());
 
             return resultState;
         }
