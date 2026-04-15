@@ -8,14 +8,16 @@ using System.Threading.Tasks;
 
 namespace M11_Lab.OperationPackage
 {
-    internal class Sign : OperatorIF 
+    internal class Sign : UnaryOperatorIF 
     {
         public void ExecuteOperation(CalculatorEnviroment env)
         {
-            if (env.getCurrentState() is OneNumberState)
+            if (env.getCurrentState() is OneNumberState) 
                 env.setFirstNumber(env.GetFirstNumber() * -1);
             else
                 env.setSecondNumber(env.GetSecondNumber() * -1);
+
+            env.setDisplay(env.getDisplay() * -1);
         }
     }
 }

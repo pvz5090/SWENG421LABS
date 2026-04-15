@@ -1,5 +1,6 @@
 using M11_LAB.StatePackage;
 using M11_LAB.OperationPackage;
+using System.Security.Cryptography.Xml;
 namespace M11_Lab
 {
     public partial class Display : Form
@@ -23,19 +24,23 @@ namespace M11_Lab
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            state = env.getCurrentState().GetNextState(new SquareRoot(), env);
+            env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
         }
 
         private void period_Click(object sender, EventArgs e)
         {
-            state = env.getCurrentState().GetNextState('.', env);
+            state = env.getCurrentState().GetNextState(".", env);
             env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
         }
 
         private void zero_Click(object sender, EventArgs e)
         {
-            state = env.getCurrentState().GetNextState(0, env);
+            state = env.getCurrentState().GetNextState("0", env);
             env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
         }
 
         private void plus_Click(object sender, EventArgs e)
@@ -52,20 +57,118 @@ namespace M11_Lab
 
         private void one_Click(object sender, EventArgs e)
         {
-            state = env.getCurrentState().GetNextState(1, env);
+            state = env.getCurrentState().GetNextState("1", env);
             env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
         }
 
         private void two_Click(object sender, EventArgs e)
         {
-            state = env.getCurrentState().GetNextState(2, env);
+            state = env.getCurrentState().GetNextState("2", env);
             env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
         }
 
         private void three_Click(object sender, EventArgs e)
         {
-            state = env.getCurrentState().GetNextState(3, env);
+            state = env.getCurrentState().GetNextState("3", env);
             env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
+        }
+
+        private void minus_Click(object sender, EventArgs e)
+        {
+            state = env.getCurrentState().GetNextState(new Minus(), env);
+            env.setCurrentState(state);
+        }
+
+        private void inverse_Click(object sender, EventArgs e)
+        {
+            state = env.getCurrentState().GetNextState(new Inverse(), env);
+            env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
+        }
+
+        private void multiply_Click(object sender, EventArgs e)
+        {
+            state = env.getCurrentState().GetNextState(new Multiply(), env);
+            env.setCurrentState(state);
+        }
+
+        private void six_Click(object sender, EventArgs e)
+        {
+            state = env.getCurrentState().GetNextState("6", env);
+            env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
+        }
+
+        private void five_Click(object sender, EventArgs e)
+        {
+            state = env.getCurrentState().GetNextState("5", env);
+            env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
+        }
+
+        private void four_Click(object sender, EventArgs e)
+        {
+            state = env.getCurrentState().GetNextState("4", env);
+            env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
+        }
+
+        private void seven_Click(object sender, EventArgs e)
+        {
+            state = env.getCurrentState().GetNextState("7", env);
+            env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
+        }
+
+        private void eight_Click(object sender, EventArgs e)
+        {
+            state = env.getCurrentState().GetNextState("8", env);
+            env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
+        }
+
+        private void nine_Click(object sender, EventArgs e)
+        {
+            state = env.getCurrentState().GetNextState("9", env);
+            env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
+        }
+
+        private void divide_Click(object sender, EventArgs e)
+        {
+            state = env.getCurrentState().GetNextState(new Divide(), env);
+            env.setCurrentState(state);
+        }
+
+        private void sign_Click(object sender, EventArgs e)
+        {
+            state = env.getCurrentState().GetNextState(new Sign(), env); 
+            env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
+        }
+
+        private void C_Click(object sender, EventArgs e)
+        {
+            state = env.getCurrentState().GetNextState(new C(), env);
+            env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
+        }
+
+        private void CC_Click(object sender, EventArgs e)
+        {
+            state = env.getCurrentState().GetNextState(new CE(), env);
+            env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
+        }
+
+        private void backspace_Click(object sender, EventArgs e)
+        {
+            state = env.getCurrentState().GetNextState("backspace", env);
+            env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
         }
     }
 }

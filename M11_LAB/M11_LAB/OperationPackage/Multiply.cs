@@ -9,9 +9,12 @@ namespace M11_LAB.OperationPackage
 {
     internal class Multiply : BinaryOperatorIF
     {
-        public double ExecuteOperation(CalculatorEnviroment state)
+        public void ExecuteOperation(CalculatorEnviroment env)
         {
-            return state.GetFirstNumber() * state.GetSecondNumber();
+            double num = env.GetFirstNumber() * env.GetSecondNumber();
+            env.setResult(num);
+            env.setFirstNumber(num);
+            env.setDisplay(num);
         }
 
     }

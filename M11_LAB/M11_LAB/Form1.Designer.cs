@@ -30,7 +30,7 @@
         {
             displayBox = new TextBox();
             backspace = new Button();
-            CC = new Button();
+            CE = new Button();
             C = new Button();
             sign = new Button();
             sqrt = new Button();
@@ -69,15 +69,17 @@
             backspace.TabIndex = 1;
             backspace.Text = "<-";
             backspace.UseVisualStyleBackColor = true;
+            backspace.Click += backspace_Click;
             // 
-            // CC
+            // CE
             // 
-            CC.Location = new Point(199, 108);
-            CC.Name = "CC";
-            CC.Size = new Size(75, 23);
-            CC.TabIndex = 2;
-            CC.Text = "CC";
-            CC.UseVisualStyleBackColor = true;
+            CE.Location = new Point(199, 108);
+            CE.Name = "CE";
+            CE.Size = new Size(75, 23);
+            CE.TabIndex = 2;
+            CE.Text = "CE";
+            CE.UseVisualStyleBackColor = true;
+            CE.Click += CC_Click;
             // 
             // C
             // 
@@ -87,6 +89,7 @@
             C.TabIndex = 3;
             C.Text = "C";
             C.UseVisualStyleBackColor = true;
+            C.Click += C_Click;
             // 
             // sign
             // 
@@ -96,6 +99,7 @@
             sign.TabIndex = 4;
             sign.Text = "+/-";
             sign.UseVisualStyleBackColor = true;
+            sign.Click += sign_Click;
             // 
             // sqrt
             // 
@@ -115,6 +119,7 @@
             seven.TabIndex = 6;
             seven.Text = "7";
             seven.UseVisualStyleBackColor = true;
+            seven.Click += seven_Click;
             // 
             // eight
             // 
@@ -124,6 +129,7 @@
             eight.TabIndex = 7;
             eight.Text = "8";
             eight.UseVisualStyleBackColor = true;
+            eight.Click += eight_Click;
             // 
             // nine
             // 
@@ -133,6 +139,7 @@
             nine.TabIndex = 8;
             nine.Text = "9";
             nine.UseVisualStyleBackColor = true;
+            nine.Click += nine_Click;
             // 
             // divide
             // 
@@ -142,6 +149,7 @@
             divide.TabIndex = 9;
             divide.Text = "/";
             divide.UseVisualStyleBackColor = true;
+            divide.Click += divide_Click;
             // 
             // four
             // 
@@ -151,6 +159,7 @@
             four.TabIndex = 10;
             four.Text = "4";
             four.UseVisualStyleBackColor = true;
+            four.Click += four_Click;
             // 
             // five
             // 
@@ -160,6 +169,7 @@
             five.TabIndex = 11;
             five.Text = "5";
             five.UseVisualStyleBackColor = true;
+            five.Click += five_Click;
             // 
             // six
             // 
@@ -169,6 +179,7 @@
             six.TabIndex = 12;
             six.Text = "6";
             six.UseVisualStyleBackColor = true;
+            six.Click += six_Click;
             // 
             // multiply
             // 
@@ -178,6 +189,7 @@
             multiply.TabIndex = 13;
             multiply.Text = "*";
             multiply.UseVisualStyleBackColor = true;
+            multiply.Click += multiply_Click;
             // 
             // three
             // 
@@ -217,6 +229,7 @@
             minus.TabIndex = 17;
             minus.Text = "-";
             minus.UseVisualStyleBackColor = true;
+            minus.Click += minus_Click;
             // 
             // zero
             // 
@@ -256,6 +269,7 @@
             inverse.TabIndex = 21;
             inverse.Text = "1/x";
             inverse.UseVisualStyleBackColor = true;
+            inverse.Click += inverse_Click;
             // 
             // equal
             // 
@@ -292,7 +306,7 @@
             Controls.Add(sqrt);
             Controls.Add(sign);
             Controls.Add(C);
-            Controls.Add(CC);
+            Controls.Add(CE);
             Controls.Add(backspace);
             Controls.Add(displayBox);
             Name = "Display";
@@ -306,7 +320,7 @@
 
         private TextBox displayBox;
         private Button backspace;
-        private Button CC;
+        private Button CE;
         private Button C;
         private Button sign;
         private Button sqrt;

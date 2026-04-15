@@ -19,9 +19,7 @@ namespace M11_LAB.StatePackage
         protected TwoNumberState twoNumberState;
 
         protected CalculatorEnviroment env;
-        public int minusEvent = 1;
-        public int plusEvent = 2;
-        public CalculatorState GetNextState(int input, CalculatorEnviroment)
+        public CalculatorState GetNextState(string input, CalculatorEnviroment)
         {
 
 

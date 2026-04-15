@@ -9,7 +9,7 @@ namespace M11_LAB.OperationPackage
 {
     internal interface OperatorIF
     {
-        public double ExecuteOperation(CalculatorEnviroment state);
+        public void ExecuteOperation(CalculatorEnviroment env);
 
     }
 }
