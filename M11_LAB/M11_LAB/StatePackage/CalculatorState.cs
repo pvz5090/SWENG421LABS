@@ -11,14 +11,13 @@ namespace M11_LAB.StatePackage
 {
     internal abstract class CalculatorState
     {
-        protected ResultState resultState = new ResultState();
-       
-        protected OperatorState operatorState = new OperatorState();
-        protected UnaryState unaryState = new UnaryState();
-        protected OneNumberState oneNumberState = new OneNumberState();
-        protected TwoNumberState twoNumberState = new TwoNumberState();
+        protected static ResultState resultState = new ResultState();
+        protected static OperatorState operatorState = new OperatorState();
+        protected static UnaryState unaryState = new UnaryState();
+        protected static OneNumberState oneNumberState = new OneNumberState();
+        protected static TwoNumberState twoNumberState = new TwoNumberState();
 
-        protected CalculatorEnviroment env = new CalculatorEnviroment();
+        protected static CalculatorEnviroment env = new CalculatorEnviroment();
         public abstract CalculatorState GetNextState(string input);
 
 
