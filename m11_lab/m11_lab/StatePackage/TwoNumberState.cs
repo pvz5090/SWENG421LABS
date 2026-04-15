@@ -12,10 +12,11 @@ namespace M11_LAB.StatePackage
         public CalculatorState GetNextState(string input)
         {
             if(input == "backspace"){
-                env.PopFromFirstNumber(input);
+                env.PopFromSecondNumber();
             }
             else {
-                env.PushToFirstNumber(input);
+                env.PushToSecondNumber(input);
+                env.setDisplay(env.GetSecondNumber());
             }
 
             return twoNumberState;
@@ -23,25 +24,31 @@ namespace M11_LAB.StatePackage
 
         public CalculatorState GetNextState(BinaryOperatorIF input)
         {
+            input.ExecuteOperation(env);
+
             return operatorState;
         }
 
         public CalculatorState GetNextState(UnaryOperatorIF input)
         {
+            input.ExecuteOperation(env);
             return unaryState;
         }
 
         public CalculatorState GetNextState(CE input)
         {
+            input.ExecuteOperation(env);
             return twoNumberState;
         }
 
         public CalculatorState GetNextState(C input)
         {
+            input.ExecuteOperation(env);
             return operatorState;
         }
         public CalculatorState GetNextState(Equal input)
         {
+            input.ExecuteOperation(env);
             return resultState;
         }
     }
