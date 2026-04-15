@@ -67,11 +67,14 @@ namespace M11_LAB.StatePackage
         }
 
         public void PushToFirstNumber(string digit) {
+            if (firstNumber == null)
+                firstNumber = "";
             firstNumber += digit;
-            if (firstNumber?.le
         }
 
         public void PushToSecondNumber(string digit) {
+            if (SecondNumber == null)
+                SecondNumber = "";
             SecondNumber += digit;
         }
 

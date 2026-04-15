@@ -19,7 +19,11 @@ namespace M11_LAB.StatePackage
         protected TwoNumberState twoNumberState;
 
         protected CalculatorEnviroment env;
+<<<<<<< HEAD
         public CalculatorState GetNextState(string input, CalculatorEnviroment)
+=======
+        public CalculatorState GetNextState(int input, CalculatorEnviroment)
+>>>>>>> 043226ae22d94ac5dd6d673d89ed9e01fb50b669
         {
 
 
