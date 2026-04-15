@@ -8,5 +8,34 @@ namespace M11_LAB.StatePackage
 {
     internal class OperatorState:CalculatorState
     {
+        public CalculatorState GetNextState(string input)
+        {
+            return twoNumberState;
+        }
+
+        public CalculatorState GetNextState(BinaryOperatorIF input)
+        {
+            return operatorState;
+        }
+
+        public CalculatorState GetNextState(UnaryOperatorIF input)
+        {
+            return unaryState;
+        }
+
+        public CalculatorState GetNextState(CE input)
+        {
+            return twoNumberState;
+        }
+
+        public CalculatorState GetNextState(C input)
+        {
+            return oneNumberState;
+        }
+
+        public CalculatorState GetNextState(Equal input)
+        {
+            return resultState;
+        }
     }
 }
