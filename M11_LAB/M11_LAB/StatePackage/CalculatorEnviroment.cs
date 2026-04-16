@@ -67,13 +67,33 @@ namespace M11_LAB.StatePackage
 
         public void PushToFirstNumber(string digit) {
             if (firstNumber == null)
+            {
                 firstNumber = "";
+                return;
+            }
+
+            if (firstNumber.Equals("0"))
+            {
+                firstNumber = digit;
+                return;
+            }
+
             firstNumber += digit;
         }
 
         public void PushToSecondNumber(string digit) {
             if (SecondNumber == null)
+            {
                 SecondNumber = "";
+                return;
+            }
+
+            if (SecondNumber.Equals("0"))
+            {
+                SecondNumber = digit;
+                return;
+            }
+
             SecondNumber += digit;
         }
 
