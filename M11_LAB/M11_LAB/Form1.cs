@@ -8,8 +8,10 @@ namespace M11_Lab
     {
         private CalculatorEnviroment env = new CalculatorEnviroment();
         CalculatorState state;
+
         public Display()
         {
+            CalculatorState.SetEnvironment(env);
             InitializeComponent();
         }
 

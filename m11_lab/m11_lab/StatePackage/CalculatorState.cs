@@ -17,7 +17,13 @@ namespace M11_LAB.StatePackage
         protected static OneNumberState oneNumberState = new OneNumberState();
         protected static TwoNumberState twoNumberState = new TwoNumberState();
 
-        protected static CalculatorEnviroment env = new CalculatorEnviroment();
+        protected static CalculatorEnviroment env;
+
+        public static void SetEnvironment(CalculatorEnviroment calcEnv)
+        {
+            env = calcEnv;
+        }
+
         public abstract CalculatorState GetNextState(string input);
 
 

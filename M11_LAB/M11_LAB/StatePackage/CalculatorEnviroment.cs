@@ -11,11 +11,10 @@ namespace M11_LAB.StatePackage
     {
         private String firstNumber = "0";
         private String? SecondNumber = null;
-        private String? resultNumber = null;
-        private String? display = null;
+        private String? resultNumber = "0";
+        private String? display = "0";
 
         private OperatorIF previousOperator = null;
-
         CalculatorState currentState = new OneNumberState();
 
         public CalculatorState getCurrentState()
