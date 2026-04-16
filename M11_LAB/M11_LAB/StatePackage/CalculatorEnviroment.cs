@@ -34,7 +34,7 @@ namespace M11_LAB.StatePackage
 
         public void setFirstNumber(double? num)
         {
-            this.firstNumber = num.ToString();
+            this.firstNumber = num.HasValue ? num.ToString() : "0";
         }
 
         public OperatorIF GetPreviousOperator()
@@ -54,7 +54,7 @@ namespace M11_LAB.StatePackage
 
         public void setSecondNumber(double? num)
         {
-            this.SecondNumber = num.ToString();
+            this.SecondNumber = num.HasValue ? num.ToString() : null;
         }
         public double getResult()
         {
@@ -62,7 +62,7 @@ namespace M11_LAB.StatePackage
         }
         public void setResult(double? num)
         {
-            this.resultNumber = num.ToString(); 
+            this.resultNumber = num.HasValue ? num.ToString() : "0";
         }
 
         public void PushToFirstNumber(string digit) {
