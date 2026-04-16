@@ -25,8 +25,7 @@ namespace M11_LAB.StatePackage
 
         public override CalculatorState GetNextState(BinaryOperatorIF input)
         {
-            env.GetPreviousOperator().ExecuteOperation(env);
-            env.setPreviousOperator(input);
+            input.ExecuteOperation(env);
 
             return operatorState;
         }
