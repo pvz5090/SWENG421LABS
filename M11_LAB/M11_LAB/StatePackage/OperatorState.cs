@@ -12,11 +12,13 @@ namespace M11_LAB.StatePackage
         public override CalculatorState GetNextState(String input)
         {
             env.setSecondNumber(double.Parse(input));
+            env.setDisplay(env.GetSecondNumber());
             return twoNumberState;
         }
 
         public override CalculatorState GetNextState(BinaryOperatorIF input)
         {
+            env.setPreviousOperator(input);
             return operatorState;
         }
 
