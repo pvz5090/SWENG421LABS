@@ -49,7 +49,9 @@ namespace M11_LAB.StatePackage
 
         public double GetSecondNumber()
         {
-            return double.Parse(this.SecondNumber);
+            if (double.TryParse(this.SecondNumber, out double result))
+                return result;
+            return 0;
         }
 
         public void setSecondNumber(double? num)
@@ -65,36 +67,19 @@ namespace M11_LAB.StatePackage
             this.resultNumber = num.HasValue ? num.ToString() : "0";
         }
 
+        private string PushDigit(string? current, string digit)
+        {
+            if (string.IsNullOrEmpty(current) || current.Equals("0"))
+                return digit;
+            return current + digit;
+        }
+
         public void PushToFirstNumber(string digit) {
-            if (firstNumber == null)
-            {
-                firstNumber = "";
-                return;
-            }
-
-            if (firstNumber.Equals("0"))
-            {
-                firstNumber = digit;
-                return;
-            }
-
-            firstNumber += digit;
+            firstNumber = PushDigit(firstNumber, digit);
         }
 
         public void PushToSecondNumber(string digit) {
-            if (SecondNumber == null)
-            {
-                SecondNumber = "";
-                return;
-            }
-
-            if (SecondNumber.Equals("0"))
-            {
-                SecondNumber = digit;
-                return;
-            }
-
-            SecondNumber += digit;
+            SecondNumber = PushDigit(SecondNumber, digit);
         }
 
         public void PopFromFirstNumber() {
