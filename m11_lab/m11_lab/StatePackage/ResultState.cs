@@ -14,13 +14,13 @@ namespace M11_LAB.StatePackage
 
         public override CalculatorState GetNextState(String input)
         {
-            //PreviousOPerator Does nopthing,stay same
-            //SecondNumber does nothing, stay sane
-            
-            env.setFirstNumber(double.Parse(input));
-
+            if (input == "backspace")
+                return resultState;
+            // Start fresh with the typed digit
+            env.setFirstNumber(null);
+            env.PushToFirstNumber(input);
+            env.setDisplay(env.getFirstNumberString());
             return oneNumberState;
-
         }
 
         public override CalculatorState GetNextState(BinaryOperatorIF input)
@@ -72,9 +72,7 @@ namespace M11_LAB.StatePackage
 
             //env.setPreviousOperator(); no change
             //env.setSecondNumber();//no change
-
-            env.setFirstNumber(env.getResult());
-
+            input.ExecuteOperation(env);
             return resultState;
         }
     }

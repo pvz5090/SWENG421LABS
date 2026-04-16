@@ -11,8 +11,12 @@ namespace M11_LAB.StatePackage
     {
         public override CalculatorState GetNextState(string input)
         {
-            //keeps second number and previous operator unchanged. Sets first number to input
-            env.setSecondNumber(double.Parse(input));
+            if (input == "backspace")
+                return unaryState;
+            // Start a new first number from scratch
+            env.setFirstNumber(null);
+            env.PushToFirstNumber(input);
+            env.setDisplay(env.getFirstNumberString());
             return oneNumberState;
         }
 

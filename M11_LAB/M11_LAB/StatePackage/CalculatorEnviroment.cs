@@ -12,7 +12,7 @@ namespace M11_LAB.StatePackage
         private String firstNumber = "0";
         private String? SecondNumber = null;
         private String? resultNumber = "0";
-        private String? display = "0";
+        private String display = "0";
 
         private OperatorIF previousOperator = null;
         CalculatorState currentState = new OneNumberState();
@@ -86,13 +86,27 @@ namespace M11_LAB.StatePackage
             if (SecondNumber?.Length > 0)
                 SecondNumber = SecondNumber.Remove(SecondNumber.Length - 1);
         }
-        public double getDisplay()
+        public string getDisplay()
         {
-            return double.Parse(this.display);
+            return this.display;
         }
         public void setDisplay(double num)
         {
             this.display = num.ToString();
+        }
+        public void setDisplay(string s)
+        {
+            this.display = s;
+        }
+
+        public string getFirstNumberString()
+        {
+            return firstNumber ?? "0";
+        }
+
+        public string getSecondNumberString()
+        {
+            return SecondNumber ?? "0";
         }
 
     }//end class

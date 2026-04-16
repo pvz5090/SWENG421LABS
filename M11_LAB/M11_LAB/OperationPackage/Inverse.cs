@@ -11,17 +11,18 @@ namespace M11_LAB.OperationPackage
     {
         public void ExecuteOperation(CalculatorEnviroment env)
         {
+            double result;
             if (env.getCurrentState() is OneNumberState)
             {
-                env.setFirstNumber(1 / env.GetFirstNumber());
-                env.setDisplay(1 / env.GetFirstNumber());
+                result = 1 / env.GetFirstNumber();
+                env.setFirstNumber(result);
             }
             else
             {
-                env.setSecondNumber(1 / env.GetSecondNumber());
-                env.setDisplay(1 / env.GetSecondNumber());
+                result = 1 / env.GetSecondNumber();
+                env.setSecondNumber(result);
             }
-
+            env.setDisplay(result);
         }
     }
 }

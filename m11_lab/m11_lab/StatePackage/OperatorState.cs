@@ -11,12 +11,16 @@ namespace M11_LAB.StatePackage
     {
         public override CalculatorState GetNextState(String input)
         {
-            env.setSecondNumber(double.Parse(input));
+            if (input == "backspace")
+                return operatorState;
+            env.PushToSecondNumber(input);
+            env.setDisplay(env.getSecondNumberString());
             return twoNumberState;
         }
 
         public override CalculatorState GetNextState(BinaryOperatorIF input)
         {
+            env.setPreviousOperator(input);
             return operatorState;
         }
 

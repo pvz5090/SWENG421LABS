@@ -16,7 +16,10 @@ namespace M11_LAB.OperationPackage
             else
                 env.setSecondNumber(env.GetSecondNumber() * env.GetSecondNumber());
 
-            env.setDisplay(env.getDisplay() * env.getDisplay());
+            if (env.getCurrentState() is OneNumberState)
+                env.setDisplay(env.GetFirstNumber());
+            else
+                env.setDisplay(env.GetSecondNumber());
         }
     }
 }
