@@ -50,6 +50,7 @@ namespace M11_Lab
         {
             state = env.getCurrentState().GetNextState(new Plus());
             env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
         }
 
         private void equal_Click(object sender, EventArgs e)
