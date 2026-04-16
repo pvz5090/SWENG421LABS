@@ -85,6 +85,7 @@ namespace M11_Lab
         {
             state = env.getCurrentState().GetNextState(new Minus());
             env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
         }
 
         private void inverse_Click(object sender, EventArgs e)
@@ -98,6 +99,8 @@ namespace M11_Lab
         {
             state = env.getCurrentState().GetNextState(new Multiply());
             env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
+
         }
 
         private void six_Click(object sender, EventArgs e)
@@ -146,6 +149,8 @@ namespace M11_Lab
         {
             state = env.getCurrentState().GetNextState(new Divide());
             env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
+
         }
 
         private void sign_Click(object sender, EventArgs e)
