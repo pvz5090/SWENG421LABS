@@ -13,7 +13,7 @@ namespace M11_LAB.OperationPackage
         {
             env.setFirstNumber(0);
             env.setSecondNumber(0);
-            env.setPreviousOperator(null);
+            env.setPreviousOperator(new NullOperator());
             env.setResult(null);
             env.setDisplay(0);
 

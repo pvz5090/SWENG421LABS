@@ -63,7 +63,7 @@ namespace M11_LAB.StatePackage
         {
             //sets first number to 0, second number to null and previous operator to null
 
-            env.setPreviousOperator(null);
+            env.setPreviousOperator(new NullOperator());
             env.setFirstNumber(0);
             env.setSecondNumber(null);//this right?
 

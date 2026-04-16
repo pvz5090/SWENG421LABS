@@ -14,7 +14,7 @@ namespace M11_LAB.StatePackage
         private String? resultNumber = "0";
         private String display = "0";
 
-        private OperatorIF previousOperator = null;
+        private OperatorIF previousOperator = new NullOperator();
         CalculatorState currentState = new OneNumberState();
 
         public CalculatorState getCurrentState()
