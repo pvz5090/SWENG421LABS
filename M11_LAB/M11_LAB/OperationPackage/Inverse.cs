@@ -12,7 +12,7 @@ namespace M11_LAB.OperationPackage
         public void ExecuteOperation(CalculatorEnviroment env)
         {
             double result;
-            if (env.getCurrentState() is OneNumberState)
+            if (env.getCurrentState() is OneNumberState or ResultState)
             {
                 result = 1 / env.GetFirstNumber();
                 env.setFirstNumber(result);

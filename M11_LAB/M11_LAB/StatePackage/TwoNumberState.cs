@@ -17,9 +17,8 @@ namespace M11_LAB.StatePackage
             }
             else {
                 env.PushToSecondNumber(input);
-                env.setDisplay(env.GetSecondNumber());
             }
-
+            env.setDisplay(env.getSecondNumberString());
             return twoNumberState;
         }
 
@@ -34,6 +33,8 @@ namespace M11_LAB.StatePackage
         public override CalculatorState GetNextState(UnaryOperatorIF input)
         {
             input.ExecuteOperation(env);
+            if (input is Sign)
+                return this; 
             return unaryState;
         }
 

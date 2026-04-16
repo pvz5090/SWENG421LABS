@@ -31,6 +31,8 @@ namespace M11_LAB.StatePackage
         public override CalculatorState GetNextState(UnaryOperatorIF input)
         {
             input.ExecuteOperation(env);
+            if (input is Sign)
+                return this; 
             return resultState;
         }
 

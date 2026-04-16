@@ -15,7 +15,11 @@ namespace M11_LAB.StatePackage
         public override CalculatorState GetNextState(String input)
         {
             if (input == "backspace")
+            {
+                env.PopFromFirstNumber();
+                env.setDisplay(env.GetFirstNumber());
                 return resultState;
+            }
             // Start fresh with the typed digit
             env.setFirstNumber(null);
             env.PushToFirstNumber(input);
