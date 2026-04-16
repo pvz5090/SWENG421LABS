@@ -56,6 +56,7 @@ namespace M11_Lab
         {
             state = env.getCurrentState().GetNextState(new Equal());
             env.setCurrentState(state);
+            displayBox.Text = env.getDisplay().ToString();
         }
 
         private void one_Click(object sender, EventArgs e)
